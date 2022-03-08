@@ -6,14 +6,14 @@ This project is for the Rampart High Rollin/Dream Vacation portal system.
 
 ###Login to the Front End
 ```
-URL: rampart-dv.localhost.en/
+URL: silverreef.localhost.en/
 UN: test@test.com
 PW: testing
 ```
 
 ###Login to the Admin
 ```
-URL: rampart-dv-portal.localhost.en/administrator
+URL: silverreef-portal.localhost.en/administrator
 UN: testing
 PW: testing
 ```
