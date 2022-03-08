@@ -43,6 +43,6 @@ class ConfigClient extends AbstractConfigClient
      */
     public static function getClientAlias()
     {
-        return 'rampart-dv';
+        return 'silverreef';
     }
 }
