@@ -6,7 +6,7 @@
 /**
  * @author Joshua Copeland <josh@engagednation.com>
  * @author Matthew Kosolofski <matthew.kosolofski@engagednation.com>
- * @package rampart-dv
+ * @package silverreef
  */
 class RoboFile extends \Robo\Tasks
 {
