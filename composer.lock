@@ -940,16 +940,16 @@
         },
         {
             "name": "engaged-nation/doctrine-portal",
-            "version": "dev-master",
+            "version": "dev-rc",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/doctrine-portal.git",
-                "reference": "4e2d5e8f45c7dd167657f0a327f89758a166bb7e"
+                "reference": "879c264f6f1599b4d19db653d10b8ea8d62b6737"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Engaged-Nation/doctrine-portal/zipball/4e2d5e8f45c7dd167657f0a327f89758a166bb7e",
-                "reference": "4e2d5e8f45c7dd167657f0a327f89758a166bb7e",
+                "url": "https://api.github.com/repos/Engaged-Nation/doctrine-portal/zipball/879c264f6f1599b4d19db653d10b8ea8d62b6737",
+                "reference": "879c264f6f1599b4d19db653d10b8ea8d62b6737",
                 "shasum": ""
             },
             "require": {
@@ -957,6 +957,7 @@
                 "php": ">=5.5.9",
                 "zircote/swagger-php": "^2.0"
             },
+            "default-branch": true,
             "type": "project",
             "autoload": {
                 "psr-4": {
@@ -972,20 +973,24 @@
                 "proprietary"
             ],
             "description": "The portal doctrine library.",
-            "time": "2021-06-14T21:08:07+00:00"
+            "support": {
+                "source": "https://github.com/Engaged-Nation/doctrine-portal/tree/rc",
+                "issues": "https://github.com/Engaged-Nation/doctrine-portal/issues"
+            },
+            "time": "2022-02-14T18:24:01+00:00"
         },
         {
             "name": "engaged-nation/lib-central-admin-client",
-            "version": "v2.38.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/lib-central-admin-client.git",
-                "reference": "e1fdcd15d63b20d50a7c1aa68ce3714e38cec404"
+                "reference": "450ab5e4c45db5b4209cadc39cc8c815a882730f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Engaged-Nation/lib-central-admin-client/zipball/e1fdcd15d63b20d50a7c1aa68ce3714e38cec404",
-                "reference": "e1fdcd15d63b20d50a7c1aa68ce3714e38cec404",
+                "url": "https://api.github.com/repos/Engaged-Nation/lib-central-admin-client/zipball/450ab5e4c45db5b4209cadc39cc8c815a882730f",
+                "reference": "450ab5e4c45db5b4209cadc39cc8c815a882730f",
                 "shasum": ""
             },
             "require": {
@@ -994,6 +999,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^6.0"
             },
+            "default-branch": true,
             "type": "project",
             "autoload": {
                 "psr-4": {
@@ -1004,11 +1010,15 @@
                 "proprietary"
             ],
             "description": "Central Admin Api Client Library",
-            "time": "2021-06-08T16:10:26+00:00"
+            "support": {
+                "source": "https://github.com/Engaged-Nation/lib-central-admin-client/tree/v2.48.0",
+                "issues": "https://github.com/Engaged-Nation/lib-central-admin-client/issues"
+            },
+            "time": "2022-02-10T01:34:44+00:00"
         },
         {
             "name": "engaged-nation/lib-encryption",
-            "version": "v1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/lib-encryption.git",
@@ -1028,6 +1038,7 @@
                 "phpunit/phpunit": "^5.6",
                 "symfony/symfony": "3.2.*"
             },
+            "default-branch": true,
             "type": "project",
             "autoload": {
                 "psr-4": {
@@ -1049,20 +1060,24 @@
                 }
             ],
             "description": "A custom Symfony encryption bundle.",
+            "support": {
+                "source": "https://github.com/Engaged-Nation/lib-encryption/tree/v1.1.0",
+                "issues": "https://github.com/Engaged-Nation/lib-encryption/issues"
+            },
             "time": "2017-08-30T23:32:48+00:00"
         },
         {
             "name": "engaged-nation/lib-mgt-client",
-            "version": "v1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/lib-mgt-client.git",
-                "reference": "79b8cafec652d7d3ad6722f8bd5ea9963d3db487"
+                "reference": "27fdd95f75051f178b86591c198467128c269c41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Engaged-Nation/lib-mgt-client/zipball/79b8cafec652d7d3ad6722f8bd5ea9963d3db487",
-                "reference": "79b8cafec652d7d3ad6722f8bd5ea9963d3db487",
+                "url": "https://api.github.com/repos/Engaged-Nation/lib-mgt-client/zipball/27fdd95f75051f178b86591c198467128c269c41",
+                "reference": "27fdd95f75051f178b86591c198467128c269c41",
                 "shasum": ""
             },
             "require": {
@@ -1071,6 +1086,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^6.0"
             },
+            "default-branch": true,
             "type": "project",
             "autoload": {
                 "psr-4": {
@@ -1081,30 +1097,34 @@
                 "proprietary"
             ],
             "description": "MGT Api Client Library",
-            "time": "2018-02-23T01:18:53+00:00"
+            "support": {
+                "source": "https://github.com/Engaged-Nation/lib-mgt-client/tree/master",
+                "issues": "https://github.com/Engaged-Nation/lib-mgt-client/issues"
+            },
+            "time": "2020-01-30T19:31:46+00:00"
         },
         {
             "name": "engaged-nation/portal-core",
-            "version": "dev-master",
+            "version": "dev-rc",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/portal-core.git",
-                "reference": "e3ce175ccbc4b700c055a182056eb926b50f7b31"
+                "reference": "76311e65e253611cf6823f2c301fa3349455ca27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Engaged-Nation/portal-core/zipball/e3ce175ccbc4b700c055a182056eb926b50f7b31",
-                "reference": "e3ce175ccbc4b700c055a182056eb926b50f7b31",
+                "url": "https://api.github.com/repos/Engaged-Nation/portal-core/zipball/76311e65e253611cf6823f2c301fa3349455ca27",
+                "reference": "76311e65e253611cf6823f2c301fa3349455ca27",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "^3.19",
                 "consolidation/robo": "^1.0",
                 "doctrine/common": "^2.6",
-                "engaged-nation/doctrine-portal": "dev-master",
-                "engaged-nation/lib-central-admin-client": "^2.0",
-                "engaged-nation/lib-encryption": "^1.0",
-                "engaged-nation/lib-mgt-client": "^1.1",
+                "engaged-nation/doctrine-portal": "dev-rc",
+                "engaged-nation/lib-central-admin-client": "dev-master",
+                "engaged-nation/lib-encryption": "dev-master",
+                "engaged-nation/lib-mgt-client": "dev-master",
                 "guzzlehttp/guzzle": "^6.2",
                 "league/csv": "^8.0",
                 "phake/phake": "^2.3",
@@ -1125,6 +1145,7 @@
                 "consolidation/robo": "^1.0",
                 "phpunit/phpunit": "^5.6"
             },
+            "default-branch": true,
             "type": "project",
             "autoload": {
                 "psr-4": {
@@ -1141,7 +1162,11 @@
                 }
             ],
             "description": "The core components for the portal domains.",
-            "time": "2021-06-11T17:37:06+00:00"
+            "support": {
+                "source": "https://github.com/Engaged-Nation/portal-core/tree/rc",
+                "issues": "https://github.com/Engaged-Nation/portal-core/issues"
+            },
+            "time": "2022-03-08T00:52:46+00:00"
         },
         {
             "name": "guzzlehttp/command",
@@ -1426,83 +1451,6 @@
                 "uri"
             ],
             "time": "2016-06-24T23:00:38+00:00"
-        },
-        {
-            "name": "kriswallsmith/assetic",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1",
-                "reference": "e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1",
-                "symfony/process": "~2.1|~3.0"
-            },
-            "conflict": {
-                "twig/twig": "<1.27"
-            },
-            "require-dev": {
-                "leafo/lessphp": "^0.3.7",
-                "leafo/scssphp": "~0.1",
-                "meenie/javascript-packer": "^1.1",
-                "mrclay/minify": "<2.3",
-                "natxet/cssmin": "3.0.4",
-                "patchwork/jsqueeze": "~1.0|~2.0",
-                "phpunit/phpunit": "~4.8 || ^5.6",
-                "psr/log": "~1.0",
-                "ptachoire/cssembed": "~1.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
-                "twig/twig": "~1.23|~2.0",
-                "yfix/packager": "dev-master"
-            },
-            "suggest": {
-                "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
-                "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
-                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
-                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
-                "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
-                "twig/twig": "Assetic provides the integration with the Twig templating engine"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Assetic": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                }
-            ],
-            "description": "Asset Management for PHP",
-            "homepage": "https://github.com/kriswallsmith/assetic",
-            "keywords": [
-                "assets",
-                "compression",
-                "minification"
-            ],
-            "time": "2016-11-11T18:43:20+00:00"
         },
         {
             "name": "league/container",
@@ -2036,6 +1984,12 @@
                 "parser",
                 "useragent"
             ],
+            "support": {
+                "forum": "http://forum.matomo.org/",
+                "issues": "https://github.com/matomo-org/device-detector/issues",
+                "source": "https://github.com/matomo-org/piwik",
+                "wiki": "https://dev.matomo.org/"
+            },
             "abandoned": "matomo/device-detector",
             "time": "2019-05-24T19:45:35+00:00"
         },
@@ -2809,6 +2763,9 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-foundation/tree/3.4"
+            },
             "time": "2018-01-03T17:14:19+00:00"
         },
         {
@@ -3530,5 +3487,5 @@
         "php": "^5.6"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.1.0"
 }
