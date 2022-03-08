@@ -1,0 +1,56 @@
+<div id="games-completed-response" style="text-align: center;">
+    {% if getUserDetails.returnMsg %}
+        <div class="embed-quiz-answer">{{ getUserDetails.returnMsg.translationId|trans({'%correctAnswers%': getUserDetails.returnMsg.correctAnswers, '%correctSingleAnswer%': getUserDetails.returnMsg.correctSingleAnswer, '%aliasPoints%': params.points,'%points%': params.points}, 'frontend')|raw }}</div>
+    {% else %}
+        <h1 class="game-completed-header">{{ 'gameCompleted.header'|trans({}, 'frontend')|raw }}</h1>
+
+        <h2 class="game-completed-body">{{ 'gameCompleted.subheader'|trans({}, 'frontend')|raw }}</h2>
+
+        {% if getUserDetails.points %}
+            <p class="modal-body-style">{{ 'gameCompleted.prize.points'|trans({'%points%': getUserDetails.points, '%aliasPoints%': params.points}, 'frontend')|raw }}</p>
+        {% endif %}
+
+        {% if getUserDetails.drawing_entries %}
+            <p class="modal-body-style">
+                {{
+                (
+                    getUserDetails.drawing_entries == 1 ?
+                    'gameCompleted.prize.drawingEntry' :
+                    'gameCompleted.prize.drawingEntries'
+                )|trans({'%entries%': getUserDetails.drawing_entries}, 'frontend')|raw
+                }}
+            </p>
+        {% endif %}
+
+        {% if getUserDetails.experience %}
+            <p class="modal-body-style">{{ 'gameCompleted.prize.experience'|trans({'%experience%': getUserDetails.experience, "%aliasExperience%": params.aliasExperience}, 'frontend')|raw }}</p>
+        {% endif %}
+
+        {% if getUserDetails.voucher_title %}
+            <p class="modal-body-style">{{ getUserDetails.voucher_title }}</p>
+
+            <div>
+                <input type="button" class="enPortal-button modal-button-style view-my-voucher-button" value="{{ 'gameCompleted.prize.voucher.btn'|trans({}, 'frontend') }}"/>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+{% if getUserDetails.voucher_title %}
+    <script>
+        EngagedNation.RequireJS.require(
+            ["jquery_1_10"],
+            function ($) {
+                $(function () {
+                    $(document).one('click', '#games-completed-response .view-my-voucher-button', EngagedNation.Utility.showUserVoucher);
+                });
+            }
+        );
+    </script>
+{% endif %}
+
+<style>
+    .lbxgrid .-md-top {
+        display: none;
+    }
+</style>

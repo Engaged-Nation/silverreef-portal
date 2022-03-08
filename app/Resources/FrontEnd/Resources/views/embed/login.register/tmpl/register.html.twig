@@ -1,0 +1,165 @@
+<div class="tmpl-register" style="max-width: 450px;">
+    <form id="doregister" method="get" autocomplete="off" style="min-width: 200px;">
+        {{ 'fzone.register.description'|trans({'%amount%': points_per_register, '%currency%': points, '%property%': cname, '%program%': constant('program') is defined ? constant('program') : ""}, 'frontend')|raw }}
+
+        <div style="overflow: hidden; height: 0;">
+            <input type="text"/>
+            <input type="password"/>
+        </div>
+
+        <div>
+            <p class="registration-subheadline"><span class="glyphicon glyphicon-exclamation-sign"></span> denotes a required field.</p>
+
+            <div class="onresp">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="First Name" name="fname">
+                    <span class="input-group-addon " data-toggle="lbxtooltip" data-placement="top" title="This field is required"><span class="glyphicon glyphicon-exclamation-sign"></span></span>
+                </div>
+            </div>
+
+            <div class="onresp">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Last Name" name="lname">
+                    <span class="input-group-addon " data-toggle="lbxtooltip" data-placement="top" title="This field is required"><span class="glyphicon glyphicon-exclamation-sign"></span></span>
+                </div>
+            </div>
+
+            <div class="onresp">
+                <div class="input-group">
+                    {% if inviteid %}
+                        <input type="text" class="form-control locked" placeholder="Email Address" name="email" value="{{ inviteid.email }}" maxlength="255" readonly/><span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    {% else %}
+                        <input type="text" class="form-control" placeholder="Email Address" name="email" value="" maxlength="255"/><span class="input-group-addon" data-toggle="lbxtooltip" data-placement="top" title="This field is required"><span class="glyphicon glyphicon-exclamation-sign"></span></span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="onresp">
+                <div class="input-group rewards-card-input">
+                    <input type="text" class="form-control" placeholder="Players Club Card Number" name="playerscard">
+                </div>
+                <p class="registration-note">
+                    <strong>Please Note:</strong> {{ "playerscard.note"|trans({'%property%': cname, '%program%': program}, 'frontend')|raw }}
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="onresp">
+                        <div class="input-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password"/>
+                            <span class="input-group-addon" data-toggle="lbxtooltip" data-placement="top"
+                                  title="This field is required - Must be 6 characters or more"><span
+                                        class="glyphicon glyphicon-exclamation-sign"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="onresp">
+                        <div class="input-group">
+                            <input type="password" class="form-control" placeholder="Confirm Password" name="cpassword"/>
+                            <span class="input-group-addon" data-toggle="lbxtooltip" data-placement="top"
+                                  title="This field is required - Must match the password"><span
+                                        class="glyphicon glyphicon-exclamation-sign"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="onresp">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="input-group birthdate-spacer">
+                            <span class="system-message-body">Birthdate</span>&nbsp;
+                            <span data-toggle="lbxtooltip" data-placement="top" title="This field is required" style="display: inline-block">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                            </span>
+                        </div>
+                        {{ birthdate|raw }}
+                    </div>
+                </div>
+                <div class="birthdate-response"></div>
+            </div>
+
+            <div class="onresp self-exclusion-spacer">
+                <label style="margin: 0">
+                    <input type="checkbox" name="selfx"/>
+                    <p class="font-18">{{ "fzone.register.selfexclusion"|trans({}, "frontend")|raw }}</p>
+                </label>
+            </div>
+
+            {% include 'FrontEnd/Resources/views/terms-and-conditions.html.twig' with {'hasTerms': 'true', 'data': data} %}
+
+            <div id="nregister-out"></div>
+            <div class="modal-button-wrapper">
+                <button type="button" class="button nregister modal-button-style">Register</button>
+            </div>
+
+            <input type="hidden" name="embed" value="login.register"/>
+            <input type="hidden" name="submit" value="true"/>
+            <input type="hidden" name="redirect" value="{{ returnlogreg }}"/>
+
+            {% if invitefid %}
+                <input type="hidden" name="invitedfid" value="{{ invitefid }}"/>
+            {% endif %}
+
+            <input type="hidden" name="action" value="register.rampart"/>
+            <input type="hidden" name="nickname" value="" maxlength="50"/>
+        </div>
+    </form>
+</div>
+
+<script>
+    EngagedNation.RequireJS.require(
+        ["jquery_1_10"],
+        function($)
+        {
+            "use strict";
+
+            $(function () {
+                /* remove old name spacing */
+                $('#doregister').find('.enPortal-col-xs-4').removeClass('enPortal-col-xs-4').addClass('col-xs-4');
+                $('#doregister').find('.enPortal-row').removeClass('enPortal-row').addClass('row');
+                $('#doregister').find('.enPortal-form-control-ex').removeClass('enPortal-form-control-ex').addClass('form-control-ex');
+
+                /* set defaults for dob so they have to choose */
+                /* first lets remove existing selected option */
+                $('select[name="dob[]"]').find('option:selected').removeAttr("selected");
+
+                $('#doregister label').on('click', function () {
+                    if ($(this).find('input[type=checkbox]').is(':checked')) {
+                        $(this).find('.box-sm-scroll').fadeIn();
+                    }
+                    else {
+                        $(this).find('.box-sm-scroll').fadeOut();
+                    }
+                });
+
+                $('#doregister').on('submit', function(e) {
+                    var this_ = $(this);
+                    e.preventDefault();
+
+                    $('.tmpl-register .msg_box_error').fadeOut().remove();
+
+                    $(this).find('[type="submit"]').fadeOut(0);
+                    $('.lbxgrid #nregister-out').html('<div class="goCenter"><img src="{{ gifloading|e("js") }}" /></div>');
+                    $(this).find('input[name="nickname"]').val('lil' + ((new Date()).getTime()).toString().substring(3, 15));
+
+                    $.ajax({
+                        dataType: 'jsonp',
+                        jsonp: 'callback',
+                        data: this_.serialize(),
+                        cache: false,
+                        url: '{{ fhost|e("js") }}/embed/index.php?id={{ id|e("js") }}&pageid={{ pageid|e("js") }}',
+                        success: function (data) {
+                            $('.lbxgrid #nregister-out').html(data.html);
+                            this_.find('[type="submit"]').fadeIn(0);
+                        }
+                    });
+                });
+
+                $.lbxtooltip();
+            });
+        }
+    );
+</script>

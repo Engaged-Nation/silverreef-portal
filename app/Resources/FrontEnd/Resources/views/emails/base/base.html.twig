@@ -1,0 +1,121 @@
+{#
+Base template for emails.
+Client customization should be done at client portal.
+
+Start your block overwrite with <table> tag when extending this base template, To avoid breaking the table base stracture of the template.
+Email design is all about table base design.
+
+<table>
+    <tr>
+        <td> Content... <td>
+    <tr>
+</table>
+#}
+
+{% set s3Url = global_en_config.environment.s3_uploads_url %}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <!-- NAME: 1 COLUMN -->
+    <!--[if gte mso 15]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ program }}</title>
+
+    <style type="text/css">
+        {# CSS base and resets #}
+        body,#eRoot{
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+            font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        }
+        a[href^=tel],a[href^=sms]{
+            color:inherit;
+            cursor:default;
+            text-decoration:none;
+        }
+        a[x-apple-data-detectors]{
+            color:inherit !important;
+            text-decoration:none !important;
+            font-size:inherit !important;
+            font-family:inherit !important;
+            font-weight:inherit !important;
+            line-height:inherit !important;
+        }
+        img,a img{
+            border:0;
+            height:auto;
+            outline:none;
+            text-decoration:none;
+            -ms-interpolation-mode:bicubic;
+        }
+        #outlook a{
+            padding:0;
+        }
+        p,a,li,td,blockquote{
+            mso-line-height-rule:exactly;
+        }
+        p,a,li,td,body,table,blockquote{
+            -ms-text-size-adjust:100%;
+            -webkit-text-size-adjust:100%;
+        }
+        table{
+            border-collapse:collapse;
+            mso-table-lspace:0pt;
+            mso-table-rspace:0pt;
+        }
+        @media only screen and (max-width: 480px){
+            body, table, td, p, a, li, blockquote{
+                -webkit-text-size-adjust: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table id="eRoot" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#ffffff;">
+            <tr>
+                <td>
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="550" style="width: 550px;">
+                        <tr>
+                            <td>
+                                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            {% block headerContainer %}{% endblock %}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            {% block bodyContainer %}{% endblock %}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            {% block footerContainer %}{% endblock %}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>

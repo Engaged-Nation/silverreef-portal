@@ -1,0 +1,126 @@
+{% extends 'FrontEnd/Resources/views/emails/base/base-registration.html.twig' %}
+
+{# Set default brand color #}
+{% set brandColor = '#000000' %}
+
+{% block headerContainer %}
+    {% include 'FrontEnd/Resources/views/emails/header.html.twig' %}
+{% endblock %}
+
+{% block bodyContainer %}
+    <table align="center" width="100%" cellpadding="10px" style="background-color:#ffffff;">
+        <tr>
+            <td>
+                {% block bodyContent %}
+                    <table cellpadding="10px">
+                        <tr>
+                            <td align="center">
+                                <span style="font-size:2.4em; font-weight:bold; color:{{ brandColor }};">{{ 'emailConfirmation.body.header'|trans({'%points_per_register%': pointsPerRegister|number_format, '%fname%': firstName}, 'frontend')|raw }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="5px">
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                Welcome to M life E rewards, M life’s new online casino rewards program.
+                                                M life E rewards continues our tradition of providing innovative, exciting programs for our guests
+                                                by giving you the chance to earn exclusive rewards just for playing free, fun online games!
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Click the button below to activate your account and <strong>get immediate access to:</strong></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table align="center" width="80%">
+                                                <tr>
+                                                    <td>&#183; <strong>100% FREE</strong> games and activities</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&#183; <strong>Exclusive rewards</strong>—like free slot play, spa discounts and more</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>The more you play, the more chances you have to win, so login daily and have fun.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>We hope you enjoy this exciting new program.</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Now, GO PLAY!</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><i>Executive Director of Marketing</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>M life</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table align="center">
+                                    <tr>
+                                        <td>
+                                            <table align="center" cellpadding="20px">
+                                                <tr>
+                                                    <td style="background-color: #000000; padding: 20px;">
+                                                        <a title="Confirm Now" href="{{ confirmLink }}" style="color: #ffffff; font-weight: bold; text-decoration: none;" target="_other" rel="nofollow">CONFIRM AND PLAY NOW</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="font-size:0.8em;">
+                                <table>
+                                    <tr>
+                                        <td align="center">Having trouble confirming your email address?<br/> Copy and paste the link below into the address bar of your browser: </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a href="{{ confirmLink }}" target="_blank">{{ confirmLink }}</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table align="center">
+                                    <tr>
+                                        <td align="center" style="font-size:0.75em">M life E rewards offers are non-transferable.</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-size:0.75em">Must be a M life Rewards member to claim any reward.</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-size:0.75em">Visit mlife.com for complete details.</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-size:0.75em"><a href="https://www.mlife.com/s">Privacy Policy</a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                {% endblock %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

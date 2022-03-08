@@ -1,0 +1,126 @@
+@import (reference) "base.less";
+
+#fzone {
+    margin-top: 0;
+
+    table {
+        width: 100%;
+
+        .tbody {
+            width: 100%;
+        }
+    }
+
+    li {
+        vertical-align: top;
+    }
+
+    .rowAboveHeaderTheme {
+        margin-top: 35px;
+
+        @media (max-width: 767px) {
+            margin-top: 95px;
+        }
+    }
+
+    #activityTab {
+        &.tabJs {
+            margin-bottom: 0;
+
+            .tabJs-nav-min {
+                background-color: #fff;
+            }
+
+            &.min {
+                border: 0;
+
+                ul {
+                    margin: 0;
+                }
+
+                .tabJs-nav {
+                    overflow: hidden;
+                }
+            }
+            .tabJs-nav {
+                margin: 0;
+            }
+            .tabJs-rs {
+                ul {
+                    text-align: left;
+
+                    &.nofloat {
+                        li {
+                            margin-left: 0;
+                        }
+                    }
+
+                    @media screen and (max-width: 1202px) {
+                        text-align: center;
+                    }
+                }
+            }
+            .tabJs-body {
+                img {
+                    border: 0;
+                    margin: 0;
+                }
+
+                .tabJs-rs {
+                    padding: 20px 8px;
+                    text-align: left;
+                }
+
+                &.bg-crop {
+                    background: transparent;
+                    margin-top: -4px;
+                    border-radius: 0 5px 5px 5px;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .sub-menutab {
+            text-align: center;
+
+            button {
+                min-width: 165px;
+                margin: 0 10px 10px;
+            }
+        }
+
+        .content-max-width-center {
+            .h1-headline-smaller {
+                margin-bottom: 10px;
+            }
+
+            .terms-and-conditions-button-div {
+                margin-bottom: 15px;
+            }
+        }
+
+        .session-expired-wrapper {
+            .session-expired-header {
+                .fontRobotoBold;
+                display: block;
+                text-align: center;
+                text-transform: capitalize;
+                font-size: 28px;
+                line-height: 120%;
+                color: #000000;
+            }
+
+            .session-expired-body {
+                text-align: left;
+                text-transform: initial;
+                font-size: 18px;
+                line-height: 150%;
+                color: #000000;
+
+                .session-expired-body-bold {
+                    .fontRobotoBold;
+                }
+            }
+        }
+    }
+}

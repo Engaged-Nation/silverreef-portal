@@ -1,0 +1,133 @@
+@import (reference) "variables.less";
+@import (reference) "config.less";
+@import "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/fonts.less";
+@import "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/responsive/fluid-type.less";
+@import "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/animation/button/shrink-effect.less";
+
+.button_template_standard {
+    .fontRobotoBold;
+    cursor: pointer;
+    .fluid-type(font-size, 320px, 1024px, 16px, 20px);
+    line-height: 1.5em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    outline: 0;
+    padding: 10px;
+    position: relative;
+    border: none;
+    background-color: @base-btn-bg-color;
+    .en-button-animations-shrink-effect();
+
+    &.active, &:active {
+        background-color: #fff;
+        color: @base-btn-bg-color;
+    }
+}
+
+.button_template_gradient {
+    .fontRobotoBold;
+    cursor: pointer;
+    .fluid-type(font-size, 320px, 1024px, 16px, 20px);
+    line-height: 1.5em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    outline: 0;
+    padding: 10px;
+    position: relative;
+    border-radius: 7px;
+    border: solid 1px #707070;
+    background-image: linear-gradient(to bottom, #d1d2d4, @base-btn-bg-color);
+    .en-button-animations-shrink-effect();
+
+    &.active, &:active {
+        background-color: @base-btn-bg-color;
+        background-image: none;
+    }
+}
+
+.button_template_image {
+    .fontRobotoBold;
+    cursor: pointer;
+    .fluid-type(font-size, 320px, 1024px, 14px, 20px);
+    line-height: 1.5em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    outline: 0;
+    padding: 10px;
+    position: relative;
+    border: none;
+    background: url('@{configS3Url}images/animations/buttonback_goldsparkles_lefttoright.png') no-repeat;
+
+    &.hover {
+        background: url('@{configS3Url}images/animations/buttonback_silversparkles_rollover_lefttoright.png') no-repeat;
+    }
+
+    &.active, &:active {
+        background: @base-btn-bg-color;
+    }
+}
+
+.button {
+    .button_template_standard;
+}
+
+input {
+    &.modal-button-style {
+        .button;
+        -webkit-box-shadow: unset;
+        -moz-box-shadow: unset;
+        -o-box-shadow: unset;
+        box-shadow:unset;
+    }
+
+    &.enPortal-button {
+        .button;
+        -webkit-box-shadow: unset;
+        -moz-box-shadow: unset;
+        -o-box-shadow: unset;
+        box-shadow:unset;
+    }
+}
+
+.enPortal-button {
+    .button;
+}
+
+.modal-button-style {
+    .button;
+}
+
+button {
+    &:not(.navbar-toggle) {
+        &:not(.iziModal-button-close) {
+            &:not(.iziToast-close) {
+                .button;
+            }
+        }
+    }
+
+    &.btn-default {
+        border-color: transparent;
+        padding: unset;
+
+        &:hover {
+            border-color: transparent !important;
+        }
+    }
+
+    &.btn {
+        .button;
+    }
+}
+
+input[type="submit"] {
+    .button;
+}
+
+input[type="button"] {
+    .button;
+}
+
+#viewMyVouchersButton {
+    .button;
+}

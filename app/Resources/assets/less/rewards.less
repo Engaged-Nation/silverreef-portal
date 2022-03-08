@@ -1,0 +1,219 @@
+@import (reference) "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/fonts.less";
+@import (reference) "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/animation/font/strikethrough.less";
+@import (reference) "variables.less";
+
+#myvouchersAndRewards {
+    .my-vouchers-rewards {
+        font-size: 16px;
+        text-align: center;
+        color: #ffffff;
+        .fontRoboto;
+
+        .switchp {
+            display: none;
+        }
+
+        > div {
+            margin-bottom: 30px !important;
+        }
+
+        #printable-vouchers {
+            padding-inline-start: 0;
+
+            .goGold {
+                color: @base-color-blue;
+            }
+
+            p {
+                text-align: left;
+            }
+
+            @media (max-width: 767px) {
+                display: table-row-group;
+            }
+        }
+    }
+}
+
+#rewardsAndMyvouchers {
+    .bg-shelf {
+        .how-it-works-button {
+            margin-bottom: 20px;
+        }
+    }
+
+    #redeem {
+        #saleDescription {
+            margin-top: 20px;
+
+            span {
+                display: block;
+
+                &.saleDate {
+                    margin-top: 15px;
+                }
+            }
+
+            .en-font-animations-fire {
+                .fontRobotoBold;
+                color: #FF0000;
+                -webkit-animation-delay: 1.3s;
+                animation-delay: 1.3s;
+            }
+        }
+
+        .fireSaleBodyText {
+            font-size: 20px;
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 18px;
+            }
+            .body-p {
+                font-size: 16px;
+            }
+        }
+        ul {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+
+            &.nofloat {
+                li {
+                    float: none;
+                    display: inline-block;
+                    position: relative;
+                    width: 200px;
+                    margin: 0 4px 40px 4px;
+                }
+            }
+
+            >li>div {
+                margin: 8px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            li {
+                min-height: 395px;
+
+                .voucher-wrapper {
+                    .box-circles-bg {
+                        .item-wrap {
+                            margin: 20px auto;
+                        }
+
+                        .box-bg {
+                            margin: 0;
+                            position: relative;
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .rewardWrapper {
+            cursor: pointer;
+
+            .rewardLink {
+                padding: 20px 0;
+            }
+
+            .box-shadow {
+                max-width: 200px;
+                max-height: 200px;
+                width: 100%;
+                height: 100%;
+            }
+
+            .pad5 {
+                padding: 5px;
+                color: #ffffff;
+                .fontRoboto;
+                font-size: 14px;
+
+                .redeemPrice {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .saleBeforeDealWrapper {
+                margin: 5px auto 0 auto;
+
+                .saleBeforeDeal {
+                    opacity: 0.4;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    .en-font-animations-strikethrough();
+
+                    &:after {
+                        background: #FF0000 !important;
+                        margin-top: -11px;
+                    }
+                }
+            }
+        }
+
+        h1 {
+            .fontRobotoBold;
+            color: @base-color-gold;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h2 {
+            .fontRoboto;
+            color: @base-color-blue;
+        }
+    }
+
+    .voucher-wrapper {
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .voucher-button-wrapper {
+        margin: 20px 0 30px 0;
+    }
+
+    .voucherButton {
+        float:none;
+        text-align: center;
+    }
+
+    .my-vouchers-rewards{
+        > div {
+            float:none !important;
+            text-align: center;
+        }
+    }
+
+    .modal-link-text {
+        color: #e7a23c;
+        cursor: pointer;
+    }
+}
+
+.buy-voucher {
+    background: @base-bg-color;
+    color: @base-color-blue;
+    padding: 5px 15px;
+    border: none !important;
+}
+
+.earn-price {
+    color: #FFFFFF;
+    .fontRobotoBold;
+    text-transform: uppercase;
+}
+
+.earn-title {
+    .fontRobotoBold;
+    color: #fbaf30;
+}

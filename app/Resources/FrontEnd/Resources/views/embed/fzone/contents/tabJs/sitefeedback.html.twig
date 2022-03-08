@@ -1,0 +1,105 @@
+<div class="sub-menutab">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="modal-button-style btn btn-default" data-view="profile" data-gtm-dimension="My_Profile/Tab/My_Profile">My Profile</button>
+        <button type="button" class="modal-button-style btn btn-default" data-view="myvouchers" data-gtm-dimension="My_Profile/Tab/My_Rewards">My Prizes</button>
+        <button type="button" class="modal-button-style btn btn-default active" data-view="sitefeedback" data-gtm-dimension="My_Profile/Tab/Site_Feedback">Help</button>
+    </div>
+</div>
+<br/>
+<div class="content-max-width-center">
+    <div class="h1-headline-smaller">{{ 'fzone.sitefeedback.form.title'|trans({'%program%' : program, '%cname%' : cname},'frontend')|raw }}</div>
+    <div class="row" id="sitefeedbackpage">
+        <div class="col-md-12">
+            {{ 'fzone.sitefeedback.form.description'|trans({'%cname%' : cname, '%program%' : program},'frontend')|raw }}
+
+            {% include 'FrontEnd/Resources/views/embed/fzone/contents/tabJs/sitefeedbackform.html.twig' %}
+        </div>
+
+        <div class="col-md-6">&nbsp;</div>
+    </div>
+    <script>
+        EngagedNation.RequireJS.require(["jquery_1_10"], function ($) {
+            "use strict";
+
+            $.engagedTabAccordion({
+                scrollOffset: $('.wrapper .header').eq(0).height() + 10
+            });
+
+            $(window).resize(function () {
+                if ($(window).width() < 800) {
+                    $('iframe#ytplayer').attr('width', $(window).width() - 100);
+                    $('.lbxgrid-content .bg').attr('max-width', $(window).width() - 100);
+                    $('iframe#ytplayer').attr('height', $(window).width() - 200);
+                } else {
+                    $('iframe#ytplayer').attr('width', 800);
+                    $('.lbxgrid-content.bg').attr('max-width', 800);
+                    $('iframe#ytplayer').attr('height', 600);
+                }
+            });
+
+            $(function () {
+                setTimeout(function(){
+                    $('#template-sitefeedback-form-button-submit').prop('disabled', true); }, 1000
+                );
+
+                $('.embed #sitefeedbackform').on('submit', function (e) {
+                    var $target = $(this);
+                    e.preventDefault();
+
+                    $('#nsitefb').html('<div class="goCenter;"><img src="{{ s3furl|e('js') }}/images/client/images/hourglass.gif" /></div>');
+                    $('input[value="Submit"]').fadeOut();
+
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'jsonp',
+                        data: $target.serialize(),
+                        jsonp: 'callback',
+                        cache: false,
+                        url: '{{ fhost|e('js') }}/embed/index.php?embed={{ embed|e('js') }}&id={{ id|e('js') }}&submit=true&pageid={{ pageid|e('js') }}&include=sitefeedback',
+                        success: function (data) {
+                            $('#nsitefb').empty();
+                            $('input[value="Submit"]').fadeIn();
+                            $.lbxgrid({html: data.html});
+                        }
+                    });
+                });
+
+                EngagedNation.Callback = EngagedNation.Callback || {};
+
+                if (!EngagedNation.Callback.hasOwnProperty('SubMenuButtons')) {
+                    EngagedNation.Callback.SubMenuButtons = function () {
+                        var self = $(this);
+                        var view = self.attr('data-view'),
+                            $elementId = $('#activityTab');
+
+                        if (view === 'myvouchers') {
+                            if ($('#lt_rewards_central').length > 0) {
+                                $('#lt_rewards_central').click();
+                                setTimeout(function () {
+                                    $('#prizes-page button:contains("MY PRIZES")').click();
+                                }, 1000);
+                            }
+                        }
+
+                        if (view === 'profile') {
+                            if ($('#lt_profile').length > 0) {
+                                $('#lt_profile').click();
+                            }
+                        }
+
+                        if(view === 'sitefeedback') {
+                            if ($('#lt_about').length > 0) {
+                                $('#lt_about').click();
+                            }
+                        }
+                    }
+                }
+
+                var button = '#activityTab .sub-menutab .btn-group .btn';
+                $(document).off('click', button, EngagedNation.Callback.SubMenuButtons);
+                $(document).on('click', button, EngagedNation.Callback.SubMenuButtons);
+            });
+        });
+    </script>
+</div>
+

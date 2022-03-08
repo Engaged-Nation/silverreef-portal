@@ -1,0 +1,40 @@
+{% if formsInput and formsConstants %}
+    {% for key,value in formsInput %}
+        {% if formsConstants[key]['db_column_name'] == 'email' %}
+            <div>
+                <input {% if user and user[formsConstants[key]['db_column_name']] %} readonly="" style="background-color: #878787;" {% endif %}
+                        type="text"
+                        class="form-control"
+                        placeholder="{{ formsConstants[key]['placeholder'] }}"
+                        name="{{ key }}"
+                        value="{{ (user[formsConstants[key]['db_column_name']]) ? user[formsConstants[key]['db_column_name']] : '' }}"/>
+            </div>
+        {% elseif formsConstants[key]['type'] == 'text' %}
+            <div>
+                <input type="text" class="form-control" placeholder="{{ formsConstants[key]['placeholder'] }}" name="{{ key }}" value="{{ (user[formsConstants[key]['db_column_name']]) ? user[formsConstants[key]['db_column_name']] : '' }}"/>
+            </div>
+        {% elseif formsConstants[key]['type'] == 'textarea' %}
+            <div>
+                <textarea class="form-control" name="{{ key }}" placeholder="{{ formsConstants[key]['placeholder'] }}" style="width: 100%; min-height: 110px;">{{ (user[formsConstants[key]['db_column_name']]) ? user[formsConstants[key]['db_column_name']] : '' }}</textarea>
+            </div>
+        {% elseif formsConstants[key]['type'] == 'captcha' %}
+            <div class="captcha-">
+                <img src="{{ fhost }}/captcha.php?id={{ id }}&time_{{ date().timestamp }}&time_{{ date().timestamp }}" style="width: 150px;"/>
+                <div></div>
+            </div>
+            <p style="margin-bottom: 10px;">{{ 'fzone.sitefeedback.form.captcha'|trans({},'frontend')|raw }}</p>
+            <div>
+                <input type="text" class="form-control" placeholder="CAPTCHA" name="captcha"/>
+            </div>
+        {% elseif formsConstants[key]['type'] == 'recaptchav2' and recaptchaSiteKey is not null %}
+            <div class="g-recaptcha-wrapper">
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <div class="g-recaptcha" data-sitekey="{{ recaptchaSiteKey }}"></div>
+                <div class="g-recaptcha-logo">
+                    <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png"/>
+                </div>
+            </div>
+            <br/>
+        {% endif %}
+    {% endfor %}
+{% endif %}

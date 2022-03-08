@@ -1,0 +1,224 @@
+<div id="instant-reward-form">
+    {% if voucher %}
+        <h1 id="instant-reward-form-header" class="modal-header-style-black">{{ 'fzone.instantRewards.header'|trans({}, 'frontend')|raw }}</h1>
+        <h2 id="instant-reward-form-subheader" class="modal-body-style">{{ 'fzone.instantRewards.subheader'|trans({}, 'frontend')|raw }}</h2>
+    {% endif %}
+
+    {% if voucher %}
+        <div id="instantRewardsUserInputForm" style="text-align: center;">
+            {{
+            renderTemplateString(
+                voucher.summary,
+                {
+                    "printButton":printButton,
+                    "smsButton":smsButton,
+                    "emailButton":emailButton,
+                    "kioskButton":kioskButton,
+                    "voucher":voucher,
+                    "userVoucher":userVoucher,
+                    "s3Url":s3Url
+                }
+            )
+            }}
+        </div>
+
+        <script>
+            EngagedNation.RequireJS.require(
+                [
+                    'jquery_1_10',
+                    'apiClientFrontendUserEmail'
+                ],
+                function($, ApiClientFrontendUserEmail)
+                {
+                    $('.lbxgrid-content').addClass ('instant-reward-form-bg');
+
+                    /**
+                     * Email voucher to User if qualified.
+                     */
+                    (new ApiClientFrontendUserEmail).post(
+                        {
+                            userId: EngagedNation.Config.userId,
+                            usersVouchersId: '{{ publicUserVoucherId|e('js') }}'
+                        },
+                        function(response) {
+                            if (!response.data) {
+                                $(document).trigger('EngagedNation:Voucher-Awarded');
+                                return;
+                            }
+
+                            if (response.status === 'Success') {
+                                EngagedNation.Notification.displaySuccess(
+                                    {
+                                        title: response.data.title,
+                                        message: response.data.message,
+                                        position: 'topRight',
+                                        timeout: 0
+                                    }
+                                );
+                                return;
+                            }
+
+                            EngagedNation.Notification.displayError(
+                                {
+                                    title: response.data.title,
+                                    message: response.data.message,
+                                    position: 'topRight',
+                                    timeout: 0
+                                }
+                            );
+                        },
+                        null
+                    );
+                }
+            );
+        </script>
+    {% else %}
+        <script>
+            EngagedNation.RequireJS.require(
+                ["jquery_1_10"],
+                function($)
+                {
+                    $('.lbxgrid-content').addClass ('instant-reward-form-bg');
+                }
+            );
+        </script>
+    {% endif %}
+
+    {% if points %}
+        <p id="instant-reward-points">{{ 'fzone.instantRewards.prize.points'|trans({'%points%': points, '%aliasPoints%': aliasPoints}, 'frontend')|raw }}</p>
+    {% endif %}
+
+    {% if drawingEntries %}
+        <p id="instant-reward-drawing-entries" class="modal-body-reward">{{ 'fzone.instantRewards.prize.drawingEntries'|trans({'%entries%': drawingEntries}, 'frontend')|raw }}</p>
+    {% endif %}
+
+    {% if experience %}
+        <p id="instant-reward-experience" class="modal-body-reward">{{ 'fzone.instantRewards.prize.experience'|trans({'%experience%': experience, '%aliasExperience%': aliasExperience}, 'frontend')|raw }}</p>
+
+        <script>
+            EngagedNation.RequireJS.require(
+                ["jquery_1_10"],
+                function($)
+                {
+                    $(document).trigger(
+                        $.Event(
+                            'EngagedNation:Experience-Earned',
+                            {
+                                engagedNation: {
+                                    exp: {{ experience|e('js') }}
+                                }
+                            }
+                        )
+                    );
+                }
+            );
+        </script>
+    {% endif %}
+
+    {% if voucher %}
+        <div class="view-your-prize-info">
+            Access your prize on the My Rewards page or by pressing the button below.
+        </div>
+
+        <div class="additional-copy btn-container">
+            <button class="btn btn-default btn-instant-reward-email modal-button-style" onclick="EngagedNation.Callback.InstantRewardButton.email(this);" data-notificationtimeout="15" data-gtm-dimension="Instant_Rewards/Email" data-publicid="{{ publicUserVoucherId }}">Email<br>YOUR REWARD</button>
+        </div>
+    {%  else %}
+        <div class="additional-copy">
+            Into the Grand Prize Drawing
+        </div>
+    {%  endif %}
+
+    <div class="additional-copy">
+        Enter another <strong>Bonus Code</strong> next Tuesday to win even more prizes!
+    </div>
+    <div class="additional-copy">
+        <span class="simple-modal text-link" data-gtm-dimension="Bonus_Code/Bonus_Code_Details">HOW BONUS CODE WORKS >
+            <span class="simple-modal-title h1-headline-smaller hidden">
+                <span class="bonuscode-how-to-header">HOW TO PLAY BONUS CODE</span>
+            </span>
+            <span class="simple-modal-content hidden">
+            <p class="body-p-left bonuscode-how-to-body">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+            <ul class="body-p-left bonuscode-how-to-body">
+               <li>Visit Rampart Casino.</li>
+               <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
+               <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
+               <li>Enter your code on the Rampart Riches website. </li>
+            </ul>
+            <p class="body-p-left bonuscode-how-to-body">That's all you need to do to win! Have fun and good luck.</p>
+            </span>
+        </span>
+    </div>
+</div>
+
+<script>
+    var EngagedNation = EngagedNation || {};
+    EngagedNation.Callback = EngagedNation.Callback || {};
+
+    EngagedNation.RequireJS.require(
+        ["jquery_1_10"],
+        function($)
+        {
+            $(
+                function() {
+                    EngagedNation.Callback.InstantRewardUserForm = function(event, target) {
+                        event.preventDefault();
+
+                        var self = $(target),
+                            data = {};
+
+                        {% if isManualInputEnabled %}
+                        if (self.find('input[name="email"]').length > 0) {
+                            data = {
+                                action: self.find('input[name="action"]').val(),
+                                pendingMessage: self.find('input[name="pendingMessage"]').val(),
+                                userFormInputs: self.serialize()
+                            }
+                        }
+
+                        if (self.find('input[name="phoneNumber"]').length > 0) {
+                            data = {
+                                action: self.find('input[name="action"]').val(),
+                                pendingMessage: self.find('input[name="pendingMessage"]').val(),
+                                userFormInputs: self.serialize()
+                            }
+                        }
+
+                        data = {
+                            action: self.find('input[name="action"]').val(),
+                            pendingMessage: self.find('input[name="pendingMessage"]').val(),
+                            userFormInputs: self.serialize()
+                        };
+                        {% else %}
+                        data = {
+                            action: self.find('input[name="action"]').val(),
+                            pendingMessage: self.find('input[name="pendingMessage"]').val(),
+                            publicUserVoucherId: self.find('input[name="publicUserVoucherId"]').val(),
+                            userFormInputs: self.serialize()
+                        };
+                        {% endif %}
+
+                        data['componentName'] = '{{ componentName|e('js') }}';
+                        data['publicUserVoucherId'] = '{{ publicUserVoucherId|e('js') }}';
+
+                        EngagedNation.InstantReward.sendReward(data);
+                    };
+
+                    if (!EngagedNation.Callback.hasOwnProperty('InstantRewardUserPrint')) {
+                        EngagedNation.Callback.InstantRewardUserPrint = function() {
+
+                            EngagedNation.InstantReward.printReward($(this));
+                        }
+                    }
+
+                    var onUserPrint = '#instantRewardsUserInputForm .btn-print-reward';
+                    $(document).off('click', onUserPrint, EngagedNation.Callback.InstantRewardUserPrint);
+                    $(document).on('click', onUserPrint, EngagedNation.Callback.InstantRewardUserPrint);
+
+                    var viewMyVouchersBtn = '#instant-reward-my-vouchers-btn';
+                    $(document).one('click', viewMyVouchersBtn, EngagedNation.Utility.showUserVoucher);
+                }
+            );
+        }
+    );
+</script>

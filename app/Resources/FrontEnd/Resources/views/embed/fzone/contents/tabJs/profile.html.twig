@@ -1,0 +1,80 @@
+{% extends 'FrontEnd/Resources/views/embed/fzone/contents/tabJs/profile/base.html.twig' %}
+
+{% block contentBeforeForm %}
+    <div class="sub-menutab">
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="modal-button-style btn btn-default active" data-view="profile" data-gtm-dimension="My_Profile/Tab/My_Profile">My Profile</button>
+            <button type="button" class="modal-button-style btn btn-default" data-view="myvouchers" data-gtm-dimension="My_Profile/Tab/My_Rewards">My Prizes</button>
+            <button type="button" class="modal-button-style btn btn-default" data-view="sitefeedback" data-gtm-dimension="My_Profile/Tab/Site_Feedback">Help</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div id="content-switch-container" class="col-md-12">
+            <div class="h1-headline-smaller">Profile Information</div>
+        </div>
+    </div>
+    <script>
+        EngagedNation.RequireJS.require(
+            ["jquery_1_10"],
+            function($) {
+                "use strict";
+
+                $.engagedTabAccordion(
+                    {
+                        scrollOffset: $('.wrapper .header').eq(0).height() + 10
+                    }
+                );
+
+                $(function(){
+                    if (!EngagedNation.Callback.hasOwnProperty('SubMenuButtons')) {
+                        EngagedNation.Callback.SubMenuButtons = function() {
+                            var self = $(this);
+                            var view = self.attr('data-view'),
+                                $elementId = $('#activityTab');
+
+                            if (view === 'myinbox') {
+                                return;
+                            }
+
+                            $.ajax({
+                                dataType: 'jsonp',
+                                jsonp: 'callback',
+                                cache: false,
+                                url: '{{ params.fhost|e('js') }}/embed/index.php?embed={{ params.embed|e('js') }}&id={{ params.id|e('js') }}&pageid={{ params.pageid|e('js') }}&tabjs=true&view=' + view + '&include=' + view,
+                                success: function (data) {
+                                    $elementId.find('.sub-menutab .btn-group .btn').removeClass('active');
+                                    self.addClass('active');
+
+                                    if (view === 'myvouchers') {
+                                        if ($elementId.find('.tabJs-rs #sitefeedbackpage').length > 0) {
+                                            $elementId.find('.tabJs-rs #sitefeedbackpage').html(data.html);
+                                            return;
+                                        }
+
+                                        if ($elementId.find('.tabJs-rs #myProfile').length > 0) {
+                                            $elementId.find('.tabJs-rs #myProfile').html(data.html);
+                                            return;
+                                        }
+                                    }
+
+                                    if (view === 'sitefeedback' || view === 'profile') {
+                                        $elementId.find('.tabJs-rs').html(data.html);
+                                        return;
+                                    }
+
+                                    $elementId.find('.tabJs-rs #myProfile').html(data.html);
+                                }
+                            });
+                        }
+                    }
+
+                    var button = '#activityTab .sub-menutab .btn-group .btn';
+                    $(document).off('click', button, EngagedNation.Callback.SubMenuButtons);
+                    $(document).on('click', button, EngagedNation.Callback.SubMenuButtons);
+                });
+
+            }
+        );
+    </script>
+{% endblock contentBeforeForm %}

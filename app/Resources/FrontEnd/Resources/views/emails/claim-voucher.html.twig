@@ -1,0 +1,309 @@
+{% set urlPrefix = global_en_config.environment.s3_uploads_url %}
+
+{% if isDownloadPdf %}
+    {% set urlPrefix = '' %}
+{% endif %}
+
+{% set emailLogoUrl = urlPrefix ~ '/images/logos/High-Rollin-Rampart-1600h.png' %}
+
+{% if not isDownloadPdf %}
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+
+    </title>
+    {% endif %}
+
+    <style type="text/css">
+        /* Outlook link fix */
+        #outlook a {padding:0;}
+        /* Hotmail background & line height fixes */
+        .ExternalClass {width:100% !important;}
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,
+        .ExternalClass td, .ExternalClass div {line-height: 100%;}
+        /* Image borders & formatting */
+        img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+        a img {border:none;}
+        /* Re-style iPhone automatic links (eg. phone numbers) */
+        .applelinks a {color:#000000; text-decoration: none;}
+        /* Hotmail symbol fix for mobile devices */
+        .ExternalClass img[class^=Emoji] { width: 10px !important; height: 10px !important; display: inline !important; }
+
+
+        #h1 a:link {color: #000000; text-decoration:none;}
+        #h1 a:visited {color: #000000; text-decoration:none;}
+        #h1 a:hover {color: #000000; text-decoration:none;}
+
+        #h2 a:link {color: #000000; text-decoration:none;}
+        #h2 a:visited {color: #000000; text-decoration:none;}
+        #h2 a:hover {color: #000000; text-decoration:none;}
+
+        #h3 a:link {color: #000000; text-decoration:none;}
+        #h3 a:visited {color: #000000; text-decoration:none;}
+        #h3 a:hover {color: #000000; text-decoration:none;}
+
+        #h4 a:link {color: #000000; text-decoration:none;}
+        #h4 a:visited {color: #000000; text-decoration:none;}
+        #h4 a:hover {color: #000000; text-decoration:none;}
+
+        #h5 a:link {color: #000000; text-decoration:none;}
+        #h5 a:visited {color: #000000; text-decoration:none;}
+        #h5 a:hover {color: #000000; text-decoration:none;}
+
+        #h6 a:link {color: #000000; text-decoration:none;}
+        #h6 a:visited {color: #000000; text-decoration:none;}
+        #h6 a:hover {color: #000000; text-decoration:none;}
+
+
+        .border {
+            border-collapse:separate;
+            border: solid #000000 1px;
+            border-radius:25px;
+            -moz-border-radius:25px;
+            mso-height-rule: exactly;
+        }
+
+        .topbg {
+            border-collapse:separate;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            background-color: #000000;
+            -moz-border-radius-topleft: 18px;
+            -moz-border-radius-topright: 18px;
+            mso-height-rule: exactly;
+
+        }
+
+        .bottombg {
+            border-collapse:separate;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            background-color: #000000;
+            mso-height-rule: exactly;
+            -moz-border-radius-bottomleft: 18px;
+            -moz-border-radius-bottomrightt: 18px;
+
+        }
+
+        .hide { max-height: 0px; font-size: 0; display: none; }
+
+        {% if isDownloadPdf %}
+        {% set padding5 = '0' %}
+        {% set padding10 = '0' %}
+        {% set padding15 = '0' %}
+        {% set padding20 = '0' %}
+        {% set padding25 = '0' %}
+
+        #downloadpdf-element-container #downloadpdf-element-container-wrapper #eRoot {
+            margin-top: 20px;
+        }
+        {% else %}
+        {% set padding5 = '5px' %}
+        {% set padding10 = '10px' %}
+        {% set padding15 = '15px' %}
+        {% set padding20 = '20px' %}
+        {% set padding25 = '25px' %}
+
+        /* Media Query for mobile */
+        @media screen and (max-width: 480px) {
+
+            .hide {
+                max-height: none !important;
+                display: block !important;
+            }
+
+            /* This resizes tables and images to be 100% wide with a proportionate width */
+            table[class=emailwrapto100pc], img[class=emailwrapto100pc] {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            table[class=emailwrapto60pc], img[class=emailwrapto60pc] {
+                width: 60% !important;
+                height: auto !important;
+            }
+
+            img[class="galleryimage"] {
+                width: 60px !important;
+                height: auto !important;
+                display: block;
+                margin: auto;
+            }
+
+            img[class="galleryimage1"] {
+                width: 220px !important;
+                height: auto !important;
+                display: block;
+                margin: auto;
+            }
+
+            /* Hide stuff on mobiles */
+            table[class=emailnomob], td[class=emailnomob], img[class=emailnomob], span[class=emailnomob] {
+                display: none !important;
+            }
+
+            td[class=emailcolsplit] {
+                width: 100% !important;
+                float: left !important;
+            }
+
+            /* This resizes body text for mobiles */
+            span[class=text1], a[class=text1] {
+                font-size: 30px !important;
+                line-height: 32px !important;
+            }
+
+            span[class=text2], a[class=text2] {
+                font-size: 20px !important;
+                line-height: 24px !important;
+            }
+
+            span[class=text3], a[class=text3] {
+                font-size: 14px !important;
+                line-height: 18px !important;
+            }
+
+            span[class=text4], a[class=text4] {
+                font-size: 10px !important;
+                line-height: 14px !important;
+            }
+
+            span[class=text5], a[class=text5] {
+                font-size: 9px !important;
+                line-height: 12px !important;
+            }
+
+            span[class=text6], a[class=text6] {
+                font-size: 13px !important;
+                line-height: 16px !important;
+            }
+
+            span[class=text7], a[class=text7] {
+                font-size: 26px !important;
+                line-height: 28px !important;
+            }
+        }
+
+        /* Additional Media Query for tablets */
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,700');
+        {% endif %}
+
+    </style>
+
+    {% if not isDownloadPdf %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body style="padding:0; margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:100%; background-color:#ffffff;">
+{% endif %}
+<!--there's an extra wrapper table here - this allows us to set the page background in webmail clients (where the body tag is ignored) -->
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%" bgcolor="#ffffff" id="eRoot">
+    <tr>
+        <td align="center" valign="top">
+            <!--table containg the main email - this will resize for mobile-->
+
+            <table {% if not isDownloadPdf %}width="640"{% endif %} border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc">
+                <tr>
+                    <td bgcolor="#ffffff">
+
+
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffff" align="center">
+                            <tr>
+                                <td id="" valign="top"  style="padding-top:{{ padding20 }};padding-bottom:{{ padding20 }};padding-left:20px;padding-right:20px; text-align:center;">
+                                    <table {% if not isDownloadPdf %}width="620"{% endif %} border="0"  cellspacing="0" cellpadding="0"  align="center" class="emailwrapto100pc">
+                                        <tr>
+                                            <td>
+                                                <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center" class="border">
+                                                    <tr>
+                                                        <td class="topbg" valign="top" align="center" style="padding-top:20px; padding-left:10px; padding-bottom:0; padding-right:10px;">
+                                                            <div style="display: block; height: 25px;"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" align="center" style="background-color: #000000; padding-top:0; padding-left:10px; padding-bottom:30px; padding-right:10px;">
+                                                            <img src="{{ emailLogoUrl }}" border="0" style="display: block; width: 300px;">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" align="center" style="padding-top:20px; padding-left:10px; padding-bottom:0; padding-right:10px;">
+                                                             <span class="text7" style="font-family:'Roboto-Bold', sans-serif; color:#000000; font-weight:700; font-size:22px; line-height:30px;">
+                                                                DREAM DOUGH REWARD
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="h1" valign="top"  style="padding-top: 10px;padding-bottom:5px;padding-left:20px;padding-right:20px; text-align:center;">
+                                                            <span class="text1" style="font-family:'Roboto-Bold', sans-serif; color:#996d15; font-weight:700; font-size:32px; line-height:36px; text-transform: uppercase;">
+                                                                {{ voucherTitle }}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="h2" valign="top" style="padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px; text-align:center;">
+                                                            <span class="text2" style="font-family:'Roboto-Bold', sans-serif; color:#000000; font-weight:700; font-size:18px; line-height:30px;">
+                                                                VISIT.  REDEEM.  ENJOY.
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="h3" valign="top"  style="padding-top:{{ padding10 }};padding-bottom:10px;padding-left:15px;padding-right:15px; text-align:center;{% if isDownloadPdf %} font-size:14px; {% endif %}">
+                                                            <span class="text3" style="font-family:'Roboto', sans-serif; color:#000000; font-weight:300;{% if not isDownloadPdf %} font-size:14px; {% endif %}line-height:18px;">
+                                                                To redeem your reward, carefully read and follow the instructions below.
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="h4" valign="top"  style="padding-top:{{ padding10 }};padding-bottom:{{ padding10 }};padding-left:15px;padding-right:15px; text-align:left;">
+                                                            <table width="360" border="0" cellspacing="0" cellpadding="0" class="emailwrapto100pc" align="center">
+                                                                <tr>
+                                                                    <td valign="top" style="padding-top:{{ padding5 }};padding-bottom:{{ padding5 }};padding-left:15px;padding-right:15px; text-align:left;{% if isDownloadPdf %} font-size:13px;{% endif %}">
+                                                                        <span class="text6" style="font-family:'Roboto', sans-serif; color:#000000; font-weight:300;{% if not isDownloadPdf %} font-size:13px;{% endif %} line-height:16px;">
+                                                                            <strong>ISSUED TO:</strong> {{ issuedTo }}<br>
+                                                                            <strong>RAMPART REWARDS CARD NUMBER:</strong> {{ playersCard }}<br>
+                                                                            <strong>DATE ISSUED:</strong> {{ issuedDate|date("m/d/Y") }}<br>
+                                                                            <strong>EXPIRATION DATE:</strong> {{ expireDate|date("m/d/Y") }}<br>
+                                                                            <strong>UNIQUE VOUCHER NUMBER:</strong> {{ vid }}
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <hr width="70%" style="border-top: 1px solid #996d15;">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="h5" valign="top"  style="padding-top:{{ padding15 }};padding-bottom:25px;padding-left:15px;padding-right:15px; text-align:center;{% if isDownloadPdf %} font-size:14px; {% endif %}">
+                                                            <span class="text3" style="font-family:'Roboto', sans-serif; color:#000000; font-weight:300;{% if not isDownloadPdf %} font-size:14px; {% endif %}line-height:18px;">
+                                                                {{ description|raw }} {{ legal|raw }}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bottombg" valign="top" style="line-height:25px; font-size:25px;">
+                                                            <div style="display: block; height: 25px;"></div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+{% if not isDownloadPdf %}
+</body>
+</html>
+{% endif %}

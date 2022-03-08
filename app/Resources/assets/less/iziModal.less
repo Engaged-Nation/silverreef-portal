@@ -1,0 +1,688 @@
+@import (reference) "config.less";
+@import (reference) "variables.less";
+@import (reference) "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/fonts.less";
+@import (reference) "button.less";
+@import (reference) "master.less";
+
+.iziModal * {
+    -webkit-font-smoothing: initial !important;
+}
+
+#engagednation-modal {
+    background: transparent;
+    .fontRoboto;
+
+    &.iziModal-rendered {
+        .iziModal-wrap {
+            .iziModal-content {
+                background-color: #000000;
+            }
+        }
+    }
+
+    &.modal-instant-reward {
+        .modal-button-style {
+            .button;
+        }
+    }
+
+    &.reset-password-wrapper {
+        max-width: 400px !important;
+
+        .iziModal-content-display {
+            .iziModal-content-display-body {
+                padding: 25px;
+
+                .forgot-password-header {
+                    color: @base-header-color;
+                    .fluid-type(font-size, 425px, 1024px, 18px, 20px);
+                    margin-bottom: 20px;
+                }
+
+                .forgot-password-body {
+                    margin-bottom: 20px;
+                    .fluid-type(font-size, 425px, 1024px, 14px, 16px);
+
+                    a {
+                        .fluid-type(font-size, 425px, 1024px, 14px, 16px);
+                    }
+                }
+
+                label {
+                    .fontRobotoBold;
+                    .fluid-type(font-size, 320px, 1024px, 12px, 16px);
+                }
+
+                .modal-button-style {
+                    width: 138px;
+                    .button;
+                }
+            }
+        }
+    }
+
+    &.help-form-wrapper {
+        .iziModal-wrap {
+            .iziModal-content {
+                .iziModal-content-wrapper {
+                    .iziModal-content-display {
+                        h3 {
+                            &.help-tab-header {
+                                .fontRobotoBold;
+                                color: @base-header-color;
+                                .fluid-type(font-size, 320px, 1024px, 16px, 20px);
+                                line-height: 1.2em;
+                            }
+                        }
+
+                        .form-control {
+                            .fluid-type(font-size, 428px, 1024px, 14px, 16px);
+                        }
+
+                        .body-p-left-white {
+                            .fluid-type(font-size, 428px, 1024px, 14px, 16px);
+                        }
+
+                        .body-p-left {
+                          .fluid-type(font-size, 428px, 1024px, 14px, 16px);
+                        }
+
+                        .body-p-left-white:nth-child(3) {
+                            margin-bottom: 20px;
+                        }
+
+                        .template-sitefeedback-form-input-question-title {
+                            .fontRobotoBold;
+                            .fluid-type(font-size, 428px, 1024px, 14px, 20px);
+                            line-height: 1.2em;
+                        }
+
+                        .loggedin-ul-container {
+                            margin-left: 25px;
+
+                            .question-selection-list {
+                                li {
+                                    @media(max-width: 320px) {
+                                        line-height: 1.5;
+                                    }
+                                }
+
+                                label {
+                                    line-height: 1.2;
+
+                                    & > [type=radio] {
+                                        margin: 8px 5px 0 0;
+                                        position: absolute;
+                                        left: -25px;
+
+                                        @media(max-width: 428px) {
+                                            margin-top: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .question-selection-list {
+                            margin-bottom: 25px;
+
+                            label {
+                                .fluid-type(font-size, 428px, 1024px, 14px, 18px);
+                            }
+                        }
+
+                        .g-recaptcha {
+                            @media(max-width: 384px) {
+                                transform: scale(.92);
+                                -webkit-transform: scale(.92);
+                                margin-left: -11px;
+                            }
+
+                            @media(max-width: 360px) {
+                                transform: scale(.85);
+                                -webkit-transform: scale(.85);
+                                margin-left: -21px;
+                            }
+
+                            @media(max-width: 320px) {
+                                transform: scale(.71);
+                                -webkit-transform: scale(.71);
+                                margin-left: 0;
+                            }
+                        }
+
+                        .modal-button-style {
+                            width: 138px;
+                            .button;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.question_trivia {
+        max-width: 550px !important;
+
+        .iziModal-wrap {
+            .iziModal-content {
+                .iziModal-content-wrapper {
+                    .iziModal-content-display {
+                        .iziModal-content-display-body {
+                            #component-question-trivia {
+                                .fluid-type(padding, 320px, 1024px, 20px, 50px);
+
+                                .api-client-game-title {
+                                    & h3 {
+                                        color: @base-header-color;
+                                        .fluid-type(font-size, 320px, 1024px, 20px, 30px);
+                                        line-height: 1.2em;
+                                        margin-bottom: 25px;
+                                    }
+                                }
+
+                                #component-question-trivia-form {
+                                    p {
+                                        .fluid-type(font-size, 320px, 1024px, 12px, 18px);
+                                        line-height: 1.2em;
+
+                                        &.question-p {
+                                            margin-bottom: 25px;
+                                        }
+                                    }
+
+                                    .component-question-trivia-option {
+                                        label {
+                                            .fluid-type(font-size, 320px, 1024px, 12px, 18px);
+                                        }
+                                    }
+                                    .button {
+                                        width: 110px
+                                    }
+                                }
+                            }
+
+                            .thank-you-header {
+                                .fontRobotoBold;
+                                .fluid-type(font-size, 320px, 1024px, 20px, 30px);
+                                line-height: 1.2em;
+                                text-transform: uppercase;
+                                margin-bottom: 20px;
+                            }
+
+                            .wrong-answer-info {
+                                .fluid-type(font-size, 320px, 1024px, 12px, 18px);
+                                margin-top: 20px;
+                                padding: 0 10px;
+                                line-height: 1.2em;
+
+                                .goGray {
+                                    color: @base-header-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.bonuscode-howto-modal {
+        max-width: 550px !important;
+
+        .iziModal-wrap {
+            .iziModal-content {
+                .iziModal-content-wrapper {
+                    .iziModal-content-display {
+                        .fluid-type(padding, 320px, 1024px, 10px, 50px);
+
+                        .iziModal-content-header {
+                            .fontRobotoBold;
+                            .fluid-type(font-size, 320px, 1024px, 20px, 30px);
+                            color: @base-header-color;
+                            margin-bottom: 25px;
+                        }
+
+                        .iziModal-content-display-body {
+                            .body-p-left {
+                                .fluid-type(font-size, 320px, 1024px, 16px, 18px);
+
+                                &:first-child {
+                                    line-height: 1.2em;
+                                }
+                            }
+
+                            .bonuscode-how-to-body-italic {
+                                font-style: italic;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.modal-reward {
+        .iziModal-wrap {
+            .iziModal-content {
+                border: none !important;
+                background-color: #000000 !important;
+
+                .iziModal-content-wrapper {
+                    &.reward {
+                        .iziModal-content-display {
+                            @media (max-width: 414px) {
+                                padding: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.modal-no-reward {
+        .modal-reward;
+    }
+
+    &.prediction-see-what-you-won-modal {
+        .modal-no-reward;
+
+        max-width: 550px !important;
+
+        .iziModal-wrap {
+            padding: 50px;
+            background: url('@{configS3Url}images/games/instant_reward/football2019_fireworks_modalback.gif') no-repeat center;
+
+
+            @media (max-width: 414px) {
+                padding: 25px;
+            }
+
+            .iziModal-content {
+                padding: 0 !important;
+
+                .iziModal-button-close {
+                    background-color: #fff !important;
+                }
+
+                .iziModal-content-display {
+                    padding: 25px !important;
+
+                    .iziModal-content-display-body {
+                        min-height: auto !important;
+                        margin-top: -20px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.game-html-loader {
+        border-color: #000000;
+
+        .iziModal-wrap {
+            .iziModal-content {
+                background-color: #000000;
+            }
+        }
+    }
+
+    &.display-body-api-client-modal {
+        .game-html-loader;
+
+        .iziModal-content-display {
+            padding: 0 !important;
+        }
+    }
+
+    .iziModal-loader {
+        background: transparent url('@{configS3Url}images/misc/football2019_throwball.svg') no-repeat 50% 50%;
+        padding: 80px;
+    }
+
+    .iziModal-wrap {
+        .iziModal-content {
+            .iziModal-content-wrapper {
+                button {
+                    &.iziModal-button-close {
+                        box-shadow: none;
+                        text-shadow: unset;
+                        color: #ffffff;
+                        opacity: 1;
+                        background-color: transparent !important;
+                    }
+                }
+
+                .iziModal-content-display {
+                    padding: 25px;
+
+                    .modal-reward-sample {
+                        .modal-instant-reward-title {
+                            display: none;
+                        }
+                    }
+
+                    .iziModal-content-header {
+                        .fontRoboto;
+                        color: #ffffff;
+
+                        .simple-modal-title-override {
+                            margin-bottom: 20px;
+                            font-size: 40px;
+                            line-height: 100%;
+                            display: inline-block;
+                            .fontRobotoBold;
+                            color: #e0c389;
+
+                            @media (max-width: 414px) {
+                                font-size: 30px;
+                            }
+
+                            @media (max-width: 320px) {
+                                font-size: 26px;
+                            }
+                        }
+
+                        .simple-modal-content-override {
+                            font-size: 20px;
+                            text-transform: capitalize;
+                        }
+
+                        .completed-modal-div {
+                            .simple-modal-title-override;
+                            line-height: 125%;
+                            text-transform: uppercase;
+
+                            @media (max-width: 459px) {
+                                font-size: 24px;
+                            }
+
+                            @media (max-width: 375px) {
+                                font-size: 22px;
+                            }
+
+                            @media (max-width: 360px) {
+                                font-size: 20px;
+                            }
+
+                            @media (max-width: 320px) {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .completed-modal-div-body {
+                            .simple-modal-content-override;
+                        }
+                    }
+
+                    .iziModal-content-display-body {
+                        color: #fff;
+
+                        .game-completed-body-small {
+                            .fontRoboto;
+                            color: #fff;
+                            text-align: center;
+                            text-transform: none;
+                            line-height: initial;
+                            font-size: 16px;
+                            display: inline-block;
+                            padding: initial;
+                            margin: 0;
+                        }
+
+                        .rewards-list-group-wrapper {
+                            margin-top: 20px;
+
+                            .reward-list-group-item {
+
+                                .reward-list-points {
+                                    color: @base-color-blue;
+                                    .fontRobotoBold;
+                                    font-size: 30px;
+                                    line-height: 125%;
+
+                                    @media(max-width: 414px) {
+                                        font-size: 20px;
+                                    }
+                                }
+
+                                .reward-list-drawing-entries {
+                                    .reward-list-points;
+                                }
+
+                                .reward-list-experience {
+                                    display:none;
+                                }
+
+                                .voucher-title {
+                                    font-size: 35px;
+                                    .fontRobotoBold;
+                                    line-height: 100%;
+                                    color: #ffffff;
+                                    text-transform: uppercase;
+
+                                    @media (max-width: 414px) {
+                                        font-size: 24px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .text-underline {
+                            text-decoration: underline;
+                        }
+
+                        .additional-copy {
+                            font-size: 16px;
+                            line-height: 125%;
+                            margin-top: 20px;
+                            text-align: center;
+                        }
+
+                        .additional-info {
+                            line-height: 150%;
+                            font-size: 20px;
+                            padding-top: 20px;
+
+                            @media (max-width: 414px) {
+                                font-size: 16px;
+                                line-height: 125%;
+                            }
+                        }
+
+                        .btn-instant-reward-email {
+                            display: block;
+                        }
+
+                        #match-3-body {
+                            h3 {
+                                font-size: 40px;
+                                .fontRoboto;
+                                color: @base-color-blue;
+                            }
+
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+
+                        #component-pick4 {
+                            h3 {
+                                font-size: 30px;
+                                .fontRoboto;
+                                color: @base-color-blue;
+                                line-height: normal;
+                                margin-bottom: 0;
+                            }
+
+                            p {
+                                font-size: 18px;
+                            }
+
+                            img {
+                                display: inline-block;
+                            }
+                        }
+
+                        #component-question-trivia {
+                            padding: 40px 30px;
+
+                            .api-client-game-title {
+                                h3 {
+                                    font-size: 40px;
+                                    .fontRobotoBold;
+                                    color: #e0c389;
+                                    line-height: 200%;
+                                }
+                            }
+
+                            #component-question-trivia-form {
+                                padding: 0;
+
+                                p {
+                                    color: #ffffff;
+                                    font-size: 20px;
+                                    line-height: 150%;
+                                    .fontRoboto;
+                                }
+
+                                .component-question-trivia-option {
+                                    font-size: 20px;
+                                    line-height: 150%;
+                                    white-space: nowrap;
+
+                                    &:last-of-type {
+                                        padding-bottom: 20px;
+                                    }
+
+                                    label {
+                                        padding-left: 0;
+                                        white-space: normal;
+                                    }
+                                }
+
+                                button {
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        h1 {
+                            @media (max-width: 414px) {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+.iziToast-wrapper {
+    .iziToast-capsule {
+        .iziToast {
+            &.notification-reward {
+                .iziToast-body {
+                    padding-left: 55px !important;
+
+                    .iziToast-icon {
+                        &.fa-gift {
+                            background: url('@{configS3Url}images/iziToast/izzytoasticon.png') center center no-repeat;
+                            background-size: 85%;
+                            margin: -24px 0 0 0;
+                            width: 45px;
+                            height: 50px;
+
+                            &::before {
+                                content: "";
+                            }
+                        }
+                    }
+
+                    .iziToast-message {
+                        font-size: 15px;
+                        line-height: 125%;
+                        color: #000000;
+
+                        .message-header {
+                            .fontRobotoBold;
+                            text-align: center;
+                            text-transform: uppercase;
+                            padding-bottom: 10px;
+                        }
+
+                        span {
+                            color: #d30000;
+                        }
+
+                        .underLine {
+                            text-decoration: underline;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+
+            &.iziToast-color-blue {
+                .iziToast-body {
+                    .iziToast-texts {
+                        .iziToast-title {
+                            font-size: 14px;
+                        }
+
+                        .iziToast-message {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            &.iziToast-color-green {
+                .iziToast-color-blue;
+            }
+
+            &.iziToast-color-red {
+                .iziToast-color-blue;
+
+                .iziToast-body {
+                    .iziToast-texts {
+                        .iziToast-title {
+                            .iziToast-error-title {
+                                text-transform: uppercase;
+                                line-height: 1.2em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.notification-winner-code-error {
+                .iziToast-color-red;
+
+                .iziToast-body {
+                    .iziToast-icon {
+                        font-size: 40px;
+                    }
+
+                    .iziToast-texts {
+                        .iziToast-title {
+                            text-align: center;
+                        }
+
+                        .iziToast-message {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

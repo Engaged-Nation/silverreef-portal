@@ -1,0 +1,70 @@
+<div class="loginForm col-md-12">
+    <div id="account" class="logged-out-account">
+        <div class="loggedout-form-header-logo">
+            <img class="img-responsive" src="{{ global_en_config.environment.s3_uploads_url ~ '/images/logout/Treasure_Chest-PHP-10653.png' }}" />
+        </div>
+        <form class="loginFormOverride" id="dologin" method="get" autocomplete="off">
+            <div class="row transparent centerMarginMagic">
+                <div class="col-md-12">
+                    <h2 class="goCenter logoutFormTitle-smaller">THANK YOU FOR PLAYING</h2>
+                    <div class="logoutForm-body">
+                        <em>Rampart Riches</em> has ended. We hope you enjoyed
+                        the program and look forward to seeing you soon at
+                        Rampart Casino, <em>Summerlin’s Home for Play!</em>
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control logged-out-field" type="text" name="username" placeholder="{{ 'fzone.me.logout.placeholders.username'|trans({}, 'frontend') }}" />
+                        <span class="input-group-addon" data-toggle="lbxtooltip" data-placement="left"
+                              title="{{ 'fzone.me.logout.titles.username'|trans({}, 'frontend') }}">
+                                            <span class="fas fa-user" aria-hidden="true"></span>
+                                        </span>
+                    </div>
+
+                    <div class="input-group">
+                        <input class="form-control logged-out-field" type="password" name="password" placeholder="{{ 'fzone.me.logout.placeholders.password'|trans({}, 'frontend') }}"/>
+                        <span class="input-group-addon forgotpassword showCursor" data-toggle="lbxtooltip" data-placement="left"
+                              title="{{ 'fzone.me.logout.titles.forgotpassword'|trans({}, 'frontend') }}"><span class="fa fa-key" data-gtm-dimension="Logout/Forgot_Password_Icon"></span></span>
+                    </div>
+
+                    <div class="row goCenter">
+                        <div class="col-xs-6">
+                            <div class="forgotpassword">
+                                <a class="link-lines-effect">{{ 'fzone.me.logout.forgotpassword'|trans({}, 'frontend') }}</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="logout-modal-help-page" data-gtm-dimension="Logout/Sitefeedback">
+                                <a class="link-lines-effect">Need Help?</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="loginButtonWrapper">
+                                <button type="submit" class="loginBtn modal-button-style" data-gtm-dimension="Login">{{ 'fzone.me.logout.login'|trans({}, 'frontend') }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="embed" value="login.register"/>
+            <input type="hidden" name="submit" value="true"/>
+            <input type="hidden" name="redirect" value="{{ returnlogreg }}"/>
+            <input type="hidden" name="action" value="login"/>
+        </form>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+<script>
+    EngagedNation.RequireJS.require(
+        ["jquery_1_10"],
+        function($)
+        {
+            $(function () {
+                $('body').css('padding-bottom', 0);
+            })
+        }
+    )
+</script>

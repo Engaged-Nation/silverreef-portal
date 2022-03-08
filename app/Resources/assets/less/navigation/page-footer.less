@@ -1,0 +1,129 @@
+@import (reference) "../../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/fonts.less";
+@import (reference) "../variables.less";
+
+#page-footer {
+    font-size: 12px;
+    color: #fff;
+    background: @base-font-color;
+    max-width: 1170px;
+    margin: 0 auto;
+
+    @media (max-width: 1199px) {
+        max-width: 970px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 991px) {
+        max-width: 750px;
+    }
+
+    .page-footer-row-1 {
+        .fontRobotoBold;
+        margin: 0 auto;
+        padding: 5px 0 0 0;
+        text-transform: uppercase;
+        max-width: 1133px;
+        text-align: center;
+
+        a {
+            color: @base-bg-color;
+            background-color: @base-font-color;
+            position: relative;
+            font-size: 14px;
+
+            &:hover {
+                color: #e7a23c;
+            }
+
+            &:active {
+                color: @base-bg-color;
+            }
+
+            @media (max-width: 350px) {
+                font-size: 11px;
+            }
+
+            @media (max-width: 300px) {
+                font-size: 10px;
+            }
+        }
+    }
+
+    hr {
+        margin: 0 auto;
+    }
+
+    .page-footer-row-2 {
+        .fontRoboto;
+        margin: 0;
+        padding: 20px 0;
+
+        a {
+            color: @base-bg-color;
+            background-color: @base-font-color;
+            position: relative;
+
+            &:hover {
+                color: #e7a23c;
+            }
+
+            &:active {
+                color: @base-bg-color;
+            }
+        }
+
+        .page-footer-row-2-inner-wrapper {
+            max-width: 1133px;
+            margin: 0 auto;
+
+            .footer-spacer {
+                margin: 20px auto;
+            }
+
+            .mobile-resize {
+                .image-logo-inner {
+                    img {
+                        @media (max-width: 475px) {
+                            display: inline-block;
+                            margin: 0 0 20px 0;
+                        }
+                    }
+                }
+
+                @media (max-width: 475px) {
+                    text-align: center;
+                }
+            }
+
+            .copyrightText {
+                @media (max-width: 475px) {
+                    text-align: center;
+                }
+            }
+
+            @media (max-width: 860px) {
+                font-size: 14px;
+            }
+
+            @media (max-width: 760px) {
+                font-size: 12px;
+            }
+
+            @media (max-width: 615px) {
+                font-size: 10px;
+            }
+
+            .body-p-nocaps {
+                text-transform: initial;
+            }
+
+            .disclaimer {
+                font-size: 12px;
+            }
+
+            .client_address {
+                font-size: 12px;
+            }
+        }
+    }
+}

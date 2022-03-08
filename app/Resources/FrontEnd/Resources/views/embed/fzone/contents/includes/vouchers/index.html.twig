@@ -1,0 +1,15 @@
+{% extends 'FrontEnd/Resources/views/embed/fzone/contents/includes/vouchers/index/base.html.twig' %}
+
+{% block soldout %}
+    <div class="soldout">{{ 'fzone.voucher.soldout'|trans({}, 'frontend') }}</div>
+{% endblock soldout %}
+
+{% block body %}
+    <h4 class="modal-h2-style">{{ data.title|raw }}</h4>
+    <p class="modal-body-price-style">-{{ data.price|number_format }} {{ points }}</p>
+    <p class="modal-body-style">{{ data.summary|raw }}</p>
+    <div class="modal-button-wrapper">
+        <input type="button" class="buy-voucher modal-button-style" data-id="{{ data.id }}" value="{{ 'fzone.redeem.lightbox.button'|trans({'%points%': points}, 'frontend')|raw }}"/>
+    </div>
+    {{ 'fzone.redeem.lightbox.note'|trans({}, 'frontend') }}
+{% endblock body %}

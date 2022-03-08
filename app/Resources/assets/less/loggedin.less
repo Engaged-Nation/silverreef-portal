@@ -1,0 +1,107 @@
+@import (reference) "config.less";
+
+@{configNamespaceSelector} {
+    #fzone {
+        #accountBox {
+            overflow: hidden;
+            padding: 0 15px;
+
+            @media (max-width: 991px) {
+                max-width: 750px;
+                margin: -16px auto 0 auto;
+            }
+
+            #account {
+                margin-top: 0;
+
+                #fname-spacer {
+                    width: 49px;
+                    height: 61px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+
+                #user-experience-icon {
+                    width: 49px;
+                    position: relative;
+                    top: 6px;
+                }
+
+                .me-area-name {
+                    margin: -124px 0 0 0;
+                    color: #FFFFFF;
+                    text-shadow: 1px 2px 2px #000000;
+
+                    @media screen and (max-width: 505px) {
+                        font-size: 18px;
+                        margin: -124px 0 0 0;
+                    }
+                }
+
+                .me-button-content-wrapper {
+                    background: url('@{configS3Url}images/marble-rectangle.png') center center no-repeat;
+                    height: 71px;
+                    line-height: 71px;
+                    margin: 0 auto;
+
+                    .starbar-outter-wrapper {
+                        max-width: 455px;
+                        margin: 0 auto;
+
+                        .starbar-inner-wrapper {
+                            display: inline-block;
+                            text-align: right;
+                        }
+
+                        .starbar-title {
+                            text-align: center;
+                            font-size: 24px;
+                            font-weight: bold;
+                            line-height: normal;
+                            position: relative;
+                            top: -9px;
+                        }
+                        .starbar-wrapper {
+                            position: relative;
+                            top: -10px;
+
+                            #user-experience-bar {
+                                border-style: none;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: 1;
+                                width: 0;
+                                height: 100%;
+                                background: url('@{configS3Url}images/levels/stardust-bar.png') no-repeat;
+                                border-top-right-radius: 12px;
+                                border-bottom-right-radius: 15px;
+                            }
+
+                            .user-progress-counter {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 2;
+
+                                .floater {
+                                    font-size: 25px;
+                                    color: #52ff52;
+                                    text-shadow: 0 0 1px #333;
+                                }
+                            }
+
+                        }
+
+                        :nth-child(1) {
+                            img {
+                                max-width: 235px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

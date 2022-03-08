@@ -1,0 +1,10 @@
+<form autocomplete="off" style="display: inline-block;" onsubmit="EngagedNation.Callback.InstantRewardUserForm(event, this);">
+    {% if isManualInputEnabled %}
+        <label for="label1">Email Address</label>
+        <input type="email" class="enPortal-form-control" id="label1" name="email" placeholder="Email address">
+    {% endif %}
+    <input type="hidden" name="action" value="sendEmail"/>
+    <input type="hidden" name="pendingMessage" value="Sending email, please wait..."/>
+    <input type="submit" class="enPortal-btn btn btn-primary modal-button-style" value="Email"/>
+</form>
+<div class="form-spacer"></div>

@@ -1,0 +1,50 @@
+{
+    "name": "engaged-nation/rampart-dv-portal",
+    "description": "Rampart Dream Vacation Portal Site",
+    "type": "project",
+    "require": {
+        "php": "^5.6",
+        "consolidation/robo": "^1.0",
+        "engaged-nation/portal-core": "dev-master"
+    },
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "EN\\Portal\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:Engaged-Nation/portal-core.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:Engaged-Nation/lib-encryption.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:Engaged-Nation/lib-central-admin-client.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:Engaged-Nation/lib-mgt-client.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:Engaged-Nation/doctrine-portal.git"
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "EN\\PortalCore\\Composer\\Scripts\\PostInstallCmd::symlinkApps",
+            "EN\\PortalCore\\Composer\\Scripts\\PostInstallCmd::symlinkLegacyPublic",
+            "EN\\PortalCore\\Composer\\Scripts\\PostInstallCmd::symlinkPublicAssets",
+            "EN\\PortalCore\\Composer\\Scripts\\PostInstallCmd::warmUpTranslationCache",
+            "EN\\PortalCore\\Composer\\Scripts\\PostInstallCmd::warmUpTwigCache",
+            "EN\\PortalCore\\Composer\\Scripts\\PostInstallCmd::symlinkFrontEndPages"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

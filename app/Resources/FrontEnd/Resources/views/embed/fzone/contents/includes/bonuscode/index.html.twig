@@ -1,0 +1,14 @@
+{% extends 'FrontEnd/Resources/views/embed/fzone/contents/includes/bonuscode/index/base.html.twig' %}
+
+{% block body %}
+    <div class="style-title">
+        <h3>{{ 'fzone.bonuscode.title'|trans({}, 'frontend')|raw }}</h3>
+    </div>
+    <br/>
+    <form id="bonuscode" autocomplete="off" style="max-width: 560px;">
+        {{ 'fzone.bonuscode.p1'|trans({'%cname%': cname, '%currency%': points}, 'frontend')|raw }}
+        <div class="spacer"></div>
+        <input type="text" class="enPortal-form-control" name="code" placeholder="Enter Code"/>
+        <input type="button" class="btn btn-box btn-red submit" value="Submit" data-gtm-dimension="Bonus_Code/Submit" />
+    </form>
+{% endblock body %}

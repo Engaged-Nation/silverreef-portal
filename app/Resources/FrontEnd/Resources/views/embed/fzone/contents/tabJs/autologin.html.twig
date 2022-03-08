@@ -1,0 +1,21 @@
+<div id="displayMessageAutologin" style="display: none;">
+    <div class="display-message-login">
+        {{ "fzone.autologin.header"|trans({},'frontend')|raw }}
+        {{ "fzone.autologin.paragraph"|trans({},'frontend')|raw }}
+    </div>
+</div>
+<script>
+    EngagedNation.RequireJS.require(
+        ["jquery_1_10"],
+        function($) {
+            "use strict";
+
+            $(function(){
+                $('.wrapper .intro-image').addClass('autologin').eq(0).prepend($('#displayMessageAutologin').css('display', 'block'));
+                $('.embed .engagedNation').fadeOut('slow');
+
+                $('.lbxgrid .xclose span').click();
+            });
+        }
+    );
+</script>

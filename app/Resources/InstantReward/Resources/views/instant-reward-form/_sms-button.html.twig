@@ -1,0 +1,10 @@
+<form autocomplete="off" style="display: inline-block;" onsubmit="EngagedNation.Callback.InstantRewardUserForm(event, this);">
+    {% if isManualInputEnabled %}
+        <label for="label2">Phone Number</label>
+        <input type="tel" class="enPortal-form-control" id="label2" name="phoneNumber" placeholder="Phone number">
+    {% endif %}
+    <input type="hidden" name="action" value="sendSMS"/>
+    <input type="hidden" name="pendingMessage" value="Sending text, please wait..."/>
+    <input type="submit" class="enPortal-btn btn btn-primary modal-button-style" value="Text"/>
+</form>
+<div class="form-spacer"></div>

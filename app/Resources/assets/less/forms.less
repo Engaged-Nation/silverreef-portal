@@ -1,0 +1,105 @@
+@import (reference) "variables.less";
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: @base-font-color !important;
+    background: #d1d2d4 !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: @base-placeholder-color;
+        font-style: italic;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: @base-placeholder-color;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: @base-placeholder-color;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: @base-placeholder-color;
+    }
+}
+
+.enPortal-form-control {
+    .form-control;
+}
+
+.input-group {
+    margin-bottom: 10px;
+
+
+    &.rewards-card-input {
+        width: 100%;
+
+        input {
+            border-radius: 4px !important;
+        }
+    }
+
+    input {
+        margin-bottom: 0 !important;
+
+        &.locked {
+            background-color: #eee;
+            cursor: default;
+        }
+    }
+
+    .input-group-addon {
+        border-left: 0;
+
+        &.-title {
+            background: #222222;
+            border-color: #333333;
+            color: #fff;
+        }
+
+        &.edit-ok {
+            background: #222;
+            border-color: #222;
+
+            span {
+                &.glyphicon {
+                    color: @base-font-color;
+                }
+            }
+        }
+    }
+}
+
+input[type="radio"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    position: relative;
+    background-color: @base-header-color;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+
+input[type="radio"]:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -4px;
+    left: -1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}

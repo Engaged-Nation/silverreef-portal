@@ -1,0 +1,17 @@
+{
+    "less": {
+        "filters" : ["LessFilter", "Yui\\CssCompressorFilter"],
+        "debug": {
+            "filters": ["LessFilter"]
+        },
+        "collections": [
+            {
+                "files": [
+                    "app/Resources/assets/less/master.less"
+                ],
+                "output": "www/css/base.css"
+            }
+        ]
+    },
+    "css": {}
+}

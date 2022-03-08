@@ -1,0 +1,10 @@
+{% if hasTerms %}
+    {% set termsLink = global_en_config.environment.s3_uploads_url ~ '/images/pdf/rules-terms.pdf' %}
+    <div class="box-sm-body">
+        <div class="onresp">
+            <label class="terms-label">
+                <input type="checkbox" name="agreex"/>{{ "fzone.termsAndConditions.input1"|trans({'%termsLink%' : termsLink}, "frontend" )|raw }}
+            </label>
+        </div>
+    </div>
+{% endif %}

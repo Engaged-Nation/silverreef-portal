@@ -1,0 +1,42 @@
+<div class="loginForm col-md-12">
+    <div id="account" class="logged-out-account">
+        <div class="loggedout-form-header-logo">
+            <img class="img-responsive" src="{{ global_en_config.environment.s3_uploads_url ~ '/images/logout/Treasure_Chest-PHP-10653.png' }}" />
+        </div>
+        <form class="loginFormOverride" id="dologin" method="get" autocomplete="off">
+            <div class="row transparent centerMarginMagic">
+                <div class="col-md-12">
+                    <h2 class="goCenter logoutFormTitle-smaller">THANK YOU FOR PLAYING</h2>
+                    <div class="logoutForm-body">
+                        <em>Rampart Riches</em> has ended. We hope you enjoyed
+                        the program and look forward to seeing you soon at
+                        Rampart Casino, <em>Summerlin’s Home for Play!</em>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="clearBoth"></div>
+    </div>
+</div>
+<script>
+    EngagedNation.RequireJS.require(
+        ["jquery_1_10"],
+        function($)
+        {
+            $(function () {
+                $('body').css('padding-bottom', 0);
+            })
+        }
+    )
+</script>
+<script>
+    EngagedNation.RequireJS.require(
+        ["jquery_1_10"],
+        function($)
+        {
+            $(function () {
+                $('body').css('padding-bottom', 0);
+            })
+        }
+    )
+</script>

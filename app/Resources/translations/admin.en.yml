@@ -1,0 +1,22 @@
+drawings:
+  subject: "%fname% You Won!  You’re a M life Weekly Drawing Winner!"
+  body: "
+  <div style=\"text-align: center\">
+    <h2>%fname%</h2>
+    <h2>You've Won %prize%</h2>
+    <h4>in the M life E rewards Drawing</h4>
+  </div>
+
+  <p>Dear %fname%,</p>
+
+  <p>We're thrilled to let you know that you're one of the winners in this week's <b>M life E rewards</b> online drawing!</p>
+  <p>
+    Your %prize% prize can be redeemed at a M life Rewards Desk.
+    Just visit the \"Rewards\" page in your account to claim your prize.
+  </p>
+  <p>
+    It's possible to win more than once, so keep playing every day to see if you can win another weekly prize - plus,
+    you'll keep earning entries into the grand prize drawing for a luxury staycation as well as M credits you can exchange for even more rewards.
+  </p>
+  <p>This prize can be redeemed in addition to any instant prizes or M credits rewards you may have earned this week.</p>
+  <p>Thank you for participating in our M life E rewards program. We look forward to seeing you at M life soon!</p>"

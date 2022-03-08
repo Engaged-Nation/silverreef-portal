@@ -1,0 +1,1033 @@
+#
+# html+ means html tags are allowed (htmlentities is not used).
+# >- symbols allows a multiline format, line break will be converted to space and \n will be removed at the end of string.
+#
+# https://symfony.com/doc/current/components/yaml/yaml_format.html
+#
+
+#
+# fzone
+#
+fzone:
+  #
+  # tabs
+  #
+  tabs:
+    welcome: "Welcome"
+    earn: "Games"
+    challenges: "Challenges"
+    arcadegames: "Arcade Games"
+    casinogames: "Casino Games"
+    redeem: "Rewards"
+    achievements: "Achievements"
+    games: "Arcade Games"
+    xlogins: "Spin 'N Win" # spin the wheel
+    profile: "PROFILE"
+    sitefeedback: "HOW TO PLAY"
+
+  marchmania:
+    drawingEntries: "Drawing TICKETS"
+
+  instantRewards:
+    header: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/rampart-dv-uploads/images/games/instant_reward/InstantWinnerV1.gif\">"
+
+    subheader: "<div class='instant-reward-subheader'>You Won</div>"
+    prize:
+      points: "%points% %aliasPoints%"
+      drawingEntries: "%entries% DRAWING TICKETS"
+      experience: ""
+
+  #
+  # brackets response
+  #
+  bracketsOverview:
+    description: "<span style=\"font-size:14px; display:inline-block;\">All brackets must have been activated at the property no later than <strong>3PM</strong> on <strong>Sunday, March 18, 2018.</strong></span>"
+    kioskStatus:
+      success: "Thank you, your bracket has been submitted."
+      fail: "Thank you for submitting your bracket."
+
+  #
+  # profile box
+  #
+  me:
+    icons:
+      trophies: "Awards"
+      bingo: "Bingo"
+    logout:
+      placeholders:
+        username: "Email Address"
+        password: "Password"
+      titles:
+        username: "Email Address to Sign In"
+        forgotpassword: "Forgot Password"
+      title: "Register Now to Experience Our Fantastic Online Promotion Just Like Your Customers!"
+      login: "Login"
+      forgotpassword: "Forgot Password?"
+      register: "Register"
+      facebook: "Register With Facebook"
+      help: "Need More Help?"
+
+  #
+  # login response
+  #
+  login:
+    incorrect: "<div class=\"wrongpass-wrapper\">
+       <div class=\"wrongpass-headline\">LOGIN UNSUCCESSFUL</div>
+       <div class=\"body-p-left\">
+         The password you entered was incorrect.
+       </div>
+       <div class=\"body-p\">
+         <div class=\"wrongpassbold\">NEED TO RESET YOUR PASSWORD?</div>
+         If so, press the button below.
+       </div>
+       <div class=\"body-p btn-container\">
+         <button type=\"button\" class=\"modal-button-style btn-reset-password\" onclick=\"$('.lbxgrid .xclose span').click();\">SUBMIT</button>
+       </div>
+     </div>"
+    welcome: ""
+    welcomeBack: ""
+
+  #
+  # registration
+  #
+  register:
+    description: "<div class=\"registration-headline\">WELCOME TO %program%!</div>
+      <div class=\"registration-subheadline\">Fill out the form below to register for an account and get access to fun, <em>free</em>
+      games, exciting prizes, special events and more!</div>"
+    optinemail: "Opt-In TO Email"
+    response: # response when completing registration
+      emailsubj: "Confirm to play on %program%"
+      iprestriction: "
+        We&apos;re sorry, but the registration process failed.<br/><br/>
+        Unfortunately, only two individuals who share the same IP address can register for new accounts.<br/><br/>
+        If you believe you received this message in error, please click the Help button near the top of the page or
+        visit the Help tab at the bottom of the page to Contact Us. Good luck!"
+
+      email2: "Your email already exists within our system. Please contact us if this is a mistake."
+
+      #
+      # is using emailtmpl.php
+      #
+      completed: "
+        <h2 class='registration-headline'>VERIFY YOUR ACCOUNT</h2>
+        <p class='body-p-left'>Fantastic prizes and fun, free games are just a click away!</p>
+        <p class='body-p-left'>To finish signing up, please open the verification email we just sent to you.</p>
+        <p class='body-p-left'>Click the button in the email to complete your registration. (If you do not see the
+          email within a few minutes, please check your spam folder.)</p>
+        <p class='body-p-left'>Thank you for signing up! Have fun and good luck.</p>"
+
+  logout: ""
+
+  #
+  # password reset extended - sending instruction to email
+  #
+  passwordresetrq:
+    email: "Please enter your email address. We will send you a link to reset your password."
+    success: "Your Forgot Password request was successful. Please check your email." #html+
+    emailtosendheader: "Reset Your Password"
+
+  #
+  # forgot password
+  #
+  forgotpassword:
+    title: "<div class=\"forgot-password-header\">Forgot Password</div>"
+    p1: "<p class=\"forgot-password-body-1\">Please enter the email address associated with your account and we will
+      send you an email with a link so that you can reset your password.</p>
+      <p class=\"forgot-password-body-2\">If you don’t know what your email address is, please
+      <a class=\"logout-modal-help-page showCursor decorationUnderline\" data-gtm-dimension=\"Logout/Sitefeedback\">contact us</a>
+      for further assistance.</p>"
+
+  #
+  # sitefeedback
+  #
+  sitefeedback:
+    about: "About %program%"
+    form:
+        title: "%program% HELP"
+        description: "<p class=\"body-p-left\">
+          Please fill out the form below to get assistance with our <em>%program%</em> program.
+          </p>
+          <p class=\"body-p-left\">
+              For questions unrelated to <em>%program%</em>, please contact %cname% directly via our primary website.
+          </p>"
+
+    instructionvideobtn: "%alias_program% INSTRUCTIONAL VIDEO"
+    faqs:
+      h1: "Why am I seeing \"Your session has expired. Please refresh your page and try again\"?"
+      p1: "In most cases, this is due to more than one %cname% website tab open at a time while logged into %program%.
+        Please close any duplicate %cname% tabs."
+      h2: "How do I change my email address?"
+      p2: "Click the Help button to submit a ticket to modify your registered email address."
+      h3: "How do I change my password?"
+      p3: "To change your password, click the My Profile button and enter your new password in the designated fields."
+      h4: "Can I auto-save my password on my computer?"
+      p4: "For your security, you are unable to auto-save your password."
+      h5: "Why haven't I received a response to my request to reset my password?"
+      p5: "Password reset requests are emailed to the address you used to register your account. Make sure to check your
+        spam folder. Additionally, you can add our domain name to your safe senders list to ensure you receive the
+        email.<br /><br />
+        It is also possible that your email provider has blocked the email. Some providers enforce strict blocking lists
+        or delete emails they deem to be spam. You can check with your provider and ask them to add our domain name to
+        their safe sender list to allow the email to come through.<br /><br />If you still do not receive the password
+        reset email, you can use the site feedback form by clicking on the Help button."
+      h6: "How long do password reset requests take?"
+      p6: "Reset requests are emailed instantly to the address that was used to register the account."
+      h7: "I share an email account with my spouse. How can we both join %program%?"
+      p7: "An email address can only be associated with one %program% account. We suggest that one of you open a second
+        email account so that you can both benefit from playing. Free email accounts can be opened at
+        https://www.google.com/gmail ."
+      h8: "What are %points%?"
+      p8: "%points% are the virtual currency rewards you receive for completing games and activities on our website,
+        such as logging in daily, inviting a friend and other games. %points% are used to redeem items in our Rewards
+        section.<br /><br />Log in daily and check the Rewards section because you never know when we will surprise you
+        with prizes and rewards."
+      h9: "At what time do %points% earning activities reset and become available to play again?"
+      p9: "%points% -earning activities are updated at 12 a.m. (PST)."
+      h10: "Where can I find my %points% balance?"
+      p10: "You can view your current balance in the box near the top of the page, under your name. You can view your
+        life to date total by clicking on the Trophies button."
+      h11: "Where can I view my %program% activity?"
+      p11: "To view your online activities or download a full report of your activities, click on the My Profile button."
+      h12: "Do I need specific software to play the games?"
+      p12: "Specific software, called Adobe Flash Player, is required to play only the Arcade games.<br /><br />This is
+        a free download from https://get.adobe.com/flashplayer/"
+      h13: "How can I redeem a reward if I don't have a printer?"
+      p13: "You can email or text message the reward to yourself, and then present the message on your phone to Rewards
+        at %cname%."
+      h14: "I received a Bonus Code-where do I enter my code?"
+      p14: "If you received a special Bonus Code, click on the Bonus Code icon located on %program% and enter the code
+        to reveal your prize."
+      h15: "How do I enter a %program% drawing?"
+      p15: "At certain times, we will feature a %program% promotion with drawing(s). Participation and receipt of
+        %points% automatically awards you virtual drawing entries and enters you into current drawings."
+      h16: "Do I need to be present for drawings?"
+      p16: "Promotion details vary. Please review the rules for each promotion to ensure you are complying with all
+        requirements."
+      h17: "Can multiple %program% accounts be merged?"
+      p17: "Multiple %program% accounts cannot be merged, but a duplicate account can be deleted by our support staff.
+        Contact us by selecting the Help button."
+    rules:
+      title: "%cname% Exclusive Rewards Program Rules"
+      description:
+        p-1: "Invited members of the %cname% Exclusive Rewards program are entitled to one registered account per
+          person. No duplicate accounts are permitted. Violation of this policy may result in the elimination of the
+          members account(s) and any further participation in the program. Management reserves the right to remove
+          members from the system and void any offers at their discretion."
+        p-2: "%cname% is not responsible for (a) electronic transmission error or delays resulting in an inability
+          to participate or other loss, (b) theft or destruction of or unauthorized access to or alterations of
+          %cname% Exclusive Rewards data, or for technical, hardware, software, or telephone failures of any kind,
+          (c) lost or unavailable connections, fraud, incomplete, garbled, or delayed computer transmissions, whether
+          caused by %cname%, users, or by any of the equipment or programming associated with or utilized in the
+          Promotion or by any technical or human error which may occur in the processing of submissions which may
+          limit, restrict, or prevent a player's ability to participate in %cname% Exclusive Rewards Promotion(s)."
+      description-group:
+        list1: "%cname% Exclusive Rewards membership enrollment is free to invited guests 21 years of age or older."
+        list2: "%cname% Exclusive Rewards is a limited time program and will conclude at the date and time
+          predetermined by %cname% Resort & Casino."
+        list3: "A valid ID must be presented at %cname% when redeeming a prize or reward."
+        list4: "Rewards/prizes require membership in the %cname% Rewards Club."
+        list5: "Exclusive Rewards members can claim one Redeemable Reward per week using their %points%."
+        list6: "Redeemable rewards and prize vouchers are non-transferrable and cannot be replaced if lost or stolen."
+        list7: "Rewards and prize vouchers are not valid after the expiration date printed on the voucher."
+        list8: "%points% have no cash value."
+        list9: "%points% cannot be combined with any other %cname% Exclusive Rewards accounts."
+        list10: "Individuals, who are excluded from casino facilities, either by %cname% Resort & Casino management,
+         or by their own request, are not eligible to win and may not participate in this program."
+        list11: "Violation of any of these rules may result in the termination of the account."
+        list12: "Members are responsible for updating their contact information on the %cname% Exclusive Rewards My
+          Profile page."
+        list13: "%cname% Exclusive Rewards and %cname% Rewards are two separate and individual programs."
+        list14: "Management reserves the right to remove members from the program without notice."
+        list15: "Management reserves the right to modify this program and/or any active promotions at any time
+          without notice."
+        list16: "Management may disqualify any person for any prize based on fraud, dishonesty or violation of
+          Official Rules or other misconduct."
+        list17: "Any attempt by any person to deliberately damage any program or to undermine the legitimate
+          operation of this promotion may be in violation of criminal and civil laws and should an attempt be made,
+          %cname% reserves the right to seek damages from any such person to the fullest extent of the law."
+        list18: "All %cname% Exclusive Rewards promotions are subject to all applicable federal, state and local
+          state laws and regulations."
+
+  #
+  # terms and condition
+  #
+  termsAndConditions:
+    h1: "%cname% Exclusive Rewards Terms and Conditions"
+    p1: "By accepting the Terms and Conditions agreement for %cname% Exclusive Rewards, the member:"
+    p2: "Understands %cname% Exclusive Rewards is an exclusive program and participation is limited to players invited
+      by %cname% Resort and Casino. %cname% Exclusive Rewards is a limited time program and will conclude at the date and
+      time predetermined by %cname% Resort and Casino."
+    p3: "Gives consent to the collection and use of personal information for the purposes of administering the
+      %cname% Exclusive Rewards for general marketing, management, and customer service activities. %cname% Resort and
+      Casino will not disclose the player's personal information other than for internal purposes."
+    p4: "Agrees to adhere to all rules and regulations associated with the %cname% Resort and Casino and the
+      %cname% Exclusive Rewards."
+    p5: "Acknowledges they are over the age of 21 and not part of the Voluntary Self-Exclusion Program or on an Evicted
+      Status at %cname% Resort and Casino."
+    p6: "Acknowledges %cname% Exclusive Rewards and its benefits are for the account holder only. A valid,
+      government-issued photo ID will be requested for any redemptions and/or drawing winnings. Rewards are not
+      transferable."
+    p7: "Acknowledges %points% have no cash value and are non-transferable. Any refund, redemption or compensation in
+      real money is excluded. In the %cname% Exclusive Rewards, the operator allows users to acquire and use %points%.
+      %points% offered may vary depending on the type of game. The object of purchase is exclusively an authorization
+      which is limited in terms of time, content and location to the use of the relevant %points%. Upon termination of
+      contract for any reason whatsoever, any %points% still available to the user upon termination shall be forfeited."
+    p8: "Agrees to be notified via email if named a %cname% Exclusive Rewards winner."
+    p9: "Agrees to “Opt-in” to %cname% Resort and Casino and %cname% Exclusive Rewards marketing solicitations and
+        emails. Users may “Opt-out” by editing their profile."
+    p10: "Revisions of the General Terms and Conditions will be sent to every user via e-mail or provided on the
+        %cname% Exclusive Rewards website. The user is obliged to check the current General Terms and Conditions on a
+        regular basis."
+    p11: "The operator assumes no liability for loss or damage of any kind arising from the improper use of the
+        account by the user. The operator is not to be liable for any damages whatsoever arising from the improper use
+        of the account (i.e. persons other than operator, or associates of the operator) from a third party. The
+        operator assumes no liability for any loss or damage due to circumstances beyond its control
+        (e.g. acts of God, etc.). The operator assumes no liability for any loss or damage incurred in the event that
+        a customer requests assistance requiring a “screen share” to correct an issue or technical situation."
+    p12: "The operator also has the right to terminate any ongoing games, terminate or block an account or ban a user
+        with or without prior notice and delete or withhold %points% where applicable. In terminating the contract, the
+        user loses all claims to his/her account and to any services, contents, virtual goods and %points% which become
+        revoked upon termination."
+    p13-group:
+      p-13: "Improper conduct on %cname% Exclusive Rewards is strictly prohibited. It includes, but is not limited to,
+        behaviors such as:"
+      list1: "deliberately submitting false or misleading information;"
+      list2: "any attempt to influence the result of a game by collusion, tampering with the program or by any other
+        means contrary to the rules;"
+      list3: "causing malfunctions or failure deliberately to influence the course of a game;"
+      list4: "creating more than one or multiple accounts for one person;"
+      list5: "breaking any other rules set forth in the Terms and Conditions."
+    p14-group:
+      p-14: "Regarding Improper conduct, the user will, in particular:"
+      list1: "not make any attempt to decompile or reproduce the software used on the %cname% Exclusive Rewards and
+        will not interfere with it in any other way and will not develop any software that interferes with the program
+        name or client-server communications;"
+      list2: "not use any type of software permitting the use of artificial intelligence, allow opponent profiling or
+        user collusion;"
+      list3: "not use any software which, at the operator’s sole discretion, is regarded as a program that would allow
+        a user to cheat, or give a user an unfair advantage;"
+      list4: "refrain from using any scripts which are not authorized by the operator;"
+      list5: "not use any software which allows the user to analyze or reproduce the website %cname% Exclusive Rewards,
+        or allows the user to interfere with the website, %cname% Exclusive Rewards and the games and/or their programming
+       in any other way;"
+      list6: "not use any program causing an excessive burden on the server."
+    input1: " I agree to the <a class=\"registration-link\" href=\"%termsLink%\" target=\"_blank\" data-gtm-dimension=\"Terms and Conditions\">terms and conditions</a>"
+
+  #
+  # claim voucher
+  #
+  claimvoucher:
+    warningTxt: "This voucher can only be claimed once and <strong><i>must</i></strong> be validated by a M life Rewards Center Representative. 
+      Are you the M life Rewards Center Representative that will validate this voucher?"
+
+  #
+  # voucher response
+  #
+  voucher:
+    collection: "Sorry, but you can only get one Dream Dough reward per %days%."
+    buy:
+      day: "<p class=\"modal-body-style\">Sorry, you can only purchase this voucher once per day.</p>"
+      week: "<p class=\"modal-body-style\">Sorry, you can only purchase this voucher once per week.</p>"
+      week2: "<p class=\"modal-body-style\">Sorry, you can only purchase this voucher once every 2 weeks.</p>"
+      month: "<p class=\"modal-body-style\">Sorry, you can only purchase this voucher %number% per month.</p>"
+      year: "<p class=\"modal-body-style\">Sorry, you can only purchase this voucher once per year.</p>"
+      once: "<p class=\"modal-body-style\">Sorry, you can only purchase this voucher once.</p>"
+      oneDay: "<p class=\"modal-body-style\">Sorry, you are limited to one (1) purchase per day of this voucher type.</p>"
+      onetime: "<p class=\"modal-body-style\">Sorry, you are limited to one (1) purchase per person of this voucher type.</p>"
+      oneTimeWeekly: "<p class=\"modal-body-style\">Sorry, you are limited to one (1) purchase per week of this voucher type.</p>"
+      twoTimeWeekly: "<p class=\"modal-body-style\">Sorry, you are limited to two (2) purchase per week of this voucher type.</p>"
+      dailyPurchaseLimit: "Sorry, you are limited to %limit% purchase per day."
+      weeklyPurchaseLimit: "Sorry, you are limited to %limit% purchase per week."
+    success: "<h3 class=\"modal-h2-style\"><img class=\"img-responsive\" src=\"/images/modals/Congratulations.png\" /></h3>
+          <p class=\"body-p modal-body-style\">You Successfully Exchanged <span>%voucherAmount% %points%</span> for <span>%voucherTitle%</span></p>
+          <p class=\"body-p modal-body-style redeem-instruction\">
+            View your reward, then download it or send it to a Rampart Casino kiosk, by clicking the button below.
+          </p>"
+
+  #
+  # my vouchers tab
+  #
+  myvouchers:
+    button:
+      email: "<span class=\"far fa-envelope\"></span> Email this<br />Voucher"
+    header: "" #html+
+    header_redeemable: "Go play with your redeemable reward"
+    header_instant: "Go play with your instant reward"
+    header_redeemable_employee: "Enjoy your redeemable reward"
+
+    bodycopy: "<p class=\"body-p\">
+        View your active prizes and redeem them by swiping your Rampart Rewards Card
+        at any Rampart promotional kiosk during the dates shown below.
+      </p>"
+
+    details: '<p class="myvoucher-issuedTo" style="display: none;"><span class="goGold">Player Name</span>: %issuedTo%</p>
+      <p class="myvoucher-nickName" style="display: none;"><span class="goGold">Nickname</span>: %nickname%</p>
+      <p class="myvoucher-playersCard" style="display: none;"><span class="goGold">Rampart Rewards Card Number</span>: %playerscard%</p>
+      <p class="myvoucher-issuedDate" style="display:none;"><span class="goGold">Date Issued</span>: %issued_date%</p>
+      <p class="myvoucher-expireDate" style="display:none;"><span class="goGold">Expiration Date</span>: %expire_date%</p>
+      <p class="myvoucher-vid" style="display:none;"><span class="goGold">Voucher Id</span>: %vid%</p>
+      <p class="myvoucher-description" style="display:none;"><span class="goGold">Description</span>: %description%</p>
+      <p class="myvoucher-legal" style="display:none;"><span class="goGold">Legal</span>: %legal%</p>'
+
+    instruction:
+      head1_redeemable: "Visit Casino"
+      txt1_redeemable: "Present this voucher at M life Rewards Desk"
+      head1_redeemable_employee: "Visit HR"
+      txt1_redeemable_employee: "Present this voucher at M life Rewards Desk during regular business
+        hours, or place in the drop box for processing."
+      head1_instant: "Visit Casino"
+      txt1_instant: "Present this voucher at M life Rewards Desk"
+      head2_redeemable: "Get Rewarded"
+      txt2_redeemable: "A M life team member will validate this voucher and present you with your reward."
+      head2_redeemable_employee: "Get Rewarded"
+      txt2_redeemable_employee: "An authorized M life Team Member will validate this voucher. Items redeemed Friday by
+        12pm are available for pickup in Human Resources the following Monday - Friday after 9AM."
+      txt2_redeemable_employee_pto: "An authorized M life Team Member will validate this voucher. PTO redeemed Friday
+        by 12pm will be issued on the following Friday paycheck."
+      head2_instant: "Get Rewarded"
+      txt2_instant: "A M life team member will validate this voucher and present you with your reward."
+
+    how_info:
+      head1_redeemable: "Details"
+      txt1_redeemable: "The name on this voucher must match your government issued photo ID and M life Rewards Card."
+      head1_redeemable_employee: "Details"
+      txt1_redeemable_employee: "The name on this voucher must match your M life-issued badge."
+      head1_instant: "Details"
+      txt1_instant: "The name on this voucher must match your government issued photo ID and M life Rewards Card."
+      txt2_redeemable: "ISSUED TO:"
+      txt2a_redeemable: "%voucherAdjectiveLinePrinted% %info_name%"
+      txt2_instant: "ISSUED TO:"
+      txt2a_instant: "%voucherAdjectiveLinePrinted% %info_name%"
+      txt3_redeemable: "VOUCHER TYPE:"
+      txt3a_redeemable: "%voucher_type%"
+      txt3_instant: "VOUCHER TYPE:"
+      txt3a_instant: "%voucher_type%"
+      txt4_redeemable: "MEMBER SINCE:"
+      txt4a_redeemable: "%register_date%"
+      txt4_instant: "MEMBER SINCE:"
+      txt4a_instant: "%register_date%"
+      txt5_redeemable: "REWARDS CARD NUMBER:"
+      txt5a_redeemable: "%playerscard%"
+      txt5_instant: "REWARDS CARD NUMBER:"
+      txt5a_instant: "%playerscard%"
+
+    when_info:
+      head1_redeemable: "&nbsp;"
+      txt1_redeemable: "&nbsp;"
+      head1_instant: "&nbsp;"
+      txt1_instant: "&nbsp;"
+      txt2_redeemable: "DATE ISSUED:"
+      txt2a_redeemable: "%issued_date%"
+      txt2_instant: "DATE ISSUED:"
+      txt2a_instant: "%issued_date%"
+      txt3_redeemable: "EXPIRATION DATE:"
+      txt3a_redeemable: "%expire_date%"
+      txt3_instant: "EXPIRATION DATE:"
+      txt3a_instant: "%expire_date%"
+      txt4_redeemable: "VID:"
+      txt4a_redeemable: "%vip_code%"
+      txt4_instant: "VID:"
+      txt4a_instant: "%vip_code%"
+      txt5_redeemable: "LEGAL:"
+      txt5a_redeemable: "%legal_info%"
+      txt5_instant: "LEGAL:"
+      txt5a_instant: "%legal_info%"
+    bottomP1: "
+      <p style=\"margin-top:10px;\">
+        Print a copy of your voucher and bring it with you to %cname% Resorts & Casino for redemption.<br /><br />
+        <span style=\"color:#FF0000\">Important Note</span>: Please be sure that your printer is connected properly and
+        in good working order before using this option. After you click this button, <strong>do not close the window that opens
+        before you print.</strong> You will not be able to print this particular voucher a second time.
+      </p>"
+
+    bottomP2-s: "
+      <p style=\"margin-top:10px;\">
+        To redeem using the option(s) below, bring your mobile device with you to %cname% Resort & Casino and display your
+        offer to a %cname% Rewards Center representative on your mobile device.
+      </p>"
+    bottomP2: "
+      <p style=\"margin-top:10px;\">
+        To redeem using the option below, bring your mobile device with you to %cname% Resort & Casino and display your
+        offer to a %cname% Rewards Center representative on your mobile device.
+      </p>"
+
+    footer: ""
+    claimed: "<div style=\"margin-right: 5px; color: red;\">This Voucher Has Been Claimed</div>"
+    alreadyclaimed: "This reward was emailed to you on %issued_date%."
+
+  #
+  # earn tab
+  #
+  earn:
+    header: "<p>Play fun games daily to earn %currency%.</p>"
+
+  #
+  # redeem
+  #
+  redeem:
+    lightbox:
+      button: "EXCHANGE NOW"
+      success:
+        button: "Email Voucher"
+    rewardsVoucherBtn: "VIEW REWARDS"
+
+  #
+  # double or nothing
+  #
+  dblng:
+    p1: "<p style='text-align: center !important;'>Would you like to try doubling your win?</p>"
+    p2: "
+      <p style='text-align: center;' class='modal-body-style'>
+        Will the next card be <strong>higher</strong> or <strong>lower</strong> than the card facing you? Take a guess
+        for a chance to <strong>double</strong> your <span style='color: #fcb131 !important;'>%pointsawarded% %points%%entries%.</span> Good luck!
+      </p>
+      "
+    response:
+      wronganswer: "<span style=\"font-size: 25px;color: #fbb032 !important; font-weight: bold !important;\" class=\"modal-body-style\">Better luck next time!</span>"
+    no_button: "No Thanks"
+    high_button: "Higher"
+    low_button: "Lower"
+
+
+  #
+  # challenges
+  #
+  challenges:
+    h3_a: "U Pick 'Em"
+    p1: "
+      <p>
+        Pick the right answer to earn big rewards!
+      </p>"
+    learnMoreText: "
+      <p>
+        U Pick ‘Em challenges you to predict the future with questions that cover every kind of topic.
+      </p>
+      <p>
+        Receive %points% for each U Pick 'Em question you answer correctly. The final date
+        you can pick an answer varies, so enjoy the challenge right up until the final moment!
+      </p>"
+
+  #
+  # bonus code
+  #
+  bonuscode:
+    title: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/rampart-dv-uploads/images/games/title/ramrich_gamemodalhead_bcode.png\">"
+    p1: "<div class=\"bonuscode-body-headline\">EARN ONE BONUS CODE PER WEEK AT RAMPART CASINO<br>
+       <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">BONUS CODE DETAILS >
+         <span class=\"simple-modal-title h1-headline-smaller hidden\"><span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span></span>
+            <span class=\"simple-modal-content hidden\">
+               <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+               <ul class=\"body-p-left bonuscode-how-to-body\">
+                  <li>Visit Rampart Casino.</li>
+                  <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
+                  <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                  <li>Enter your code on the Rampart Riches website. </li>
+               </ul>
+               <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
+            </span>
+       </span></div>
+       Enter your weekly bonus code in the box below to win a <strong>special instant prize</strong>!"
+    response:
+      noRewardCode: "<div class=\"bonuscode-error-wrapper\">
+          <div class=\"instant-reward-header\">thank you<br>for playing</div>
+          <div class=\"additional-copy\">Unfortunately, this code was either already entered, or is not currently valid.</div>
+          <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+          <div class=\"additional-copy\">
+            <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
+              <span class=\"simple-modal-title h1-headline-smaller hidden\">
+                <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
+              </span>
+              <span class=\"simple-modal-content hidden\">
+                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                 <ul class=\"body-p-left bonuscode-how-to-body\">
+                    <li>Visit Rampart Casino.</li>
+                    <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
+                    <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                    <li>Enter your code on the Rampart Riches website. </li>
+                 </ul>
+                 <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
+               </span>
+             </span>
+           </div>
+         </div>"
+      nobonuscode: "<div class=\"bonuscode-error-wrapper\">
+          <div class=\"instant-reward-header\">thank you<br>for playing</div>
+          <div class=\"additional-copy\">Please enter a valid code.</div>
+          <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+          <div class=\"additional-copy\">
+            <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
+              <span class=\"simple-modal-title h1-headline-smaller hidden\">
+                <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
+              </span>
+              <span class=\"simple-modal-content hidden\">
+                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                 <ul class=\"body-p-left bonuscode-how-to-body\">
+                    <li>Visit Rampart Casino.</li>
+                    <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
+                    <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                    <li>Enter your code on the Rampart Riches website. </li>
+                 </ul>
+                 <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
+               </span>
+             </span>
+           </div>
+         </div>"
+      invalidcode: "<div class=\"bonuscode-error-wrapper\">
+         <div class=\"instant-reward-header\">thank you<br>for playing</div>
+         <div class=\"additional-copy\">Unfortunately, the code you entered is invalid. Please check your code and try again.</div>
+         <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+         <div class=\"additional-copy\">
+           <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
+             <span class=\"simple-modal-title h1-headline-smaller hidden\">
+               <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
+             </span>
+             <span class=\"simple-modal-content hidden\">
+                <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                <ul class=\"body-p-left bonuscode-how-to-body\">
+                   <li>Visit Rampart Casino.</li>
+                   <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
+                   <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                   <li>Enter your code on the Rampart Riches website. </li>
+                </ul>
+                <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
+              </span>
+            </span>
+          </div>
+        </div>"
+      codeNotAvailable: "<div class=\"bonuscode-error-wrapper\">
+        <div class=\"instant-reward-header\">thank you<br>for playing</div>
+        <div class=\"additional-copy\">Sorry, the Bonus Code you entered is expired and is no longer available.</div>
+          <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+          <div class=\"additional-copy\">
+            <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
+              <span class=\"simple-modal-title h1-headline-smaller hidden\">
+                <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
+              </span>
+              <span class=\"simple-modal-content hidden\">
+                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                 <ul class=\"body-p-left bonuscode-how-to-body\">
+                    <li>Visit Rampart Casino.</li>
+                    <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
+                    <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                    <li>Enter your code on the Rampart Riches website. </li>
+                 </ul>
+                 <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
+               </span>
+             </span>
+           </div>
+         </div>"
+
+  #
+  # bonus code bingo
+  #
+  bonuscodebingo:
+    error:
+      redemptionLimit: "THANK YOU FOR PLAYING. UNFORTUNATELY, THIS CODE HAS ALREADY BEEN ENTERED AND CANNOT BE USED AGAIN."
+      dailyLimit: "Thank you for playing.  Unfortunately, you have already entered the maximum number of bonus codes you can redeem today."
+      alreadyUsed: "<div class=\"bonuscode-error-wrapper\">
+        <div class=\"instant-reward-header\">thank you<br>for playing</div>
+        <div class=\"additional-copy\">Unfortunately, this code was already entered.</div>
+        <div class=\"additional-copy\">Visit Rampart Casino to get a new code and try again.</div>
+        <div class=\"additional-copy\">
+          <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
+            <span class=\"simple-modal-title h1-headline-smaller hidden\">
+              <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
+            </span>
+            <span class=\"simple-modal-content hidden\">
+               <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+               <ul class=\"body-p-left bonuscode-how-to-body\">
+                  <li>Visit Rampart Casino.</li>
+                  <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
+                  <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                  <li>Enter your code on the Rampart Riches website. </li>
+               </ul>
+               <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
+             </span>
+           </span>
+         </div>
+       </div>"
+    description: "With 13 different properties in Las Vegas, there's ALWAYS something fun and cool to do.  Now you'll
+      get rewarded just for doing things you planned to do anyway!  Simply visit our properties below, have fun, get a
+      bonus code and when you collect 6, you'll win a GOLDEN LION INSTANT REWARD!"
+
+
+  #
+  # my voucher awarded and btn
+  #
+  awardedVoucher:
+    thankYouVoucherPick4: "
+      <h2><span id=\"awarded-voucher-title\">%voucherTitle%</span></h2>"
+    isvoucher: "Redeem My Voucher"
+
+  #
+  # promo pick 4
+  #
+  pick4Promo:
+    title: "PICK, CLICK & WIN!"
+    p1: "Press the image you think will award the biggest prize and win instantly!"
+    description: "Press the image you think will award the biggest prize and win instantly!"
+
+  #
+  # survey
+  #
+  survey:
+    p1: ""
+    thankyou: "Thank you for taking our survey! You were awarded %amount% %currency%."
+
+  #
+  # match3
+  #
+  match3:
+    title: "Match 3 Game"
+    p1: "Pick cards until you match three of a kind.<br />Try to find the biggest rewards!"
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+        <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+
+  #
+  # crossword
+  #
+  crossword:
+    p1: ""
+    learntoplay: "How To Play"
+    learntoplayinfo: '
+      <p>
+        Click each number on the crossword grid to read the associated question, then type your answer into the "Answer" field.
+        Answers should not include spaces, punctuation marks or special characters.
+      </p>
+      <p>
+        Click "Post to Crossword Puzzle" to add your answer to the board.
+      </p>
+      <p>
+        You''ll be awarded %points% for <strong>each correct answer</strong>, so don''t click "Submit" until you''ve
+        answered as many questions as you can! You can play once per week.
+      </p>'
+    p2: "Click on the number to see the question."
+    thankyou: "<p>Thank you for playing! You were awarded %pointsawarded% %points%.</p>"
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+        <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+    response:
+      thankyou: "<h3 class=\"goGold\">Congratulations!</h3>You have been awarded %pointsawarded% %points%."
+
+  #
+  # casino trivia
+  #
+  casinotrivia:
+    title: "PHOTO RECALL"
+    subtitle: ""
+    p1: "You have %time% seconds to study an image."
+    p2: "Memorize as many details as you can, then answer a question about what you saw."
+    p3: "Get it right and you'll win %points%!"
+    p4: "You only have one chance to play every week. Are you ready?"
+    readyBtn: "Ready!"
+    submitBtn: "Submit"
+    answerInput: "Answer"
+    p5: ""
+    hint: "Hint: %hint%"
+    thankyou: "<p style='font-size: 30px !important; text-align: center !important; text-transform: uppercase !important;'>You Did It!</p>
+      <p style='text-align: center !important; text-transform: uppercase !important;'>Thank you for playing.</p>
+      <p style='text-align: center !important;'>You were awarded <span style='color: #fbb032 !important;'>%pointsawarded% %points%</span>!</p>"
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+     <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+    response:
+      wronganswer: "<div class=\"wrong-answer-header\">Thank You For Playing</div>
+        <div class=\"wrong-answer-body\">Unfortunately, the correct answer was <span class=\"wrong-answer\" style=\"font-weight:bold;\">%correctSingleAnswer%</span>.</div>
+        <div class=\"wrong-answer-body\">Please come back again next week<br>
+        for a fun new challenge!</div>"
+      thankyou: "<h3 class=\"goGold\">Congratulations!</h3>You have been awarded %pointsawarded% %points%."
+
+  #
+  # 3 cards monte
+  #
+  threeCardsMonte:
+    title: "3-Card Monte"
+    noRecordedGame: "
+      <p class='wrong-answer-header'>Thank you for playing!</p>
+      <p class='wrong-answer-body'>Unfortunately, you did not find the ace of hearts.</p>
+      <p class='wrong-answer-body'>Please play again to earn <span class=\"wrong-answer\">%points%.</span></p>"
+    afterPlayMessage: "<p class=\"game-completed-header\">You Did It!</p>
+      <p style='text-align: center !important; text-transform: uppercase !important;'>Thank you for playing.</p>
+      <p style='text-align: center !important;'>You were awarded <span style='color: #fbb032 !important;'>%pointsawarded% %points%</span>!</p>"
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+      <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+
+  #
+  # wordsearch
+  #
+  wordsearch:
+    savedgame: "<p class=\"game-completed-body\">The game was successfully saved.</p>"
+
+  #
+  # memory match
+  #
+  memorymatch:
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+        <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+
+
+  #
+  # Video Text
+  #
+  video:
+    headerTxt: "Learn how to earn rewards"
+
+
+  #
+  # fill in the blank
+  #
+  fitb:
+    title: "Fill in the Blank"
+    p1: ""
+    learntoplay: "How To Play"
+    learntoplayinfo: "Search through the Rampart Casino website to find the answer to the question below.
+      type in your guess in the \"answer\" box. Get the answer right and you'll earn %points%!"
+    thankyou: "<p style='font-size: 30px !important; text-align: center !important; text-transform: uppercase !important;'>You Did It!</p>
+        <p style='text-align: center !important; text-transform: uppercase !important;'>Thank you for playing.</p>
+        <p style='text-align: center !important;'>You were awarded <span style='color: #fbb032 !important;'>%pointsawarded% %points%</span>!</p>"
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+      <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+    submitBtn: "Submit"
+    answerInput: "Answer"
+    response:
+      noanswer: "Please enter your answer and try again"
+      thankyou: "<h3 class=\"goGold\">Congratulations!</h3>You've won %pointsawarded% %points%!"
+      wrong: "
+        <div class=\"wrong-answer-header\">Thank You For Playing!</div>
+        <div class=\"wrong-answer-body\ style=\"text-transform: initial;\">Unfortunately, the correct answer was
+        <span class=\"wrong-answer\" style=\"font-weight:bold;\">%correctSingleAnswer%</span>.</div>
+        <div class=\"wrong-answer-body\">Please come back again tomorrow<br>
+        for a fun new challenge!</div>"
+
+  #
+  # quiz
+  #
+  quiz:
+    title: "Quiz"
+    p1: ""
+    wronganswer: "Sorry, the correct answer was <span style=\"color: #3b0042; font-weight:bold\">%answer%</span>"
+    submitBtn: "Submit Answer"
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+      <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+    response:
+      noanswer: "Please enter your answer and try again"
+      thankyou: "<h3 class=\"goGold\">Congratulations!</h3>You've won %pointsawarded% %points%!"
+      wronganswer: "
+        <div class=\"wrong-answer-header\">Thank You For Playing!</div>
+        <div class=\"wrong-answer-body\" style=\"text-transform: initial;\">Unfortunately, the correct answer was
+        <span class=\"wrong-answer\" style=\"font-weight:bold;\">%correctSingleAnswer%</span>.</div>
+        <div class=\"wrong-answer-body\">Please come back again tomorrow<br>
+        for a fun new challenge!</div>"
+
+  #
+  # trivia
+  #
+  trivia:
+    title: "Trivia"
+    p1: ""
+    wronganswer: "Sorry, the correct answer was <span style=\"color: #3b0042; font-weight:bold\">%answer%</span>"
+    noActiveGame: "<p style='text-align: center !important;'>Sorry, there is no active game for today.</p>
+      <p style='text-align: center !important;'>Please come back tomorrow!</p>"
+    submitBtn: "Submit Answer"
+    successMessage: "<p style='font-size: 30px !important; text-align: center !important; text-transform: uppercase !important; font-weight: bold !important;'>You Did It!</p>
+     <p style='text-align: center !important; text-transform: uppercase !important;'>Thank you for playing.</p>
+     <p style='text-align: center !important;'>You were awarded <span style='color: #fbb032 !important;'>%pointsawarded% %points%</span>!</p>"
+    response:
+      noanswer: "Please enter your answer and try again"
+      thankyou: "<h3 class=\"goGold\">Congratulations!</h3>You've won %pointsawarded% %points%!" #html+
+      wrong: "
+        <div class=\"wrong-answer-header\">Thank You For Playing!</div>
+        <div class=\"wrong-answer-body\" style=\"text-transform: initial;\">Unfortunately, the correct answer was
+        <span class=\"wrong-answer\" style=\"font-weight:bold;\">%correctSingleAnswer%</span>.</div>
+        <div class=\"wrong-answer-body\">Please come back again tomorrow<br>
+        for a fun new challenge!</div>"
+
+  #
+  # facebook share
+  #
+  share:
+    title: "Share and Win Now"
+    p1: ""
+    p2: "Share the %program% fun with your friends so they can enjoy all the benefits of the program while you add to your %currency% total."
+    noactive: "There is no active Facebook share today, please return tomorrow"
+
+  #
+  # invite a friend
+  #
+  invites:
+    email-subject: "Your friend is inviting you to play "
+    title: "<span class=\"invite-title-style\">Invite A Friend</span>"
+    p1: "<p>Share your good %program% fortune with your friends and earn %pointsperinvite% %points% for each person who
+      registers!</p><br />"
+    p2: "<p>Enter the email addresses of those you wish to invite below.<br />(Use a comma to separate each address)</p><br />"
+    button: "Send Invitation"
+    tableheader1: "Email Address"
+    tableheader2: "Accepted"
+    tableheader3: "Date Invited"
+    sent:
+      title: "<span class=\"invite-sent-title-style\">Friends you've invited</span>"
+
+  #
+  # bonus keys
+  #
+  keys:
+    title: "Finders Wanted"
+    p1: "<img id='bonusKeys' class='img-responsive' src='%imgsrc%'>
+      <p>We've hidden a pair of M life E rewards Keys somewhere on our website. Claim a finders fee by searching the page indicated
+      below.</p>
+      <p>Click on the keys once you find them and you'll earn a nice chunk of %points% .</p>
+      <p>Press the button below to get your search underway!</p>"
+    wonKey: "Congratulations! You found the key!<br /><br />Come back tomorrow to play again!"
+    wonKeyDrawingEntries: "Congratulations! You found the key!<br /><br />You have earned %keyPoints% %points% and
+      %dEntries% drawing entries.<br /><br />Come back tomorrow to play again!"
+    completed: "<p style='color: #000;'>You have completed all the keys for today</p>"
+  #
+  # Entries Lightbox
+  #
+  entries:
+    h3: "Weekly Drawing"
+
+  #
+  # authentication
+  #
+  auth:
+    inboxsubject: "Welcome to %program%!"
+    inboxbody: "Welcome to %program%!<br /><br />I'm thrilled to personally welcome you to our new online casino rewards
+      program.<br /><br />It's easy, fun and 100% FREE to play and win on %program%!<br /><br />You'll earn M credits
+      every time you log in and play Spin 'N Win; earn even more by playing a wide variety of games such as Memory Match,
+      Three-Card Monte and Crossword. Then, exchange your M credits for exclusive rewards you can redeem at M life Rewards Desk,
+      Resort & Spa-like free play, dining offers, spa discounts and more.<br /><br />M life prides itself on
+      offering innovative programs that bring you value and excitement. Have fun and good luck.<br /><br />Now, go play!<br /><br />
+      Executive Director of Marketing<br />M life" #html+
+
+  #
+  # drawings
+  #
+  drawings:
+    activetitle: "Drawing Entries"
+    activep1: "<h1 class=\"modal-header-style\">Congratulations!</h1>
+      <div class=\"modal-body-style\">You've earned <span class=\"color-highlight goBold\">%entry%</span> %word% into the
+      <span class=\"color-highlight goBold\">xxx giveaway</span>.<br /><br />
+      Play every day to earn even more and good luck in the <span class=\"color-highlight goBold\">Grand Finale Drawing
+      on month day, 2018</span>!</div>"
+    p1: "<h1 class=\"modal-header-style\">Congratulations!</h1>
+      <div class=\"modal-body-style\">You've earned <span class=\"color-highlight goBold\">%entry%</span> %word% into the
+      <span class=\"color-highlight goBold\">xxx giveaway</span>.<br /><br />
+      Play every day to earn even more and good luck in the <span class=\"color-highlight goBold\">Grand Finale Drawing
+      on month day, 2018</span>!</div>"
+    noactivedrawing: "<div class=\"modal-body-style goCenter\">There are no active drawings<br /> at this time, but stay tuned!
+      <br /><br />New drawings and events will be coming soon.</div>"
+    noentries: "<div class=\"modal-body-style goCenter\">You currently have no drawing entries.</div>"
+
+  #
+  # autologin
+  #
+  autologin:
+    header: "<h2>Your M life Rewards<br/>online promotion has ended.</h2>"
+    paragraph: "<p>Please use your M life Rewards card while playing slots<br/>and table games at the casino to receive future rewards in your mailbox.</p><p>Thanks for Playing!</p>"
+
+  #
+  # iframe flash message
+  #
+  iframe:
+    noflash: "<p style=\"color: #000;\">We’re sorry, but this game is not supported on mobile devices.
+      You can enjoy this and other %program% activities on your tablet or computer.</p>"
+
+  #
+  # arcadegames
+  #
+  arcadegames:
+    flashNotSupported: "<p style=\"color: #000;\">Games on our website require the Adobe Flash Plugin to play.
+      If you are experiencing problems playing, please obtain the newest flash plugin by clicking the link below.</p>
+      <p style=\"color: #000;\"><a href=\"https://get.adobe.com/flashplayer/\" target=\"_new\" style=\"color: red;\">https://get.adobe.com/flashplayer/</a></p>"
+
+  #
+  # casinogames
+  #
+  casinogames:
+    flashNotSupported: "<p style=\"color: #000;\">Games on our website require the Adobe Flash Plugin to play.
+      If you are experiencing problems playing, please obtain the newest flash plugin by clicking the link below.</p>
+      <p style=\"color: #000;\"><a href=\"https://get.adobe.com/flashplayer/\" target=\"_new\" style=\"color: red;\">https://get.adobe.com/flashplayer/</a></p>"
+
+  #
+  # leaderboard
+  #
+  leaderboard:
+    loggedin: "<p class=\"view-leaderboard-top-text\">Test your skills and compete for a top 20 spot on the leaderboard.</p>"
+
+  #
+  # Experience Bar
+  #
+  experience:
+    nextLevelText: "<button class=\"en-button-animations-shrink-effect seeAllPrizes\">SEE ALL PRIZES</button><span class=\"experience-text-highlight hidden\">%remaining% %points%</span>"
+    experience-bar-text: ""
+    experience-bar-header: "YOU'RE WORKING TOWARD"
+    completed: "<div class=\"completed\"><div class=\"text-center\">NICELY DONE<br /><span>You won all the level-up prizes! Enjoy your rewards.</span></div></div>"
+
+playerscard:
+  note: 'While you can sign up for <em>%program%</em> without entering a Players Club card number, <span class="text-underline">
+    you will not be able to redeem any rewards or instant prizes</span> without adding a valid number to your account.
+    Please sign up for a Players Club Card at %property% and enter the number on your <em>%program%</em>
+    <strong>My Profile</strong> page at your earliest convenience.'
+
+#
+# Email template to confirm registration
+#
+emailConfirmation:
+  body:
+    header: "%fname%, <br/> Activate Your Account to<br/> Get %points_per_register% M credits!"
+
+  footer:
+    companywebsite: "https://theresortatsummerlin.com/"
+    companyadress: "221 N. Rampart Blvd., Las Vegas, Nevada 89145, United States"
+    customerservice: "https://theresortatsummerlin.com/contact-us/"
+
+  links:
+    program: "https://www.mlife.com"
+    socialmedia:
+      facebook: ""
+      instragram: ""
+      twitter: ""
+
+#
+# Email template for invite a friend
+#
+emailInvite:
+  body:
+    h1: >-
+      <h1 style="color: #642667;">
+        Get your FREE %alias_points% now!<br> <span>It's</span> as easy as 1, 2, 3...
+      </h1>
+
+  footer:
+    companywebsite: "https://theresortatsummerlin.com/"
+    companyadress: "221 N. Rampart Blvd., Las Vegas, Nevada 89145, United States"
+    customerservice: "https://theresortatsummerlin.com/contact-us/"
+
+  links:
+    program: "https://theresortatsummerlin.com/"
+    socialmedia:
+      facebook: ""
+      instragram: ""
+      twitter: ""
+
+gameCompleted:
+  header: "<div class=\"completed-modal-div\">CONGRATULATIONS!</div>"
+  subheader: "<div class=\"completed-modal-div\">You played this game today
+              and Rampart awarded you:</div>"
+  prize:
+    points: "<div class=\"instant-reward-points game-completed-padding\">%points% %aliasPoints%</div>"
+    drawingEntries: ""
+    experience: ""
+    voucher:
+      btn: "View My Voucher"
+
+email:
+  response:
+    subject: "Your voucher is ready"
+
+api:
+  instant:
+    reward:
+      notification:
+        message: "<strong>YOUR REWARD IS EXPIRING</strong><br />
+          You have <span>%amount% reward%plural%</span> about to <span>expire</span>.<br/>
+          <span class=\"underLine\">Click here</span> to access your rewards."

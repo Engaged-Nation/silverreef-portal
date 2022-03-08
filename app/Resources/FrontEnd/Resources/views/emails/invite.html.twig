@@ -1,0 +1,76 @@
+{% extends 'FrontEnd/Resources/views/emails/base/base-invite.html.twig' %}
+
+{% set brandColor = '#000' %}
+
+{% block bodyContainer %}
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-top:none; border-bottom:none; background-color:#ffffff;">
+        <tr>
+            <td>
+                {% block bodyContent %}
+                    <table cellpadding="10px">
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><span style="font-size:2.4em; font-weight:bold; color:{{ brandColor }};">YOU'RE INVITED!</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table cellpadding="5px">
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                You've been invited to join <strong>M life E rewards,</strong> M life’s new online rewards program. Your friends are already having fun playing 100% FREE online games and earning Mlife-exclusive rewards like <strong>free slot play, spa discounts and more.</strong>
+
+                                            </span>
+                                        </td>
+                                    </tr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Here's <strong>5,000 M credits</strong> to get you started. </td>
+                        </tr>
+                        <tr>
+                            <td><span>We look forward to seeing you on M life E rewards. Have fun and good luck!</span></td>
+                        </tr>
+                                </table>
+                        <tr>
+                            <td>
+                                <table cellpadding="5px">
+                                    <tr>
+                                        <td><i>Executive Director of Marketing</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>M life</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table align="center">
+                                    <tr>
+                                        <td>
+                                            <table align="center" cellpadding="20px">
+                                                <tr>
+                                                    <td style="background-color:{{ brandColor }};">
+                                                        <a title="Confirm Now" href="{{ joinLink }}" target="_blank" style="color:#ffffff; font-weight:bold; text-decoration:none;">
+                                                            LET’S GO PLAY!
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                {% endblock %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,435 @@
+{% block fzone %}
+    {% set boxBorders = true %}
+    <div id="fzone">
+        <div class="row rowAboveHeaderTheme">
+            <span id="en-me-area-layout-container"></span>
+            <script>
+                "use strict";
+                EngagedNation.RequireJS.require(
+                    ['centralAdminApi'],
+                    function(CentralAdminApi)
+                    {
+                        if (!EngagedNation.Config.userId) return;
+                        (new CentralAdminApi).post(
+                            'getUserAvailableComponentThemeDisplay',
+                            {
+                                componentId: EngagedNation.Config.componentMeAreaLayoutId,
+                                categoryId: EngagedNation.Config.categoryDefaultId
+                            },
+                            function(response) {
+                                if (!response.data) return;
+                                $('#en-me-area-layout-container').html(response.data);
+                            },
+                            function(XMLHttpRequest, textStatus, errorThrown) {
+                                window.Logger.get('MeAreaLayout').error(errorThrown);
+                            }
+                        );
+                    }
+                );
+            </script>
+
+            {% if user %}
+                {{ include('FrontEnd/Resources/views/theme/header/login/shared-script.html.twig') }}
+            {% else %}
+                {{ include('FrontEnd/Resources/views/theme/header/logout/shared-script.html.twig') }}
+            {% endif %}
+        </div>
+
+        <div class="row rowBelowHeaderTheme">
+            {# LOGGED OUT PAGE #}
+            {% if not user %}
+                <span id="logout-layout-container"></span>
+                <script>
+                    "use strict";
+                    EngagedNation.RequireJS.require(
+                        ['centralAdminApi'],
+                        function(CentralAdminApi)
+                        {
+                            (new CentralAdminApi).post(
+                                'getAvailableComponentThemeDisplay',
+                                {
+                                    componentId: EngagedNation.Config.componentLogoutLayoutId,
+                                    categoryId: EngagedNation.Config.categoryDefaultId
+                                },
+                                function(response) {
+                                    if (!response.data) return;
+                                    $('#logout-layout-container').html(response.data);
+                                },
+                                function(XMLHttpRequest, textStatus, errorThrown) {
+                                    window.Logger.get('LogoutLayout').error(errorThrown);
+                                }
+                            );
+                        }
+                    );
+                </script>
+            {% endif %}
+
+            {# LOGGED IN PAGE #}
+            {% if user %}
+                <div class="col-md-12">
+                    <div id="activityTab" class="tabJs">
+                        <div class="tabJs-nav-min">
+                            <button type="button" class="navbar-toggle">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <ul class="tabJs-nav noselect">
+
+                            {% if activeTab %}
+                                {% for tab in activeTab %}
+                                    <li id="{{ tab.name_id }}" class="{{ (tab.is_active == 1) ? 'active' : '' }}" data-gtm-dimension="{{ tab.name }}" {{ tab.is_visible == 0 ? 'style="display: none;"' : '' }}>
+                                        {% if tab.has_borders == 1 %}
+                                        <div class="gborder-body">
+                                            <div class="gborder-left"></div>
+                                            <div class="gborder-right"></div>
+                                            <div class="gborder-bottom"></div>
+                                            <div class="gborder-">
+                                                {% else %}
+                                                    {% set boxBorders = false %}
+                                                {% endif %}
+                                                <a data-url="tabManager" data-tabManagerId="{{ tab.tabManagerId ~ '-' ~ tab.id }}" data-categoryid="{{ tab.category_id }}" data-layoutscript="{{ tab.layout_script_name }}">{{ tab.name }}</a>
+                                                {% if tab.has_borders == 1 %}
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                {% if global_en_config.theme.isTabjsWelcomeEnabled %}
+                                    <li id="lt_welcome" class="active displayNone" data-gtm-dimension="Home">
+                                        <div class="gborder-body">
+                                            <div class="gborder-left"></div>
+                                            <div class="gborder-right"></div>
+                                            <div class="gborder-bottom"></div>
+                                            <div class="gborder-">
+                                                <a data-url="welcome">{{ 'fzone.tabs.welcome'|trans({}, 'frontend') }}</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            {% endif %}
+
+                            <li id="lt_autologin" style="display: none;" data-gtm-dimension="Autologin">
+                                {% if boxBorders %}
+                                <div class="gborder-body">
+                                    <div class="gborder-left"></div>
+                                    <div class="gborder-right"></div>
+                                    <div class="gborder-bottom"></div>
+                                    <div class="gborder-">
+                                        {% endif %}
+                                        <a data-url="autologin">{{ 'fzone.tabs.autologin'|trans({}, 'frontend') }}</a>
+                                        {% if boxBorders %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </li>
+
+                            {% if global_en_config.theme.isTabjsEarnEnabled %}
+                                <li id="lt_earn" class="displayNone" data-gtm-dimension="Daily Play">
+                                    {% if boxBorders %}
+                                    <div class="gborder-body">
+                                        <div class="gborder-left"></div>
+                                        <div class="gborder-right"></div>
+                                        <div class="gborder-bottom"></div>
+                                        <div class="gborder-">
+                                            {% endif %}
+                                            <a data-url="earn">{{ 'fzone.tabs.earn'|trans({}, 'frontend') }}</a>
+                                            {% if boxBorders %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+
+                            {% if user %}
+                                {% if global_en_config.theme.isTabjsChallengesEnabled %}
+                                    <li id="lt_challenges" style="display: none;" data-gtm-dimension="U Pick 'Em">
+                                        {% if boxBorders %}
+                                        <div class="gborder-body">
+                                            <div class="gborder-left"></div>
+                                            <div class="gborder-right"></div>
+                                            <div class="gborder-bottom"></div>
+                                            <div class="gborder-">
+                                                {% endif %}
+                                                <a data-url="challenges">{{ 'fzone.tabs.challenges'|trans({}, 'frontend') }}</a>
+                                                {% if boxBorders %}
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+
+                                <li id="lt_arcadegames" style="display: none;" data-gtm-dimension="Arcade Games">
+                                    {% if boxBorders %}
+                                    <div class="gborder-body">
+                                        <div class="gborder-left"></div>
+                                        <div class="gborder-right"></div>
+                                        <div class="gborder-bottom"></div>
+                                        <div class="gborder-">
+                                            {% endif %}
+                                            <a data-url="arcadegames">{{ 'fzone.tabs.arcadegames'|trans({}, 'frontend') }}</a>
+                                            {% if boxBorders %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </li>
+
+                                <li id="lt_casinogames" style="display: none;" data-gtm-dimension="Casino Games">
+                                    {% if boxBorders %}
+                                    <div class="gborder-body">
+                                        <div class="gborder-left"></div>
+                                        <div class="gborder-right"></div>
+                                        <div class="gborder-bottom"></div>
+                                        <div class="gborder-">
+                                            {% endif %}
+                                            <a data-url="casinogames">{{ 'fzone.tabs.casinogames'|trans({}, 'frontend') }}</a>
+                                            {% if boxBorders %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </li>
+
+
+                                <li id="lt_redeem" data-gtm-dimension="Rewards" style="display: none;">
+                                    {% if boxBorders %}
+                                    <div class="gborder-body">
+                                        <div class="gborder-left"></div>
+                                        <div class="gborder-right"></div>
+                                        <div class="gborder-bottom"></div>
+                                        <div class="gborder-">
+                                            {% endif %}
+                                            <a data-url="redeem">{{ 'fzone.tabs.redeem'|trans({}, 'frontend') }}</a>
+                                            {% if boxBorders %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </li>
+
+
+                                <li id="lt_myvouchers" data-gtm-dimension="My Vouchers" style="display: none;">
+                                    <div class="gborder-body">
+                                        <div class="gborder-left"></div>
+                                        <div class="gborder-right"></div>
+                                        <div class="gborder-bottom"></div>
+                                        <div class="gborder-">
+                                            <a data-url="myvouchers"></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if user %}
+                                {% if user_mode == constant('EN\\PortalCore\\Database\\Constants\\Config::USER_MODE_LEVEL') %}
+                                    <li id="lt_level_leaderboard" data-gtm-dimension="Level Leaderboard" class="displayNone">
+                                        {% if boxBorders %}
+                                        <div class="gborder-body">
+                                            <div class="gborder-left"></div>
+                                            <div class="gborder-right"></div>
+                                            <div class="gborder-bottom"></div>
+                                            <div class="gborder-">
+                                                {% endif %}
+                                                <a data-url="level_leaderboard">{{ 'fzone.tabs.levelLeaderboard'|trans({}, 'frontend') }}</a>
+                                                {% if boxBorders %}
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </li>
+                                    <li id="lt_level_info" data-gtm-dimension="Level Info" class="displayNone">
+                                        <a data-url="level_info"></a>
+                                    </li>
+                                {% endif %}
+
+                                <li id="lt_profile" style="display: none;" data-gtm-dimension="My Profile">
+                                    {% if boxBorders %}
+                                    <div class="gborder-body">
+                                        <div class="gborder-left"></div>
+                                        <div class="gborder-right"></div>
+                                        <div class="gborder-bottom"></div>
+                                        <div class="gborder-">
+                                            {% endif %}
+                                            <a data-url="profile">{{ 'fzone.tabs.profile'|trans({}, 'frontend') }}</a>
+                                            {% if boxBorders %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </li>
+
+                                {% if global_en_config.theme.isTabjsPromoquickpickEnabled %}
+                                    <li id="lt_promoquickpick" data-gtm-dimension="Promo Quick Pick" style="display:none;">
+                                        <a data-url="promo_quickpick"></a>
+                                    </li>
+                                {% endif %}
+                            {% endif %}
+                            <li id="lt_about" style="display: none;" data-gtm-dimension="Help">
+                                {% if boxBorders %}
+                                <div class="gborder-body">
+                                    <div class="gborder-left"></div>
+                                    <div class="gborder-right"></div>
+                                    <div class="gborder-bottom"></div>
+                                    <div class="gborder-">
+                                        {% endif %}
+                                        <a data-url="sitefeedback">{{ 'fzone.tabs.sitefeedback'|trans({}, 'frontend') }}</a>
+                                        {% if boxBorders %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </li>
+                            <li id="lt_quickpick" style="display: none;" data-gtm-dimension="Quick Pick">
+                                {% if boxBorders %}
+                                <div class="gborder-body">
+                                    <div class="gborder-left"></div>
+                                    <div class="gborder-right"></div>
+                                    <div class="gborder-bottom"></div>
+                                    <div class="gborder-">
+                                        {% endif %}
+                                        <a data-url="quickpick">{{ 'fzone.tabs.quickpick'|trans({}, 'frontend') }}</a>
+                                        {% if boxBorders %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </li>
+
+                            <li id="lt_embed_quick_pick" data-gtm-dimension="Embed Quick Pick" style="display: none;">
+                                <a data-url="embed_quick_pick"></a>
+                            </li>
+
+                            <li id="lt_bonus_codes_bingo" style="display: none;" data-gtm-dimension="Blackout Blitz">
+                                {% if boxBorders %}
+                                <div class="gborder-body">
+                                    <div class="gborder-left"></div>
+                                    <div class="gborder-right"></div>
+                                    <div class="gborder-bottom"></div>
+                                    <div class="gborder-">
+                                        {% endif %}
+                                        <a data-url="bonus_codes_bingo">{{ 'fzone.tabs.bonusCodesBingo'|trans({}, 'frontend') }}</a>
+                                        {% if boxBorders %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </li>
+
+                        </ul>
+                        <div class="tabJs-body bg-crop">
+                            {% if boxBorders %}
+                            <div class="gborder-body">
+                                <div class="gborder-left"></div>
+                                <div class="gborder-right"></div>
+                                <div class="gborder-bottom"></div>
+                                <div class="gborder-">
+                                    {% endif %}
+                                    <div class="tabJs-rs"></div>
+                                    {% if boxBorders %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if entries_per %}
+        <script>
+            var drawingEntriesEnabled = {{ entries_per|e('js') }};
+        </script>
+    {% endif %}
+
+    {% if pointsAnimationEnabled %}
+        <script>
+            var EngagedNation = EngagedNation || {};
+            EngagedNation.ConfigUtility
+                .add('pointsAnimationEnabled', '{{ pointsAnimationEnabled|e('js') }}')
+                .add('coinanim_splitBy', {{ coinanim.splitBy|e('js') }})
+                .add('coinanim_amountMax', {{ coinanim.amountMax|e('js') }});
+        </script>
+    {% endif %}
+{% endblock %}
+{% block jscript %}
+    <script>
+        EngagedNation.RequireJS.require(
+            ["jquery_1_10"],
+            function($)
+            {
+                $(function () {
+                    var navWrapper = $('.navWrapper'),
+                        body_wrap = $('.body_wrap'),
+                        account = $('#account'),
+                        html_element = $('html'),
+                        page_footer = $('#page-footer'),
+                        container = $('.container'),
+                        takeover = $('.takeover');
+
+                    {% if user %}
+                        if((html_element).hasClass('logged-out')) {
+                            $(html_element).removeClass('logged-out');
+                        }
+                        if(!$(navWrapper).hasClass('engagedNation')){
+                            $(navWrapper).addClass('engagedNation');
+                        }
+
+                        if($(takeover).hasClass('logged-out')){
+                            $(takeover).removeClass('logged-out');
+                        }
+
+                        if(!$(body_wrap).is('#body_wrap')){
+                            $(body_wrap).attr('id', 'body_wrap');
+                        }
+
+                        if($(account).hasClass('logged-out-account')) {
+                            $(account).removeClass('logged-out-account');
+                        }
+
+                        if($(html_element).hasClass('setTo100')){
+                            $(html_element).removeClass('setTo100')
+                        }
+
+                        $(navWrapper).css('display', 'block');
+                        $(page_footer).css('display', 'block');
+                        $(body_wrap).css({
+                            'max-width' : '1140px !important',
+                            'height' : 'initial'
+                        });
+
+                        $('#page-main-nav, #page-footer').removeClass('hidden');
+                    {% else %}
+                        $(container).css('width', '100%');
+                        $(body_wrap).css('height', '100vh');
+                        $(html_element).addClass('logged-out');
+                    {% endif %}
+
+                    $('#activityTab').tabJs({
+                        rotate: false,
+                        dataUrl: '{{ url|e("js") }}&tabjs=true&pageid={{ pageid|e("js") }}',
+                        callback: function()
+                        {
+                            var $activeTab = $("#activityTab ul li.active");
+                            if ($activeTab.length < 1) return;
+                        }
+                    });
+
+                    $('#fzone .-fl-help').on('click', function () {
+                        $('#t-sitefeedback').trigger('click');
+                    });
+                });
+
+                var pageMainNav = $('#page-main-nav-links');
+
+                EngagedNation.Callback = EngagedNation.Callback || {};
+
+                if (!EngagedNation.Callback.hasOwnProperty('ModalLearnMoreVideo')) {
+                    EngagedNation.Callback.ModalLearnMoreVideo = function() {
+                        EngagedNation.Objects.Modal.simpleModal('<iframe src="' + $(this).attr('data-src') + '" width="' + $(this).attr('data-width') + '" height="' + $(this).attr('data-height') + '" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>');
+
+                        $(pageMainNav).hasClass('in') ? $(pageMainNav).removeClass('in') : '';
+                    }
+                }
+
+                var layoutBodyLink = '.vimeo-video-link';
+                $(document).off('click', layoutBodyLink, EngagedNation.Callback.ModalLearnMoreVideo);
+                $(document).on('click', layoutBodyLink, EngagedNation.Callback.ModalLearnMoreVideo);
+            }
+        );
+    </script>
+{% endblock %}

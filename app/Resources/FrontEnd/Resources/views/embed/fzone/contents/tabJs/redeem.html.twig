@@ -1,0 +1,107 @@
+{% extends 'FrontEnd/Resources/views/embed/fzone/contents/tabJs/redeem/base.html.twig' %}
+
+{% block filter %}
+    {% if list %}
+    <div id="rewards-page-top-section">
+        <div class="clearfix">
+            <h2 class="h2-subheadline">{{ points }} Rewards</h2>
+
+            {% if global_en_config.getDatabaseConfig('is_sale_enabled') %}
+                <h2 id="saleDescription" class="h2-subheadline">
+                    <span class="en-font-animations-fire">Fire Sale</span>
+                    <span class="saleDate">JULY 26 - AUGUST 13</span>
+                </h2>
+                <p class="fireSaleBodyText">Get even more of the rewards you want most during our end-of-program fire
+                    sale.<br />Limited quantities available. Get yours before time runs out!
+                </p>
+            {% else %}
+                <div class="rewards-page-details">
+                    Exchange your {{ points }} for the rewards you want most.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock filter %}
+{% block tabitems %}
+    <div>
+        {% if list %}
+            {% set saleClass = '' %}
+            <ul class="noselect nofloat dlistb" style="text-align: center; width: 100%;">
+                {% for item in list %}
+                    {% if item.thumbnail is not empty %}
+                        {% set image = item.thumbnail %}
+                    {% else %}
+                        {% set image = imgDefault %}
+                    {% endif %}
+                    <li class="darkblue item box-circles">
+                        {% if item.available == item.sold %}
+                            <div class="tag">
+                                <div class="soldout"></div>
+                            </div>
+                        {% endif %}
+
+                        <div class="box-circles-bg darkblue-circles">
+                            <img class="img-responsive transition" src="{{ img ~ image }}"/>
+                        </div>
+                        <div class="box-bg" style="margin: 0; position: relative;">
+                            {% if global_en_config.getDatabaseConfig('is_sale_enabled') %}
+                                {% set saleClass = 'en-font-animations-fire' %}
+                                {% if item.grp_note %}
+                                    <div class="saleBeforeDealWrapper">
+                                        <span class="saleBeforeDeal">{{ item.grp_note|number_format }} {{ points }}</span>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+
+                            <div class="item-wrap item-desc {{ colors[loop.index0] }}-opacity">
+                                <div class="rewardLink">
+                                    <button class="pop btn-box- btn-box button" data-item="vouchers" data-id="{{ item.id }}" data-gtm-dimension="Rewards/View_Voucher">View Details</button>
+                                </div>
+                            </div>
+
+                            <div class="earn-price {{ saleClass }}">{{ item.price|number_format }}<br>{{ points }}</div>
+
+                            <div class="earn-title">
+                                {% if item.title|length > 70 %}
+                                    {{ item.title[:70] }}... Read More
+                                {% else %}
+                                    {{ item.title }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            {% block pagination %}
+                {% if paginav %}
+                    <div class="pagi_">
+                        <div class="toleft transition {{ toleft }}">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </div>
+                        <div class="toright transition {{ toright }}">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endblock %}
+        {% else %}
+            <div id="rewards-page-coming-soon">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="h2-subheadline">COMING SOON!</h2>
+                        <div class="coming-soon-details text-center">
+                            Exchange the {{ points }} you earn playing our fun, <em>free</em> online games for your choice of
+                            rewards. Take them to Rampart Casino along with your <em>High Rollin' at Rampart</em> instant rewards and
+                            Rampart Casino monthly offers for 3X the benefits!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock tabitems %}
+
+{% block scriptmargintop %}
+{% endblock scriptmargintop %}

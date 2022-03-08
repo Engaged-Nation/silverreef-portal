@@ -1,0 +1,427 @@
+@import (reference) "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/fonts.less";
+@import "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/responsive/fluid-type.less";
+
+.logged-out {
+    .rowBelowHeaderTheme {
+        position: relative;
+        z-index: 2;
+
+        > div {
+            height: 100%;
+        }
+
+        #logout-layout-container {
+            #theme-display-logout-box {
+                &.pre {
+                    .loginForm {
+                        #account {
+                            &.logged-out-account {
+                                text-align: center;
+
+                                .header-logo {
+                                    text-align: center;
+                                    margin: 0 auto 40px auto;
+
+                                    img {
+                                        display: inline-block;
+                                        .fluid-type(width, 320px, 1024px, 150px, 322px);
+                                    }
+                                }
+
+                                .subHeadlineText {
+                                    .fontRoboto;
+                                    color: #FFFFFF;
+                                    margin: 30px auto 20px auto;
+                                    line-height: 1em;
+                                    .fluid-type(font-size, 320px, 1024px, 18px, 30px);
+                                    max-width: 1000px;
+                                }
+
+                                .highlighted_text {
+                                    color: #939597;
+                                }
+
+                                .countdownHeaderText {
+                                    .fontRobotoBold;
+                                    .fluid-type(font-size, 320px, 1024px, 18px, 40px);
+                                    color: #939597;
+                                    text-transform: uppercase;
+                                    line-height: 1.2em;
+                                    margin: 20px auto;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.during {
+                    .pre;
+                    .loginForm {
+                        height: 100%;
+                        display: table;
+                        text-align: center;
+                        color: #ffffff;
+
+                        #account {
+                            display: table-cell;
+                            vertical-align: middle;
+                            height: 100%;
+
+                            &.logged-out-account {
+                                padding: 10px;
+                                position: relative;
+                                text-align: center;
+
+                                .headlineText {
+                                    .fontRoboto;
+                                    .fluid-type(font-size, 320px, 1024px, 18px, 32px);
+                                    text-transform: uppercase;
+                                    margin: 20px auto 0;
+                                }
+                                .subHeadlineText {
+                                    .headlineText;
+                                    .fluid-type(font-size, 320px, 1024px, 16px, 24px);
+                                    margin: 0 auto 20px auto;
+                                }
+
+                                .loginFormOverride {
+                                    margin: 0 auto;
+                                    .fontRoboto;
+
+                                    .formWrapper {
+                                        margin: 0 auto;
+                                        max-width: 450px;
+
+                                        .input-group {
+                                            margin: 10px 0;
+
+                                            @media (max-width: 991px) {
+                                                width: 100%;
+                                            }
+                                        }
+
+                                        .fas {
+                                            &.fa-user {
+                                                padding-left: 2px;
+                                            }
+                                        }
+
+                                        .btn-reset-password {
+                                            cursor: pointer;
+                                        }
+
+                                        .xxs-12 {
+                                            .remember-me {
+                                                margin-top: 8px;
+
+                                                label {
+                                                    font-weight: normal;
+
+                                                    .font-18 {
+                                                        .fontRobotoCondensed;
+                                                        .fluid-type(font-size, 320px, 1024px, 13px, 16px);
+                                                        line-height: 1.1em;
+                                                    }
+                                                }
+                                            }
+
+                                            .decorationUnderline {
+                                                text-align: center;
+                                                text-transform: uppercase;
+                                                .fontRobotoCondensed;
+                                                color: #ffffff;
+                                                line-height: 1.1em;
+                                                .fluid-type(font-size, 320px, 1024px, 13px, 16px);
+                                            }
+
+                                            .logout-modal-help-page {
+                                                .decorationUnderline;
+                                            }
+                                        }
+                                    }
+
+                                    p {
+                                        .fontRobotoCondensed;
+                                        color: #ffffff;
+                                        font-size: 22px;
+                                        line-height: 1.1em;
+                                        margin: 0 0 15px;
+                                        text-transform: uppercase;
+                                        .fluid-type(font-size, 320px, 1024px, 14px, 16px);
+                                    }
+
+                                    .loginButtonWrapper {
+                                        margin: 15px 0;
+                                        text-align: center;
+                                        display: block;
+
+                                        @media (max-width: 425px) {
+                                            margin: 10px auto;
+                                        }
+
+                                        button {
+                                            width: 138px;
+                                        }
+                                    }
+
+                                    .RegisterButtonWrapper {
+                                        .loginButtonWrapper;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.soft {
+                    .during;
+
+                    .loginForm {
+                        #account {
+                            &.logged-out-account {
+                                .header-logo {
+                                    margin: 0 auto 40px auto;
+                                }
+
+                                .headlineText {
+                                    .fontRobotoCondensedBold;
+                                    color: #626366;
+                                    line-height: 1em;
+                                    .fluid-type(font-size, 320px, 1024px, 20px, 50px);
+                                    margin: 0 auto 20px;
+                                }
+
+                                .subHeadlineText {
+                                    .fontRobotoCondensed;
+                                    font-size: 40px;
+                                    margin: 20px auto;
+                                    color: #939597;
+                                    line-height: 1em;
+                                    .fluid-type(font-size, 320px, 1024px, 18px, 38px);
+
+                                    @media screen and (max-width: 414px) {
+                                        margin: 8px 0;
+                                    }
+                                }
+
+                                .body-subcopy {
+                                    .fontRobotoCondensed;
+                                    margin: 0 auto 25px auto;
+                                    max-width: 1000px;
+                                    line-height: 1.1em;
+                                    .fluid-type(font-size, 320px, 1024px, 16px, 28px);
+
+                                    .highlighted_text {
+                                        color: #939597;
+                                    }
+                                }
+
+                                .loginFormOverride {
+                                    p {
+                                        .fontRobotoCondensed;
+                                        line-height: 1.1em;
+
+                                        .fluid-type(font-size, 320px, 1024px, 14px, 16px);
+                                    }
+
+                                    .col-xs-6 {
+                                        &:last-child {
+                                            @media screen and (max-width: 320px) {
+                                                padding-left: 0;
+                                                padding-right: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.hard {
+                    .during;
+
+                    .loginForm {
+                        #account {
+                            &.logged-out-account {
+                                .header-logo {
+                                    text-align: center;
+                                    margin: 0 auto 40px auto;
+                                }
+
+                                .headlineText {
+                                    .fontRobotoCondensedBold;
+                                    color: #626366;
+                                    line-height: 1em;
+                                    .fluid-type(font-size, 320px, 1024px, 20px, 50px);
+                                    margin: 20px auto 0 auto;
+                                }
+
+                                .subHeadlineText {
+                                    .fontRoboto;
+                                    font-size: 40px;
+                                    margin: 30px auto 20px auto;
+                                    color: #ffffff;
+                                    line-height: 1em;
+                                    max-width: 1000px;
+                                    text-transform: initial;
+                                    .fluid-type(font-size, 320px, 1024px, 16px, 30px);
+
+                                    @media screen and (max-width: 414px) {
+                                        margin: 8px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+#doregister {
+    .rewards-card-info {
+        color: #e51c23;
+        cursor: pointer;
+    }
+
+    .birthdate-info {
+        .rewards-card-info;
+    }
+
+    .optin-info {
+        .rewards-card-info;
+    }
+
+    .onresp {
+        .terms-label {
+            line-height: 1em;
+        }
+    }
+
+    .form-control {
+        font-size: 13px;
+    }
+
+    .form-control-ex {
+        color: #000000;
+        min-width: 78px;
+    }
+
+    .birthdate-spacer {
+        margin: 10px 0 20px 0;
+    }
+
+    .location-spacer {
+        .birthdate-spacer;
+    }
+
+    .self-exclusion-spacer {
+        margin-top: 20px;
+    }
+
+    .box-sm-body {
+        margin-bottom: 20px;
+    }
+
+    .modal-button-wrapper {
+        text-align: left;
+    }
+
+    .input-group-addon {
+        color: #ffffff;
+        background-color: #000000;
+    }
+
+    .msg_box_error {
+        background-color: #600d09;
+        border-radius: 4px;
+        color: #fff;
+        padding: 10px;
+        text-shadow: 0 1px 0 #333;
+        margin-bottom: 10px;
+    }
+
+    .text-underline {
+        text-decoration: underline;
+    }
+
+    .button {
+        width: 138px;
+    }
+}
+
+.height100 {
+    height: 100%;
+}
+
+html {
+    &.logged-out {
+        .height100;
+
+        body {
+            .height100;
+
+            .takeover {
+                .height100;
+
+                .container {
+                    &.main-container {
+                        .height100;
+
+                        #page_outer_wrap {
+                            .height100;
+
+                            #body_wrap {
+                                .height100;
+
+                                #page_wrap {
+                                    .height100;
+
+                                    .embed {
+                                        .height100;
+
+                                        #fzone {
+                                            .height100;
+
+                                            .rowAboveHeaderTheme {
+                                                margin-top: 0;
+                                            }
+
+                                            .rowBelowHeaderTheme {
+                                                .height100;
+                                                display: table;
+                                                width: 100%;
+                                                margin-left: 0;
+
+                                                #theme-display-logout-box {
+                                                    .height100;
+                                                    display: table;
+                                                    width: 100%;
+
+                                                    .loginForm {
+                                                        .height100;
+                                                        display: table;
+                                                        width: 100%;
+
+                                                        #account {
+                                                            .height100;
+                                                            display: table-cell;
+                                                            vertical-align: middle;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

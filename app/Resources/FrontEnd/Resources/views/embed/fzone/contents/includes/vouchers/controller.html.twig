@@ -1,0 +1,34 @@
+{% extends 'FrontEnd/Resources/views/embed/fzone/contents/includes/vouchers/controller/base.html.twig' %}
+
+{% block response %}
+    {{ 'fzone.voucher.success'|trans({'%voucherAdjectiveLine%': voucherAdjectiveLine, '%voucherTitle%': voucherTitle, '%voucherAmount%': voucherAmount, '%points%': points}, 'frontend')|raw }}
+    <div class="text-center">
+        <div class="modal-button-wrapper">
+            <button class="modal-button-style" onclick="EngagedNation.Callback.DownloadPdf.OnClick(
+                    {
+                    'data-downloadpdf-sourceurl': 'api/public/user/voucher/download?usersVouchersId=' + encodeURIComponent('{{ publicUserVoucherId|e('js') }}'),
+                    'data-downloadpdf-filename': '{{ voucherTitle }}',
+                    'data-downloadpdf-orientation': 'portrait'
+                    }
+                    );"
+            >
+                DOWNLOAD YOUR REWARD
+            </button>
+            <button class="modal-button-style view-my-prizes-btn">
+                VIEW<br> YOUR REWARD
+            </button>
+        </div>
+    </div>
+
+    <script>
+      EngagedNation.RequireJS.require(
+  				["jquery_1_10"],
+  				function ($) {
+              $(document).on('click', '.lbxgrid.custom-redeem-success .view-my-prizes-btn', function() {
+                  $('.view-my-voucher-btn').click();
+                  $('.lbxgrid-close span').trigger("click");
+              });
+          }
+  		);
+    </script>
+{% endblock response %}

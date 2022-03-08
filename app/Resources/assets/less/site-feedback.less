@@ -1,0 +1,148 @@
+@import (reference) "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/fonts.less";
+
+.sub-menutab {
+    &.sitefeedback-sub-menu {
+        .btn-group {
+            @media (max-width: 600px) {
+                display: inline-grid;
+            }
+
+            .modal-button-style {
+                border-radius: 8.1px !important;
+
+                @media (max-width: 600px) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+#sitefeedbackpage {
+    padding:8px;
+    max-width: 360px;
+    margin: 0 auto;
+
+    .h1-headline-smaller {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .body-p {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .body-p-left {
+        line-height: 125%;
+        max-width: 360px;
+    }
+
+    .faq-terms-rules-link {
+        margin: 0 auto 20px;
+
+        .h3-subheadline {
+            font-size: 16px;
+        }
+    }
+
+    #sitefeedbackform {
+        input {
+            max-width: 360px;
+
+            &.button {
+                padding: 5px 15px;
+            }
+        }
+
+        textarea {
+            max-width: 360px;
+        }
+
+        p {
+            .body-p;
+        }
+
+        .captcha- {
+            margin: 10px auto;
+            text-align:center;
+        }
+
+        .captcha-text {
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .recap-container {
+            max-width: 360px;
+        }
+
+        .g-recaptcha-wrapper {
+            display: table;
+            margin: 0 auto;
+        }
+
+        .buttonWrapper {
+            text-align: center;
+        }
+    }
+
+    #component-sitefeedback-form {
+        #template-sitefeedback-form {
+            .form-group {
+                .input-group {
+                    #template-sitefeedback-form-input-email {
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                    }
+
+                    @media (max-width: 767px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #template-sitefeedback-form-input-description-errors-container {
+                max-width: initial;
+                width: 100%;
+                margin: initial;
+                padding: initial;
+
+                .parsley-errors-list {
+                    @media (max-width: 767px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #template-sitefeedback-form-field-questions {
+                .question-selection-list {
+                    label {
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .g-recaptcha {
+                margin-left: -15px;
+                padding-bottom: 0;
+            }
+
+            #recaptcha-errors-container {
+                margin: 0 -15px 20px;
+
+                @media (max-width: 767px) {
+                    margin-top: -10px;
+                }
+
+                .parsley-errors-list {
+                    padding: 0;
+                }
+            }
+
+            #template-sitefeedback-form-button-submit {
+                width: 138px;
+            }
+        }
+    }
+}

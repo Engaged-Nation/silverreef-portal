@@ -1,0 +1,76 @@
+{% extends 'FrontEnd/Resources/views/embed/fzone/contents/tabJs/bonus_codes_bingo/base.html.twig' %}
+
+{% block body %}
+    <div id="embed-bonus-codes-promo">
+        <div class="row">
+            <div class="{% block bonuscode_form_container_class %}col-md-6{% endblock  %}">
+                <form class="embed-bonus-codes-promo-code" autocomplete="off">
+                    {% block embedBonusCodesDescription %}
+                        <div class="embed-bonus-codes-description">
+                            {{ 'fzone.bonuscodebingo.description'|trans({}, 'frontend')|raw }}
+                        </div>
+                    {% endblock embedBonusCodesDescription %}
+
+                    <input class="form-control" type="text" name="code" placeholder="{{ 'fzone.bonuscodebingo.inputplaceholder'|trans({}, 'frontend')|raw }}"/>
+                    <button id="blackout-button" class="button modal-button-style" type="submit">{{ 'fzone.bonuscodebingo.submit'|trans({}, 'frontend')|raw }}</button>
+                    <input type="hidden" name="bingo_id" value="{{ currentBingoId }}">
+                </form>
+            </div>
+            <div class="{% block bonuscode_progress_container_class %}col-md-6{% endblock  %}">
+                <div class="embed-bonus-codes-progress-wrapper">
+                    <div class="embed-bonus-codes-progress-counter">
+                        <span class="embed-bonus-codes-progress-number">{{ (getUserBingoPromo) ? getUserBingoPromo|length : 0 }}</span> / {{ getCurrentPromos|length }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="embed-bonus-codes-promo-list">
+            {% for list in getCurrentPromos %}
+                {% set completed = '' %}
+                {% if getUserBingoPromo %}
+                    {% set break = false %}
+                    {% for userCurrentPromo in getUserBingoPromo if not break%}
+                        {% if userCurrentPromo.bonus_codes_promo_id == list.bonus_codes_promo_id %}
+                            {% set completed = 'embed-bonus-codes-completed' %}
+                            {% set break = true %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if
+                    bonusCodesBingoExtraItemS3Asset is not null and
+                    loop.index == global_en_config.getDatabaseConfig('bonus_codes_bingo_extra_item_position')
+                %}
+                    <div class="embed-bonus-codes-promo-item">
+                        <div class="embed-bonus-codes-promo-wrapper">
+                            <img class="img-responsive" src="{{ bonusCodesBingoExtraItemS3Asset.path }}"/>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="embed-bonus-codes-promo-item {{ completed }}" data-promoid="{{ list.bonus_codes_promo_id }}">
+                    <div class="embed-bonus-codes-promo-wrapper">
+                        <img class="img-responsive" src="{{ list.s3_path }}"/>
+                        <div class="display-full embed-bonus-codes-status">
+                            <div class="display-full display-table">
+                                <div class="display-table-cell align-middle">
+                                    <div class="embed-bonus-codes-status-check">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+        {% if bonusCodeBingoCompleted %}
+            <div class="embed-bonus-codes-promo-result">
+                <form class="embed-bonus-codes-promo-claim">
+                    <button class="button" type="submit">Claim Reward!</button>
+                    <input type="hidden" name="bonusCodesPromoData" value="{{ bonusCodeBingoCompleted }}"/>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+{% endblock body %}

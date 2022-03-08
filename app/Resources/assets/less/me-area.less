@@ -1,0 +1,180 @@
+@import (reference) "../../../../vendor/engaged-nation/portal-core/FrontEnd/Resources/less/shared/fonts.less";
+@import (reference) "variables.less";
+
+#account {
+    .profile {
+        margin: 0;
+        text-align: center;
+        padding: 15px;
+
+        .brand-logo {
+            cursor: default;
+
+            img {
+                display: inline-block;
+                height: 100%;
+                width: 100%;
+                max-width: 160px;
+            }
+        }
+
+        .level_info {
+            display:inline-block;
+            text-align:right;
+        }
+
+        .user-points-display-wrapper {
+            font-size: 21px;
+            .fontRobotoBold;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px #000000;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 14px;
+
+            @media (max-width: 1199px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 991px) {
+                font-size: 12px;
+            }
+
+            @media (max-width: 767px) {
+                margin-top: 1.5em;
+                font-size: 25px;
+            }
+
+            @media (max-width: 450px) {
+                font-size: 4.5vw;
+            }
+
+            @media (max-width: 290px) {
+                font-size: 4vw;
+            }
+
+            .-drawing-entries {
+                .fontRobotoBold;
+                color: #BDEBFF;
+
+                .-value {
+                    color: #FFFFFF;
+                }
+            }
+
+            .-points {
+                .-drawing-entries;
+            }
+
+            a {
+                color: #ffffff;
+
+                &:hover {
+                    color: #A97630;
+                }
+            }
+        }
+
+        .meAreaCenterImage {
+            @media (max-width: 1199px) {
+                margin-top: 1em;
+            }
+        }
+
+        .experience-wrapper {
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+            margin-top: 5px;
+
+            &.experiencePointsModal {
+                cursor: pointer;
+            }
+
+            .experience-text-highlight {
+                text-transform: uppercase;
+                color: #BDEBFF;
+            }
+
+            .experience-text-top {
+                .fontRobotoBold;
+                font-size: 21px;
+
+                .learnmore-text {
+                    @media (max-width: 767px) {
+                        color: #BDEBFF;
+                    }
+                }
+
+                .xpbar-header {
+                    .fontRobotoBold;
+                    color: #fff;
+                }
+
+                .user-level-range-name {
+                    .experience-text-highlight;
+                    line-height: 1.2em;
+                }
+
+                @media (max-width: 1199px) {
+                    font-size: 20px;
+                }
+
+                @media (max-width: 991px) {
+                    font-size: 12px;
+                }
+
+                @media (max-width: 767px) {
+                    margin-top: .5em;
+                    font-size: 25px;
+                }
+
+                @media (max-width: 450px) {
+                    font-size: 4.5vw;
+                }
+
+                @media (max-width: 290px) {
+                    font-size: 4vw;
+                }
+            }
+
+            .user-experience-container {
+                width: 100%;
+                display: inline-block;
+
+                .user-experience-bar {
+                    margin-top: -2px;
+
+                    @media (max-width: 767px) {
+                        margin-top: 0;
+                    }
+
+                    @media (max-width: 565px) {
+                        margin-top: -3px;
+                    }
+                }
+
+                @media (max-width: 1199px) {
+                    width: 60%;
+                }
+
+                @media (max-width: 767px) {
+                    display: inline-block;
+                }
+            }
+
+            .experience-text-bottom {
+                font-size: 14px;
+                margin-top: 10px;
+                text-transform: initial;
+            }
+
+            .completed {
+                .fontRoboto;
+                color: @base-color-blue;
+                font-size: 20px;
+                line-height: 110%;
+            }
+        }
+    }
+}
