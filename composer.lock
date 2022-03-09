@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6524ef244167a9ff0e9547d818270188",
+    "content-hash": "6e42751bc0c75fd7866a49a52a93cd03",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -944,12 +944,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/doctrine-portal.git",
-                "reference": "879c264f6f1599b4d19db653d10b8ea8d62b6737"
+                "reference": "037eb43c3fc5ebb4554b9234668ed5a106c663ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Engaged-Nation/doctrine-portal/zipball/879c264f6f1599b4d19db653d10b8ea8d62b6737",
-                "reference": "879c264f6f1599b4d19db653d10b8ea8d62b6737",
+                "url": "https://api.github.com/repos/Engaged-Nation/doctrine-portal/zipball/037eb43c3fc5ebb4554b9234668ed5a106c663ba",
+                "reference": "037eb43c3fc5ebb4554b9234668ed5a106c663ba",
                 "shasum": ""
             },
             "require": {
@@ -974,14 +974,14 @@
             ],
             "description": "The portal doctrine library.",
             "support": {
-                "source": "https://github.com/Engaged-Nation/doctrine-portal/tree/rc",
+                "source": "https://github.com/Engaged-Nation/doctrine-portal/tree/master",
                 "issues": "https://github.com/Engaged-Nation/doctrine-portal/issues"
             },
-            "time": "2022-02-14T18:24:01+00:00"
+            "time": "2022-02-14T19:38:26+00:00"
         },
         {
             "name": "engaged-nation/lib-central-admin-client",
-            "version": "dev-master",
+            "version": "v2.48.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/lib-central-admin-client.git",
@@ -1098,10 +1098,10 @@
             ],
             "description": "MGT Api Client Library",
             "support": {
-                "source": "https://github.com/Engaged-Nation/lib-mgt-client/tree/master",
+                "source": "https://github.com/Engaged-Nation/lib-mgt-client/tree/v1.1.0",
                 "issues": "https://github.com/Engaged-Nation/lib-mgt-client/issues"
             },
-            "time": "2020-01-30T19:31:46+00:00"
+            "time": "2018-02-23T01:18:53+00:00"
         },
         {
             "name": "engaged-nation/portal-core",
@@ -1109,12 +1109,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/portal-core.git",
-                "reference": "76311e65e253611cf6823f2c301fa3349455ca27"
+                "reference": "9fe84a2ceb072ca93c8131d79ad44afa0dc07685"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Engaged-Nation/portal-core/zipball/76311e65e253611cf6823f2c301fa3349455ca27",
-                "reference": "76311e65e253611cf6823f2c301fa3349455ca27",
+                "url": "https://api.github.com/repos/Engaged-Nation/portal-core/zipball/9fe84a2ceb072ca93c8131d79ad44afa0dc07685",
+                "reference": "9fe84a2ceb072ca93c8131d79ad44afa0dc07685",
                 "shasum": ""
             },
             "require": {
@@ -1163,10 +1163,10 @@
             ],
             "description": "The core components for the portal domains.",
             "support": {
-                "source": "https://github.com/Engaged-Nation/portal-core/tree/rc",
+                "source": "https://github.com/Engaged-Nation/portal-core/tree/master",
                 "issues": "https://github.com/Engaged-Nation/portal-core/issues"
             },
-            "time": "2022-03-08T00:52:46+00:00"
+            "time": "2022-03-08T23:35:08+00:00"
         },
         {
             "name": "guzzlehttp/command",
