@@ -1,6 +1,6 @@
 # Silver Reef Rollin/Dream Vacation Portal
 
-This project is for the Rampart High Rollin/Dream Vacation portal system.
+This project is for the Silver Reef High Rollin/Dream Vacation portal system.
 
 ## Test Logins
 
