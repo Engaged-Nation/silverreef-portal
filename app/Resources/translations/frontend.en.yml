@@ -29,7 +29,7 @@ fzone:
     drawingEntries: "Drawing TICKETS"
 
   instantRewards:
-    header: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/rampart-dv-uploads/images/games/instant_reward/InstantWinnerV1.gif\">"
+    header: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/silverreef-uploads/images/games/instant_reward/InstantWinnerV1.gif\">"
 
     subheader: "<div class='instant-reward-subheader'>You Won</div>"
     prize:
