@@ -1,6 +1,6 @@
 {
-    "name": "engaged-nation/rampart-dv-portal",
-    "description": "Rampart Dream Vacation Portal Site",
+    "name": "engaged-nation/silverreef-portal",
+    "description": "Silver Reef Dream Vacation Portal Site",
     "type": "project",
     "require": {
         "php": "^5.6",
