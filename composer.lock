@@ -1105,12 +1105,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:Engaged-Nation/portal-core.git",
-                "reference": "9fe84a2ceb072ca93c8131d79ad44afa0dc07685"
+                "reference": "dd6340a5ec97b89b0d5cdfe9d6e6366ec1e9e902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Engaged-Nation/portal-core/zipball/9fe84a2ceb072ca93c8131d79ad44afa0dc07685",
-                "reference": "9fe84a2ceb072ca93c8131d79ad44afa0dc07685",
+                "url": "https://api.github.com/repos/Engaged-Nation/portal-core/zipball/dd6340a5ec97b89b0d5cdfe9d6e6366ec1e9e902",
+                "reference": "dd6340a5ec97b89b0d5cdfe9d6e6366ec1e9e902",
                 "shasum": ""
             },
             "require": {
@@ -1161,7 +1161,7 @@
                 "source": "https://github.com/Engaged-Nation/portal-core/tree/master",
                 "issues": "https://github.com/Engaged-Nation/portal-core/issues"
             },
-            "time": "2022-03-08T23:35:08+00:00"
+            "time": "2022-03-15T15:15:10+00:00"
         },
         {
             "name": "guzzlehttp/command",
