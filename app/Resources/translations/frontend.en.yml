@@ -1031,3 +1031,15 @@ api:
         message: "<strong>YOUR REWARD IS EXPIRING</strong><br />
           You have <span>%amount% reward%plural%</span> about to <span>expire</span>.<br/>
           <span class=\"underLine\">Click here</span> to access your rewards."
+system:
+  session:
+    expired: "<div class='session-expired-wrapper'>
+      <span class='session-expired-header'>YOUR SESSION HAS EXPIRED.</span>
+      <div class='session-expired-body'>
+        Please refresh your browser to continue. If you have opened this site in multiple tabs or browsers, please close the duplicate tabs/browsers.
+      </div></div>"
+    timeout: '<h1 class="text-center mb-3">Refreshing Your Experience</h1>
+      <p class="text-center mb-0">Please wait for a few moments while the latest updates are applied to your account.</p>
+      <div class="spinner text-center">
+        <div id="loaderWrapper"><div class="en-animation-loader-cube-grid"><div class="en-animation-loader-cube en-animation-loader-cube1"></div><div class="en-animation-loader-cube en-animation-loader-cube2"></div><div class="en-animation-loader-cube en-animation-loader-cube3"></div><div class="en-animation-loader-cube en-animation-loader-cube4"></div><div class="en-animation-loader-cube en-animation-loader-cube5"></div><div class="en-animation-loader-cube en-animation-loader-cube6"></div><div class="en-animation-loader-cube en-animation-loader-cube7"></div><div class="en-animation-loader-cube en-animation-loader-cube8"></div><div class="en-animation-loader-cube en-animation-loader-cube9"></div></div></div>
+      </div>'
