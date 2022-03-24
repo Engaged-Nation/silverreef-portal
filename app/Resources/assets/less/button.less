@@ -1,2 +1,15 @@
-/* left blank intentionally */
-.button{}
+@import (reference) "variables.less";
+
+.button_template_standard {
+    background-color: @base-btn-bg-color;
+}
+
+.button {
+    .button_template_standard;
+}
+
+button {
+    &.btn {
+        .button;
+    }
+}
