@@ -29,7 +29,7 @@ fzone:
     drawingEntries: "Drawing TICKETS"
 
   instantRewards:
-    header: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/rampart-dv-uploads/images/games/instant_reward/InstantWinnerV1.gif\">"
+    header: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/silverreef-uploads/images/games/instant_reward/InstantWinnerV1.gif\">"
 
     subheader: "<div class='instant-reward-subheader'>You Won</div>"
     prize:
@@ -72,16 +72,19 @@ fzone:
   #
   login:
     incorrect: "<div class=\"wrongpass-wrapper\">
-       <div class=\"wrongpass-headline\">LOGIN UNSUCCESSFUL</div>
+       <div class=\"wrongpass-headline\">Login Unsuccessful</div>
        <div class=\"body-p-left\">
          The password you entered was incorrect.
        </div>
+       <div class=\"body-p-left\">
+         Please close this message and try again.
+       </div>
        <div class=\"body-p\">
          <div class=\"wrongpassbold\">NEED TO RESET YOUR PASSWORD?</div>
-         If so, press the button below.
+         Press the button below.
        </div>
        <div class=\"body-p btn-container\">
-         <button type=\"button\" class=\"modal-button-style btn-reset-password\" onclick=\"$('.lbxgrid .xclose span').click();\">SUBMIT</button>
+         <button type=\"button\" class=\"modal-button-style btn-reset-password\" onclick=\"$('.lbxgrid .xclose span').click();\">RESET PASSWORD</button>
        </div>
      </div>"
     welcome: ""
@@ -341,7 +344,7 @@ fzone:
     success: "<h3 class=\"modal-h2-style\"><img class=\"img-responsive\" src=\"/images/modals/Congratulations.png\" /></h3>
           <p class=\"body-p modal-body-style\">You Successfully Exchanged <span>%voucherAmount% %points%</span> for <span>%voucherTitle%</span></p>
           <p class=\"body-p modal-body-style redeem-instruction\">
-            View your reward, then download it or send it to a Rampart Casino kiosk, by clicking the button below.
+            View your reward, then download it or send it to a Silver Reef Casino kiosk, by clicking the button below.
           </p>"
 
   #
@@ -356,13 +359,13 @@ fzone:
     header_redeemable_employee: "Enjoy your redeemable reward"
 
     bodycopy: "<p class=\"body-p\">
-        View your active prizes and redeem them by swiping your Rampart Rewards Card
-        at any Rampart promotional kiosk during the dates shown below.
+        View your active prizes and redeem them by swiping your Silver Reef Rewards Card
+        at any Silver Reef promotional kiosk during the dates shown below.
       </p>"
 
     details: '<p class="myvoucher-issuedTo" style="display: none;"><span class="goGold">Player Name</span>: %issuedTo%</p>
       <p class="myvoucher-nickName" style="display: none;"><span class="goGold">Nickname</span>: %nickname%</p>
-      <p class="myvoucher-playersCard" style="display: none;"><span class="goGold">Rampart Rewards Card Number</span>: %playerscard%</p>
+      <p class="myvoucher-playersCard" style="display: none;"><span class="goGold">Silver Reef Rewards Card Number</span>: %playerscard%</p>
       <p class="myvoucher-issuedDate" style="display:none;"><span class="goGold">Date Issued</span>: %issued_date%</p>
       <p class="myvoucher-expireDate" style="display:none;"><span class="goGold">Expiration Date</span>: %expire_date%</p>
       <p class="myvoucher-vid" style="display:none;"><span class="goGold">Voucher Id</span>: %vid%</p>
@@ -511,17 +514,17 @@ fzone:
   # bonus code
   #
   bonuscode:
-    title: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/rampart-dv-uploads/images/games/title/ramrich_gamemodalhead_bcode.png\">"
-    p1: "<div class=\"bonuscode-body-headline\">EARN ONE BONUS CODE PER WEEK AT RAMPART CASINO<br>
+    title: "<img class=\"img-responsive center-block\" src=\"https://s3-us-west-2.amazonaws.com/silverreef-uploads/images/games/title/ramrich_gamemodalhead_bcode.png\">"
+    p1: "<div class=\"bonuscode-body-headline\">EARN ONE BONUS CODE PER WEEK AT SILVER REEF CASINO<br>
        <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">BONUS CODE DETAILS >
          <span class=\"simple-modal-title h1-headline-smaller hidden\"><span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span></span>
             <span class=\"simple-modal-content hidden\">
-               <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+               <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Silver Reef Riches.</p>
                <ul class=\"body-p-left bonuscode-how-to-body\">
-                  <li>Visit Rampart Casino.</li>
-                  <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
-                  <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
-                  <li>Enter your code on the Rampart Riches website. </li>
+                  <li>Visit Silver Reef Casino.</li>
+                  <li>Earn 10 base points on your Silver Reef Rewards Card during your visit.</li>
+                  <li>Swipe at any Silver Reef Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                  <li>Enter your code on the Silver Reef Riches website. </li>
                </ul>
                <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
             </span>
@@ -531,19 +534,19 @@ fzone:
       noRewardCode: "<div class=\"bonuscode-error-wrapper\">
           <div class=\"instant-reward-header\">thank you<br>for playing</div>
           <div class=\"additional-copy\">Unfortunately, this code was either already entered, or is not currently valid.</div>
-          <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+          <div class=\"additional-copy\">Visit Silver Reef Casino to get a new code once per week.</div>
           <div class=\"additional-copy\">
             <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
               <span class=\"simple-modal-title h1-headline-smaller hidden\">
                 <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
               </span>
               <span class=\"simple-modal-content hidden\">
-                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Silver Reef Riches.</p>
                  <ul class=\"body-p-left bonuscode-how-to-body\">
-                    <li>Visit Rampart Casino.</li>
-                    <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
-                    <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
-                    <li>Enter your code on the Rampart Riches website. </li>
+                    <li>Visit Silver Reef Casino.</li>
+                    <li>Earn 10 base points on your Silver Reef Rewards Card during your visit.</li>
+                    <li>Swipe at any Silver Reef Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                    <li>Enter your code on the Silver Reef Riches website. </li>
                  </ul>
                  <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
                </span>
@@ -553,19 +556,19 @@ fzone:
       nobonuscode: "<div class=\"bonuscode-error-wrapper\">
           <div class=\"instant-reward-header\">thank you<br>for playing</div>
           <div class=\"additional-copy\">Please enter a valid code.</div>
-          <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+          <div class=\"additional-copy\">Visit Silver Reef Casino to get a new code once per week.</div>
           <div class=\"additional-copy\">
             <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
               <span class=\"simple-modal-title h1-headline-smaller hidden\">
                 <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
               </span>
               <span class=\"simple-modal-content hidden\">
-                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Silver Reef Riches.</p>
                  <ul class=\"body-p-left bonuscode-how-to-body\">
-                    <li>Visit Rampart Casino.</li>
-                    <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
-                    <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
-                    <li>Enter your code on the Rampart Riches website. </li>
+                    <li>Visit Silver Reef Casino.</li>
+                    <li>Earn 10 base points on your Silver Reef Rewards Card during your visit.</li>
+                    <li>Swipe at any Silver Reef Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                    <li>Enter your code on the Silver Reef Riches website. </li>
                  </ul>
                  <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
                </span>
@@ -575,19 +578,19 @@ fzone:
       invalidcode: "<div class=\"bonuscode-error-wrapper\">
          <div class=\"instant-reward-header\">thank you<br>for playing</div>
          <div class=\"additional-copy\">Unfortunately, the code you entered is invalid. Please check your code and try again.</div>
-         <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+         <div class=\"additional-copy\">Visit Silver Reef Casino to get a new code once per week.</div>
          <div class=\"additional-copy\">
            <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
              <span class=\"simple-modal-title h1-headline-smaller hidden\">
                <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
              </span>
              <span class=\"simple-modal-content hidden\">
-                <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Silver Reef Riches.</p>
                 <ul class=\"body-p-left bonuscode-how-to-body\">
-                   <li>Visit Rampart Casino.</li>
-                   <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
-                   <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
-                   <li>Enter your code on the Rampart Riches website. </li>
+                   <li>Visit Silver Reef Casino.</li>
+                   <li>Earn 10 base points on your Silver Reef Rewards Card during your visit.</li>
+                   <li>Swipe at any Silver Reef Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                   <li>Enter your code on the Silver Reef Riches website. </li>
                 </ul>
                 <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
               </span>
@@ -597,19 +600,19 @@ fzone:
       codeNotAvailable: "<div class=\"bonuscode-error-wrapper\">
         <div class=\"instant-reward-header\">thank you<br>for playing</div>
         <div class=\"additional-copy\">Sorry, the Bonus Code you entered is expired and is no longer available.</div>
-          <div class=\"additional-copy\">Visit Rampart Casino to get a new code once per week.</div>
+          <div class=\"additional-copy\">Visit Silver Reef Casino to get a new code once per week.</div>
           <div class=\"additional-copy\">
             <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
               <span class=\"simple-modal-title h1-headline-smaller hidden\">
                 <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
               </span>
               <span class=\"simple-modal-content hidden\">
-                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+                 <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Silver Reef Riches.</p>
                  <ul class=\"body-p-left bonuscode-how-to-body\">
-                    <li>Visit Rampart Casino.</li>
-                    <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
-                    <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
-                    <li>Enter your code on the Rampart Riches website. </li>
+                    <li>Visit Silver Reef Casino.</li>
+                    <li>Earn 10 base points on your Silver Reef Rewards Card during your visit.</li>
+                    <li>Swipe at any Silver Reef Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                    <li>Enter your code on the Silver Reef Riches website. </li>
                  </ul>
                  <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
                </span>
@@ -627,19 +630,19 @@ fzone:
       alreadyUsed: "<div class=\"bonuscode-error-wrapper\">
         <div class=\"instant-reward-header\">thank you<br>for playing</div>
         <div class=\"additional-copy\">Unfortunately, this code was already entered.</div>
-        <div class=\"additional-copy\">Visit Rampart Casino to get a new code and try again.</div>
+        <div class=\"additional-copy\">Visit Silver Reef Casino to get a new code and try again.</div>
         <div class=\"additional-copy\">
           <span class=\"simple-modal text-link\" data-gtm-dimension=\"Bonus_Code/Bonus_Code_Details\">HOW TO PLAY BONUS CODE >
             <span class=\"simple-modal-title h1-headline-smaller hidden\">
               <span class=\"bonuscode-how-to-header\">HOW TO PLAY BONUS CODE</span>
             </span>
             <span class=\"simple-modal-content hidden\">
-               <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Rampart Riches.</p>
+               <p class=\"body-p-left bonuscode-how-to-body\">Get an additional award when you enter a <strong>bonus code</strong> on Silver Reef Riches.</p>
                <ul class=\"body-p-left bonuscode-how-to-body\">
-                  <li>Visit Rampart Casino.</li>
-                  <li>Earn 10 base points on your Rampart Rewards Card during your visit.</li>
-                  <li>Swipe at any Rampart Casino kiosk the same day you earned your base points to get a bonus code.</li>
-                  <li>Enter your code on the Rampart Riches website. </li>
+                  <li>Visit Silver Reef Casino.</li>
+                  <li>Earn 10 base points on your Silver Reef Rewards Card during your visit.</li>
+                  <li>Swipe at any Silver Reef Casino kiosk the same day you earned your base points to get a bonus code.</li>
+                  <li>Enter your code on the Silver Reef Riches website. </li>
                </ul>
                <p class=\"body-p-left bonuscode-how-to-body\">That's all you need to do to win! Have fun and good luck.</p>
              </span>
@@ -778,7 +781,7 @@ fzone:
     title: "Fill in the Blank"
     p1: ""
     learntoplay: "How To Play"
-    learntoplayinfo: "Search through the Rampart Casino website to find the answer to the question below.
+    learntoplayinfo: "Search through the Silver Reef Casino website to find the answer to the question below.
       type in your guess in the \"answer\" box. Get the answer right and you'll earn %points%!"
     thankyou: "<p style='font-size: 30px !important; text-align: center !important; text-transform: uppercase !important;'>You Did It!</p>
         <p style='text-align: center !important; text-transform: uppercase !important;'>Thank you for playing.</p>
@@ -976,12 +979,12 @@ emailConfirmation:
     header: "%fname%, <br/> Activate Your Account to<br/> Get %points_per_register% M credits!"
 
   footer:
-    companywebsite: "https://theresortatsummerlin.com/"
-    companyadress: "221 N. Rampart Blvd., Las Vegas, Nevada 89145, United States"
-    customerservice: "https://theresortatsummerlin.com/contact-us/"
+    companywebsite: "https://www.domain.com"
+    companyadress: "United States"
+    customerservice: "https://www.domain.com"
 
   links:
-    program: "https://www.mlife.com"
+    program: "https://www.domain.com"
     socialmedia:
       facebook: ""
       instragram: ""
@@ -998,12 +1001,12 @@ emailInvite:
       </h1>
 
   footer:
-    companywebsite: "https://theresortatsummerlin.com/"
-    companyadress: "221 N. Rampart Blvd., Las Vegas, Nevada 89145, United States"
-    customerservice: "https://theresortatsummerlin.com/contact-us/"
+    companywebsite: "https://www.domain.com"
+    companyadress: " "
+    customerservice: "https://www.domain.com"
 
   links:
-    program: "https://theresortatsummerlin.com/"
+    program: "https://www.domain.com/"
     socialmedia:
       facebook: ""
       instragram: ""
@@ -1012,7 +1015,7 @@ emailInvite:
 gameCompleted:
   header: "<div class=\"completed-modal-div\">CONGRATULATIONS!</div>"
   subheader: "<div class=\"completed-modal-div\">You played this game today
-              and Rampart awarded you:</div>"
+              and Silver Reef awarded you:</div>"
   prize:
     points: "<div class=\"instant-reward-points game-completed-padding\">%points% %aliasPoints%</div>"
     drawingEntries: ""
@@ -1031,3 +1034,15 @@ api:
         message: "<strong>YOUR REWARD IS EXPIRING</strong><br />
           You have <span>%amount% reward%plural%</span> about to <span>expire</span>.<br/>
           <span class=\"underLine\">Click here</span> to access your rewards."
+system:
+  session:
+    expired: "<div class='session-expired-wrapper'>
+      <span class='session-expired-header'>YOUR SESSION HAS EXPIRED.</span>
+      <div class='session-expired-body'>
+        Please refresh your browser to continue. If you have opened this site in multiple tabs or browsers, please close the duplicate tabs/browsers.
+      </div></div>"
+    timeout: '<h1 class="text-center mb-3">Refreshing Your Experience</h1>
+      <p class="text-center mb-0">Please wait for a few moments while the latest updates are applied to your account.</p>
+      <div class="spinner text-center">
+        <div id="loaderWrapper"><div class="en-animation-loader-cube-grid"><div class="en-animation-loader-cube en-animation-loader-cube1"></div><div class="en-animation-loader-cube en-animation-loader-cube2"></div><div class="en-animation-loader-cube en-animation-loader-cube3"></div><div class="en-animation-loader-cube en-animation-loader-cube4"></div><div class="en-animation-loader-cube en-animation-loader-cube5"></div><div class="en-animation-loader-cube en-animation-loader-cube6"></div><div class="en-animation-loader-cube en-animation-loader-cube7"></div><div class="en-animation-loader-cube en-animation-loader-cube8"></div><div class="en-animation-loader-cube en-animation-loader-cube9"></div></div></div>
+      </div>'
