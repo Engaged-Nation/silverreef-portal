@@ -357,15 +357,16 @@ fzone:
     header_redeemable: "Go play with your redeemable reward"
     header_instant: "Go play with your instant reward"
     header_redeemable_employee: "Enjoy your redeemable reward"
+    headline: "My Prizes"
 
     bodycopy: "<p class=\"body-p\">
-        View your active prizes and redeem them by swiping your Silver Reef Rewards Card
-        at any Silver Reef promotional kiosk during the dates shown below.
+        View your active rewards and redeem them by swiping your Reef Rewards Card at any Silver Reef Casino Resort
+        kiosk during the dates shown below.
       </p>"
 
     details: '<p class="myvoucher-issuedTo" style="display: none;"><span class="goGold">Player Name</span>: %issuedTo%</p>
       <p class="myvoucher-nickName" style="display: none;"><span class="goGold">Nickname</span>: %nickname%</p>
-      <p class="myvoucher-playersCard" style="display: none;"><span class="goGold">Silver Reef Rewards Card Number</span>: %playerscard%</p>
+      <p class="myvoucher-playersCard" style="display: none;"><span class="goGold">Reef Rewards Card Number</span>: %playerscard%</p>
       <p class="myvoucher-issuedDate" style="display:none;"><span class="goGold">Date Issued</span>: %issued_date%</p>
       <p class="myvoucher-expireDate" style="display:none;"><span class="goGold">Expiration Date</span>: %expire_date%</p>
       <p class="myvoucher-vid" style="display:none;"><span class="goGold">Voucher Id</span>: %vid%</p>
