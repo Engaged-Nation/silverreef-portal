@@ -72,16 +72,19 @@ fzone:
   #
   login:
     incorrect: "<div class=\"wrongpass-wrapper\">
-       <div class=\"wrongpass-headline\">LOGIN UNSUCCESSFUL</div>
+       <div class=\"wrongpass-headline\">Login Unsuccessful</div>
        <div class=\"body-p-left\">
          The password you entered was incorrect.
        </div>
+       <div class=\"body-p-left\">
+         Please close this message and try again.
+       </div>
        <div class=\"body-p\">
          <div class=\"wrongpassbold\">NEED TO RESET YOUR PASSWORD?</div>
-         If so, press the button below.
+         Press the button below.
        </div>
        <div class=\"body-p btn-container\">
-         <button type=\"button\" class=\"modal-button-style btn-reset-password\" onclick=\"$('.lbxgrid .xclose span').click();\">SUBMIT</button>
+         <button type=\"button\" class=\"modal-button-style btn-reset-password\" onclick=\"$('.lbxgrid .xclose span').click();\">RESET PASSWORD</button>
        </div>
      </div>"
     welcome: ""
